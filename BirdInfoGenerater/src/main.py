@@ -111,7 +111,15 @@ def main():
             print("\nError: Can't identify as a bird. Please try again.")
 
         # Suggest similar birds
-        print("\nDid you mean any of these birds? ", birds_df["Name"].unique()[:3])
+        if matched_bird:
+            print(f"\nDid you mean '{matched_bird}'?")
+        else:
+            suggestions = process.extract(query, birds_df["Name"].tolist(), limit=3)
+            print("\nError: Can't identify as a bird. Perhaps you meant:")
+            for suggestion in suggestions:
+                print(f" - {suggestion[0]} (confidence: {suggestion[1]}%)")
+
+        # print("\nDid you mean any of these birds? ", birds_df["Name"].unique()[:3])
 
 if __name__ == "__main__":
     main()
