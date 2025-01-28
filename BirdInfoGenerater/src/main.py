@@ -2,9 +2,6 @@ import pandas as pd
 import os
 from fuzzywuzzy import process
 import pickle
-
-from data_loader import load_dataset, load_template
-from search_engine import find_best_match, suggest_similar_birds
 from dynamic import generate_dynamic_description
 
 # Define the extract_keywords function before loading the pickle file
@@ -75,40 +72,59 @@ def main():
     template_path = "../Templates/template1.txt"
     extractor_model_path = "../model/keyword_extractor.pkl"
 
-        # Load dataset and template
+    # Load dataset and template
     birds_df = load_dataset(dataset_path)
     if birds_df is None:
-        exit()
+        return
 
     template = load_template(template_path)
     if template is None:
-        exit()
+        return
 
-    def main():
-        print("Welcome to the Bird Information System!")
+    # Load the keyword extraction model
+    extract_keywords_function = load_keyword_extractor(extractor_model_path)
 
-        while True:
-            query = input("\nEnter bird name (or type 'exit' to quit): ").strip().lower()
-            if query == 'exit':
-                print("Exiting the system.")
-                break
+    if not extract_keywords_function:
+        print("Error: Could not load keyword extraction model.")
+        return
 
-            # Step 1: Find the best match using fuzzy matching
-            matched_bird = find_best_match(query, birds_df["Name"].tolist())
+    print("Welcome to the Bird Information System!")
+    
+    while True:
+        query = input("\nEnter bird name (or type 'exit' to quit): ").strip().lower()
+        if query == 'exit':
+            print("Exiting the system.")
+            break
+        
+        # Fuzzy matching to find the best bird name
+        matched_bird = find_best_match(query, birds_df["Name"].tolist())
 
-            if matched_bird:
-                bird_row = birds_df[birds_df["Name"] == matched_bird].iloc[0].to_dict()
-                
-                # Step 2: Generate dynamic output using GPT-2
-                description = generate_dynamic_description(bird_row)
+        if matched_bird:
+            bird_row = birds_df[birds_df["Name"] == matched_bird]
+            if not bird_row.empty:
+                bird_data = bird_row.iloc[0].to_dict()
+                description = generate_description(template, bird_data)
                 print("\nGenerated Description:\n")
                 print(description)
 
+                description_dynamic = generate_dynamic_description(bird_data)
+                print("\n**Dynamic Output (AI-Generated):**")
+                print(description_dynamic)
             else:
-                print("\nError: Can't identify the bird. Please try again.")
-                suggestions = suggest_similar_birds(query, birds_df["Name"].tolist())
-                if suggestions:
-                    print("\nDid you mean any of these birds?: ", suggestions)
+                print(f"\nNo exact match found for '{query}', but suggested: {matched_bird}")
+        else:
+            print("\nError: Can't identify as a bird. Please try again.")
+
+        # Suggest similar birds
+        if matched_bird:
+            print(f"\nDid you mean '{matched_bird}'?")
+        else:
+            suggestions = process.extract(query, birds_df["Name"].tolist(), limit=3)
+            print("\nError: Can't identify as a bird. Perhaps you meant:")
+            for suggestion in suggestions:
+                print(f" - {suggestion[0]} (confidence: {suggestion[1]}%)")
+
+        # print("\nDid you mean any of these birds? ", birds_df["Name"].unique()[:3])
 
 if __name__ == "__main__":
     main()
