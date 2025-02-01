@@ -1,0 +1,70 @@
+intent,examples
+bird_info_generating,Tell me about the kingfisher
+bird_info_generating,What are the features of the bald eagle?
+bird_info_generating,Can you describe a parrot's habitat?
+bird_info_generating,Give me details about the peacock's behavior
+bird_info_generating,What is unique about the sparrow?
+bird_info_generating,How does an owl hunt at night?
+bird_info_generating,Tell me about the flamingo's diet
+bird_info_generating,What are the characteristics of a crow?
+bird_info_generating,Describe the flight pattern of a hummingbird
+bird_info_generating,What do pelicans eat?
+bird_info_generating,Can you explain the nesting habits of a robin?
+bird_info_generating,What makes penguins adapted to cold climates?
+bird_info_generating,Tell me about the migration of seagulls
+bird_info_generating,How does a woodpecker find insects in trees?
+bird_info_generating,What are the physical traits of a swan?
+bird_info_generating,Describe the hunting techniques of a heron
+bird_info_generating,What is the lifespan of a falcon?
+bird_info_generating,Why are vultures considered scavengers?
+bird_info_generating,Tell me about the communication methods of pigeons
+bird_info_generating,What is the role of storks in ecosystems?
+bird_info_generating,How do toucans use their large beaks?
+bird_info_generating,Describe the flight endurance of an albatross
+bird_info_generating,What are the mating rituals of cranes?
+bird_info_generating,Tell me about the different species of ducks
+bird_info_generating,How do ostriches defend themselves?
+bird_info_generating,What is the habitat of an emu?
+bird_info_generating,Why are kiwis flightless birds?
+bird_info_generating,Describe the vibrant colors of a macaw
+bird_info_generating,What are the vocalizations of a cockatoo?
+bird_info_generating,How does a nightingale produce its song?
+bird_info_generating,Tell me about the domestication of canaries
+bird_info_generating,What are the feeding habits of finches?
+bird_info_generating,Describe the social behavior of blue jays
+bird_info_generating,What is the symbolism of cardinals in culture?
+bird_info_generating,How intelligent are ravens?
+bird_info_generating,What are the nesting habits of magpies?
+bird_info_generating,Tell me about the murmuration of starlings
+bird_info_generating,What is the diet of a blackbird?
+bird_info_generating,How do egrets hunt in shallow water?
+bird_info_generating,Describe the unique beak shape of an ibis
+bird_info_generating,What is the laughing call of a kookaburra?
+bird_info_generating,How do lorikeets feed on nectar?
+bird_info_generating,Tell me about the camouflage of quails
+bird_info_generating,What are the courtship displays of pheasants?
+bird_info_generating,How do partridges protect their young?
+bird_info_generating,Describe the habitat of grouse
+bird_info_generating,What are the migration patterns of sandpipers?
+bird_info_generating,How do terns dive for fish?
+bird_info_generating,Tell me about the diving abilities of cormorants
+bird_info_generating,What is the hunting strategy of a shrike?
+bird_info_generating,Describe the unique crest of a hoopoe
+bird_info_generating,How do bowerbirds attract mates?
+bird_info_generating,What is the mimicry ability of a lyrebird?
+bird_info_generating,Tell me about the nest-building skills of weaver birds
+bird_info_generating,What are the feeding habits of hornbills?
+bird_info_generating,How do sunbirds pollinate flowers?
+bird_info_generating,Describe the aerial acrobatics of bee-eaters
+bird_info_generating,What is the role of drongos in their ecosystem?
+bird_info_generating,How do wagtails communicate with their tails?
+bird_info_generating,What are the foraging techniques of pipits?
+bird_range_predict,Which birds migrate in winter?
+bird_range_predict,Tell me about bird migration patterns
+bird_range_predict,Do parrots migrate?
+greeting,Hello
+greeting,Hi there!
+greeting,Good morning
+goodbye,Bye
+goodbye,See you later
+goodbye,Goodbye
