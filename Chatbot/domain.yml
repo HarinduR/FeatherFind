@@ -1,7 +1,0 @@
-responses:
-  utter_greet:
-    - text: "Hello! Ask me anything about birds!"
-  utter_bird_info:
-    - text: "Let me fetch some details about {bird}."
-  utter_migration_info:
-    - text: "I will check migration data for you."
