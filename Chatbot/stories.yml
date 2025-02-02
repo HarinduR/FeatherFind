@@ -1,0 +1,10 @@
+stories:
+- story: Bird Information Request
+  steps:
+  - intent: bird_info_request
+  - action: action_retrieve_bird_info
+
+- story: Migration Query
+  steps:
+  - intent: migration_info
+  - action: action_retrieve_migration_data

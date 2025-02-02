@@ -1,0 +1,18 @@
+version: "3.1"
+nlu:
+- intent: bird_info_request
+  examples: |
+    - Tell me about the [Kingfisher](bird)
+    - What do you know about the [Hornbill](bird)?
+    - Describe the [Eagle](bird)
+
+- intent: migration_info
+  examples: |
+    - Which birds migrate in winter?
+    - Do any birds migrate to Sri Lanka?
+    - Tell me about bird migration
+
+- intent: image_identification
+  examples: |
+    - Identify this bird from my photo
+    - What bird is in this picture?
