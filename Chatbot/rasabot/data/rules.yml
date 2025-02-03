@@ -1,0 +1,59 @@
+version: "3.1"
+
+rules:
+
+- rule: Respond to Bird Information Request
+  steps:
+  - intent: bird_info_generate
+  - action: utter_bird_info_generate
+
+- rule: Respond to Bird Range Prediction
+  steps:
+  - intent: range_prediction
+  - action: utter_range_prediction
+
+- rule: Respond to Bird Image Classification
+  steps:
+  - intent: image_classification
+  - action: utter_image_classification
+
+- rule: Respond to Keyword Finder
+  steps:
+  - intent: keyword_finder
+  - action: utter_keyword_finder
+
+- rule: Respond to Positive User Mood
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+
+- rule: Respond to Negative User Mood
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+
+- rule: Respond to User Affirmation
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Respond to User Denial
+  steps:
+  - intent: deny
+  - action: utter_deny
+  - action: utter_goodbye 
+
+- rule: Respond to Greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to Goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to Bot Challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge

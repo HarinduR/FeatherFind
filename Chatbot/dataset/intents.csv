@@ -1,70 +1,564 @@
 intent,examples
-bird_info_generating,Tell me about the kingfisher
-bird_info_generating,What are the features of the bald eagle?
-bird_info_generating,Can you describe a parrot's habitat?
-bird_info_generating,Give me details about the peacock's behavior
-bird_info_generating,What is unique about the sparrow?
-bird_info_generating,How does an owl hunt at night?
-bird_info_generating,Tell me about the flamingo's diet
-bird_info_generating,What are the characteristics of a crow?
-bird_info_generating,Describe the flight pattern of a hummingbird
-bird_info_generating,What do pelicans eat?
-bird_info_generating,Can you explain the nesting habits of a robin?
-bird_info_generating,What makes penguins adapted to cold climates?
-bird_info_generating,Tell me about the migration of seagulls
-bird_info_generating,How does a woodpecker find insects in trees?
-bird_info_generating,What are the physical traits of a swan?
-bird_info_generating,Describe the hunting techniques of a heron
-bird_info_generating,What is the lifespan of a falcon?
-bird_info_generating,Why are vultures considered scavengers?
-bird_info_generating,Tell me about the communication methods of pigeons
-bird_info_generating,What is the role of storks in ecosystems?
-bird_info_generating,How do toucans use their large beaks?
-bird_info_generating,Describe the flight endurance of an albatross
-bird_info_generating,What are the mating rituals of cranes?
-bird_info_generating,Tell me about the different species of ducks
-bird_info_generating,How do ostriches defend themselves?
-bird_info_generating,What is the habitat of an emu?
-bird_info_generating,Why are kiwis flightless birds?
-bird_info_generating,Describe the vibrant colors of a macaw
-bird_info_generating,What are the vocalizations of a cockatoo?
-bird_info_generating,How does a nightingale produce its song?
-bird_info_generating,Tell me about the domestication of canaries
-bird_info_generating,What are the feeding habits of finches?
-bird_info_generating,Describe the social behavior of blue jays
-bird_info_generating,What is the symbolism of cardinals in culture?
-bird_info_generating,How intelligent are ravens?
-bird_info_generating,What are the nesting habits of magpies?
-bird_info_generating,Tell me about the murmuration of starlings
-bird_info_generating,What is the diet of a blackbird?
-bird_info_generating,How do egrets hunt in shallow water?
-bird_info_generating,Describe the unique beak shape of an ibis
-bird_info_generating,What is the laughing call of a kookaburra?
-bird_info_generating,How do lorikeets feed on nectar?
-bird_info_generating,Tell me about the camouflage of quails
-bird_info_generating,What are the courtship displays of pheasants?
-bird_info_generating,How do partridges protect their young?
-bird_info_generating,Describe the habitat of grouse
-bird_info_generating,What are the migration patterns of sandpipers?
-bird_info_generating,How do terns dive for fish?
-bird_info_generating,Tell me about the diving abilities of cormorants
-bird_info_generating,What is the hunting strategy of a shrike?
-bird_info_generating,Describe the unique crest of a hoopoe
-bird_info_generating,How do bowerbirds attract mates?
-bird_info_generating,What is the mimicry ability of a lyrebird?
-bird_info_generating,Tell me about the nest-building skills of weaver birds
-bird_info_generating,What are the feeding habits of hornbills?
-bird_info_generating,How do sunbirds pollinate flowers?
-bird_info_generating,Describe the aerial acrobatics of bee-eaters
-bird_info_generating,What is the role of drongos in their ecosystem?
-bird_info_generating,How do wagtails communicate with their tails?
-bird_info_generating,What are the foraging techniques of pipits?
-bird_range_predict,Which birds migrate in winter?
-bird_range_predict,Tell me about bird migration patterns
-bird_range_predict,Do parrots migrate?
-greeting,Hello
-greeting,Hi there!
-greeting,Good morning
-goodbye,Bye
-goodbye,See you later
-goodbye,Goodbye
+bird_info_generate,Tell me about the kingfisher
+bird_info_generate,What are the features of the bald eagle?
+bird_info_generate,Can you describe a parrot's habitat?
+bird_info_generate,Give me details about the peacock's behavior
+bird_info_generate,What is unique about the sparrow?
+bird_info_generate,How does an owl hunt at night?
+bird_info_generate,Tell me about the flamingo's diet
+bird_info_generate,What are the characteristics of a crow?
+bird_info_generate,Describe the flight pattern of a hummingbird
+bird_info_generate,What do pelicans eat?
+bird_info_generate,Can you explain the nesting habits of a robin?
+bird_info_generate,What makes penguins adapted to cold climates?
+bird_info_generate,Tell me about the migration of seagulls
+bird_info_generate,How does a woodpecker find insects in trees?
+bird_info_generate,What are the physical traits of a swan?
+bird_info_generate,Describe the hunting techniques of a heron
+bird_info_generate,What is the lifespan of a falcon?
+bird_info_generate,Why are vultures considered scavengers?
+bird_info_generate,Tell me about the communication methods of pigeons
+bird_info_generate,What is the role of storks in ecosystems?
+bird_info_generate,How do toucans use their large beaks?
+bird_info_generate,Describe the flight endurance of an albatross
+bird_info_generate,What are the mating rituals of cranes?
+bird_info_generate,Tell me about the different species of ducks
+bird_info_generate,How do ostriches defend themselves?
+bird_info_generate,What is the habitat of an emu?
+bird_info_generate,Why are kiwis flightless birds?
+bird_info_generate,Describe the vibrant colors of a macaw
+bird_info_generate,What are the vocalizations of a cockatoo?
+bird_info_generate,How does a nightingale produce its song?
+bird_info_generate,Tell me about the domestication of canaries
+bird_info_generate,What are the feeding habits of finches?
+bird_info_generate,Describe the social behavior of blue jays
+bird_info_generate,What is the symbolism of cardinals in culture?
+bird_info_generate,How intelligent are ravens?
+bird_info_generate,What are the nesting habits of magpies?
+bird_info_generate,Tell me about the murmuration of starlings
+bird_info_generate,What is the diet of a blackbird?
+bird_info_generate,How do egrets hunt in shallow water?
+bird_info_generate,Describe the unique beak shape of an ibis
+bird_info_generate,What is the laughing call of a kookaburra?
+bird_info_generate,How do lorikeets feed on nectar?
+bird_info_generate,Tell me about the camouflage of quails
+bird_info_generate,What are the courtship displays of pheasants?
+bird_info_generate,How do partridges protect their young?
+bird_info_generate,Describe the habitat of grouse
+bird_info_generate,What are the migration patterns of sandpipers?
+bird_info_generate,How do terns dive for fish?
+bird_info_generate,Tell me about the diving abilities of cormorants
+bird_info_generate,What is the hunting strategy of a shrike?
+bird_info_generate,Describe the unique crest of a hoopoe
+bird_info_generate,How do bowerbirds attract mates?
+bird_info_generate,What is the mimicry ability of a lyrebird?
+bird_info_generate,Tell me about the nest-building skills of weaver birds
+bird_info_generate,What are the feeding habits of hornbills?
+bird_info_generate,How do sunbirds pollinate flowers?
+bird_info_generate,Describe the aerial acrobatics of bee-eaters
+bird_info_generate,What is the role of drongos in their ecosystem?
+bird_info_generate,How do wagtails communicate with their tails?
+bird_info_generate,What are the foraging techniques of pipits?
+bird_info_generate,Tell me about the [Kingfisher](bird)
+bird_info_generate,What do you know about the [Hornbill](bird)?
+bird_info_generate,Describe the [Eagle](bird)
+bird_info_generate,Give me details on the [Peacock](bird)
+bird_info_generate,What species is the [Sparrow](bird)?
+bird_info_generate,Tell me interesting facts about the [Owl](bird)
+bird_info_generate,Provide information on the [Parrot](bird)
+bird_info_generate,Explain characteristics of the [Flamingo](bird)
+bird_info_generate,What does the [Penguin](bird) eat?
+bird_info_generate,How does the [Hummingbird](bird) fly?
+bird_info_generate,What is unique about the [Woodpecker](bird)?
+bird_info_generate,Share details on the [Macaw](bird)
+bird_info_generate,What habitat suits the [Pelican](bird)?
+bird_info_generate,Where can I find the [Canary](bird)?
+bird_info_generate,What are the features of the [Cockatoo](bird)?
+bird_info_generate,What’s special about the [Albatross](bird)?
+bird_info_generate,How fast can the [Peregrine Falcon](bird) fly?
+bird_info_generate,What does the [Blue Jay](bird) sound like?
+bird_info_generate,Describe the feathers of the [Swan](bird)
+bird_info_generate,How big is the [Condor](bird)?
+bird_info_generate,What’s the diet of the [Cuckoo](bird)?
+bird_info_generate,What is the lifespan of a [Robin](bird)?
+bird_info_generate,Tell me about the migration of the [Crane](bird)
+bird_info_generate,Where do [Toucans](bird) live?
+bird_info_generate,How colorful is the [Lorikeet](bird)?
+bird_info_generate,What is the nesting behavior of the [Magpie](bird)?
+bird_info_generate,What does the [Nightingale](bird) sing?
+bird_info_generate,Explain the flight style of the [Kestrel](bird)
+bird_info_generate,What are the threats to the [Vulture](bird)?
+bird_info_generate,How does the [Heron](bird) catch fish?
+bird_info_generate,What role does the [Finch](bird) play in the ecosystem?
+bird_info_generate,How intelligent is the [Crow](bird)?
+bird_info_generate,What is the mating ritual of the [Lovebird](bird)?
+bird_info_generate,Why do [Seagulls](bird) stay near the sea?
+bird_info_generate,What is the symbolism of the [Raven](bird)?
+bird_info_generate,How do [Doves](bird) communicate?
+bird_info_generate,Where do [Starlings](bird) form murmurations?
+bird_info_generate,Describe the sounds of the [Mockingbird](bird)
+bird_info_generate,What are the sleeping habits of the [Puffin](bird)?
+bird_info_generate,How do [Swallows](bird) migrate?
+bird_info_generate,What do [Quails](bird) eat?
+bird_info_generate,How rare is the [Hoopoe](bird)?
+bird_info_generate,What distinguishes the [Grouse](bird) from other birds?
+bird_info_generate,What are the defensive strategies of the [Rail](bird)?
+bird_info_generate,How does the [Lyrebird](bird) mimic sounds?
+bird_info_generate,How long do [Ospreys](bird) live?
+bird_info_generate,How do [Cranes](bird) communicate?
+bird_info_generate,Why are [Bustards](bird) considered heavy fliers?
+bird_info_generate,What is the role of the [Snipe](bird) in wetland ecosystems?
+range_prediction,Which birds migrate in winter?
+range_prediction,Do any birds migrate to Sri Lanka?
+range_prediction,Tell me about bird migration
+range_prediction,What birds travel long distances?
+range_prediction,Which birds migrate in summer?
+range_prediction,How do birds know when to migrate?
+range_prediction,What is the longest bird migration?
+range_prediction,Do all birds migrate?
+range_prediction,Why do some birds migrate?
+range_prediction,Where do migratory birds go?
+range_prediction,When do birds start migrating?
+range_prediction,What birds migrate to India?
+range_prediction,Which birds migrate from Europe?
+range_prediction,Do birds return to the same place every year?
+range_prediction,How far do birds fly during migration?
+range_prediction,What is the shortest bird migration?
+range_prediction,Can birds migrate without stopping?
+range_prediction,What birds fly over the ocean during migration?
+range_prediction,Do birds fly in groups when migrating?
+range_prediction,How do birds navigate during migration?
+range_prediction,Which birds migrate the fastest?
+range_prediction,What are the common migratory birds in Sri Lanka?
+range_prediction,Do penguins migrate?
+range_prediction,How do climate changes affect bird migration?
+range_prediction,Can birds change their migration routes?
+range_prediction,What birds migrate at night?
+range_prediction,Which birds migrate alone?
+range_prediction,What is the most famous migratory bird?
+range_prediction,Do eagles migrate?
+range_prediction,What birds migrate over mountains?
+range_prediction,Are there birds that migrate across continents?
+range_prediction,What dangers do migratory birds face?
+range_prediction,How do scientists track bird migration?
+range_prediction,Do birds migrate in bad weather?
+range_prediction,Which small birds migrate the farthest?
+range_prediction,How do birds prepare for migration?
+range_prediction,What food do migratory birds eat on their journey?
+range_prediction,Which birds migrate to warm places?
+range_prediction,What are the signs of bird migration?
+range_prediction,Do all migratory birds return to their birthplace?
+range_prediction,How does bird migration affect ecosystems?
+range_prediction,What technology is used to study bird migration?
+range_prediction,Which birds travel the longest non-stop?
+range_prediction,Do birds fly higher during migration?
+range_prediction,Can birds get lost while migrating?
+range_prediction,Which birds migrate from Africa to Asia?
+range_prediction,What are the patterns of bird migration?
+range_prediction,How do young birds learn to migrate?
+range_prediction,What impact does deforestation have on migration?
+range_prediction,Which birds migrate to Sri Lanka in winter?
+image_classification,Identify this bird from my photo
+image_classification,What bird is in this picture?
+image_classification,Can you recognize this bird from the image?
+image_classification,What species is this bird in my photo?
+image_classification,Tell me the name of the bird in this image.
+image_classification,Which bird is shown in this picture?
+image_classification,Find the bird species from my uploaded image.
+image_classification,Detect the bird in this photo.
+image_classification,What type of bird is in this picture?
+image_classification,Can you analyze this bird image?
+image_classification,Show me details about this bird from my image.
+image_classification,Identify the bird from this snapshot.
+image_classification,What bird do you see in this photo?
+image_classification,Help me recognize this bird.
+image_classification,Can you classify this bird?
+image_classification,Which category does this bird belong to?
+image_classification,Find the bird name from my image.
+image_classification,Can you tell me about this bird based on my picture?
+image_classification,Recognize the bird in this photograph.
+image_classification,Tell me which bird is in this image.
+image_classification,Detect the species of this bird.
+image_classification,What bird species do you think this is?
+image_classification,Identify the bird type in this picture.
+image_classification,What is the scientific name of this bird in my photo?
+image_classification,Which bird family does this bird belong to?
+image_classification,Can you determine the bird from my uploaded image?
+image_classification,Analyze the bird in this picture.
+image_classification,Provide information on the bird in my image.
+image_classification,Guess the bird name from this photo.
+image_classification,Is this a migratory bird in my picture?
+image_classification,Identify the bird’s habitat based on this image.
+image_classification,Can you match this bird with known species?
+image_classification,What bird is this based on its features?
+image_classification,Recognize this bird using AI.
+image_classification,Which bird is in my image based on its colors?
+image_classification,Identify this bird using image recognition.
+image_classification,What bird resembles the one in my picture?
+image_classification,Can you find the bird name using its markings?
+image_classification,Tell me if this bird is common in Sri Lanka.
+image_classification,Is this bird endangered or not?
+image_classification,Classify the bird in my uploaded photo.
+image_classification,What’s the closest match to this bird?
+image_classification,Provide details of this bird based on its shape.
+image_classification,Is this bird a predator or not?
+image_classification,Can you find a similar-looking bird to this one?
+image_classification,Identify the bird using its beak shape.
+image_classification,What kind of bird does this image represent?
+image_classification,Does this bird belong to the parrot family?
+image_classification,Show me birds that look similar to this one.
+image_classification,Find this bird’s name using AI bird recognition.
+greet,hey
+greet,hello
+greet,hi
+greet,hello there
+greet,good morning
+greet,good evening
+greet,good afternoon
+greet,hey there
+greet,hey dude
+greet,hey buddy
+greet,hi friend
+greet,what's up?
+greet,yo
+greet,howdy
+greet,greetings
+greet,morning
+greet,evening
+greet,sup
+greet,what's new?
+greet,how's it going?
+greet,hey pal
+greet,hi there
+greet,nice to meet you
+greet,pleasure to meet you
+greet,hey mate
+greet,hola
+greet,bonjour
+greet,aloha
+greet,namaste
+greet,salam
+greet,wassup
+greet,yo yo
+greet,hello friend
+greet,hey, how are you?
+greet,good to see you
+greet,what's good?
+greet,what's going on?
+greet,how are you today?
+greet,peace
+greet,hey team
+greet,hi folks
+greet,hi everyone
+greet,hey chatbot
+greet,chatbot, hello
+greet,greetings, bot
+greet,hey AI
+greet,how’s life?
+greet,how’s your day?
+greet,long time no see
+greet,happy to be here
+greet,yo bro
+greet,hey sis
+goodbye,cu
+goodbye,good by
+goodbye,cee you later
+goodbye,good night
+goodbye,bye
+goodbye,goodbye
+goodbye,have a nice day
+goodbye,see you around
+goodbye,bye bye
+goodbye,see you later
+goodbye,see ya
+goodbye,take care
+goodbye,catch you later
+goodbye,farewell
+goodbye,talk to you soon
+goodbye,until next time
+goodbye,peace out
+goodbye,later
+goodbye,I'm out
+goodbye,see you next time
+goodbye,have a good one
+goodbye,take it easy
+goodbye,so long
+goodbye,gotta go
+goodbye,have a great day
+goodbye,have a wonderful day
+goodbye,stay safe
+goodbye,see you soon
+goodbye,cheers
+goodbye,adios
+goodbye,ciao
+goodbye,au revoir
+goodbye,sayonara
+goodbye,hasta la vista
+goodbye,later gator
+goodbye,bye for now
+goodbye,see you tomorrow
+goodbye,talk later
+goodbye,have a nice evening
+goodbye,keep in touch
+goodbye,see you in a bit
+goodbye,all the best
+goodbye,farewell, friend
+goodbye,I'm off
+goodbye,I'm leaving
+goodbye,time to go
+goodbye,talk soon
+goodbye,signing off
+goodbye,hope to chat again
+goodbye,see you again
+affirm,yes
+affirm,y
+affirm,indeed
+affirm,of course
+affirm,that sounds good
+affirm,correct
+affirm,absolutely
+affirm,sure
+affirm,definitely
+affirm,exactly
+affirm,that's right
+affirm,affirmative
+affirm,yeah
+affirm,yup
+affirm,sure thing
+affirm,you bet
+affirm,no doubt
+affirm,that's true
+affirm,agreed
+affirm,sounds great
+affirm,sounds perfect
+affirm,100%
+affirm,okay
+affirm,ok
+affirm,right
+affirm,roger that
+affirm,I agree
+affirm,certainly
+affirm,for sure
+affirm,totally
+affirm,uh-huh
+affirm,I think so
+affirm,why not
+affirm,makes sense
+affirm,I'm in
+affirm,I approve
+affirm,that's correct
+affirm,naturally
+affirm,you got it
+affirm,precisely
+affirm,couldn't agree more
+affirm,sure, why not
+affirm,go ahead
+affirm,yes, please
+affirm,undoubtedly
+affirm,I second that
+affirm,quite so
+affirm,without a doubt
+affirm,exactly right
+deny,no
+deny,n
+deny,never
+deny,I don't think so
+deny,don't like that
+deny,no way
+deny,not really
+deny,absolutely not
+deny,nope
+deny,nah
+deny,not at all
+deny,not happening
+deny,no chance
+deny,I disagree
+deny,I don't agree
+deny,not now
+deny,not interested
+deny,count me out
+deny,negative
+deny,no thanks
+deny,not for me
+deny,I'd rather not
+deny,doesn't sound good
+deny,I wouldn't say so
+deny,out of the question
+deny,forget it
+deny,no, never
+deny,not this time
+deny,I refuse
+deny,I decline
+deny,no sir
+deny,no ma'am
+deny,that's incorrect
+deny,no, thank you
+deny,unlikely
+deny,nope, not happening
+deny,I'd prefer not to
+deny,absolutely not
+deny,I can't
+deny,not a fan
+deny,no, I don't
+deny,I reject that
+deny,I'm not sure about that
+deny,I wouldn't bet on it
+deny,no, not really
+deny,not my thing
+deny,I won't
+deny,I don't approve
+deny,not feeling it
+deny,doesn't work for me
+mood_great,perfect
+mood_great,great
+mood_great,amazing
+mood_great,feeling like a king
+mood_great,wonderful
+mood_great,I am feeling very good
+mood_great,I am great
+mood_great,I am amazing
+mood_great,I am going to save the world
+mood_great,super stoked
+mood_great,extremely good
+mood_great,so so perfect
+mood_great,so good
+mood_great,so perfect
+mood_great,fantastic
+mood_great,awesome
+mood_great,I'm on top of the world
+mood_great,couldn't be better
+mood_great,I'm feeling unstoppable
+mood_great,totally blessed
+mood_great,I'm thriving
+mood_great,I'm in a great mood
+mood_great,things are going amazing
+mood_great,I'm full of energy
+mood_great,couldn't ask for more
+mood_great,I feel like a champion
+mood_great,I'm loving life
+mood_great,I feel wonderful today
+mood_great,today is a great day
+mood_great,I'm feeling excellent
+mood_great,absolutely fantastic
+mood_great,really happy
+mood_great,so excited
+mood_great,my day is going awesome
+mood_great,I'm feeling top-notch
+mood_great,all is well
+mood_great,super happy
+mood_great,I'm smiling all day
+mood_great,feeling fabulous
+mood_great,totally pumped
+mood_great,I'm in the best mood
+mood_great,everything is going my way
+mood_great,I'm feeling so blessed
+mood_great,it's a beautiful day
+mood_great,can't complain, feeling great
+mood_great,I'm in high spirits
+mood_great,super excited about today
+mood_great,best day ever
+mood_great,I'm feeling sky-high
+mood_great,full of joy
+mood_great,I'm glowing today
+mood_great,my energy is through the roof
+mood_unhappy,my day was horrible
+mood_unhappy,I am sad
+mood_unhappy,I don't feel very well
+mood_unhappy,I am disappointed
+mood_unhappy,super sad
+mood_unhappy,I'm so sad
+mood_unhappy,sad
+mood_unhappy,very sad
+mood_unhappy,unhappy
+mood_unhappy,not good
+mood_unhappy,not very good
+mood_unhappy,extremely sad
+mood_unhappy,so saad
+mood_unhappy,so sad
+mood_unhappy,I feel terrible
+mood_unhappy,I'm feeling down
+mood_unhappy,I'm really upset
+mood_unhappy,today was a bad day
+mood_unhappy,I'm feeling hopeless
+mood_unhappy,I don't feel okay
+mood_unhappy,I'm not in a good mood
+mood_unhappy,everything is going wrong
+mood_unhappy,I'm feeling depressed
+mood_unhappy,I'm feeling miserable
+mood_unhappy,I feel like crying
+mood_unhappy,I'm emotionally drained
+mood_unhappy,nothing is going right
+mood_unhappy,I'm really frustrated
+mood_unhappy,I'm having a rough day
+mood_unhappy,feeling heartbroken
+mood_unhappy,life is tough right now
+mood_unhappy,I'm in a bad mood
+mood_unhappy,I'm feeling stressed out
+mood_unhappy,I feel empty
+mood_unhappy,I just want to be alone
+mood_unhappy,I’m feeling worthless
+mood_unhappy,I'm overwhelmed
+mood_unhappy,I'm not okay
+mood_unhappy,today is not my day
+mood_unhappy,I'm mentally exhausted
+mood_unhappy,I feel lost
+mood_unhappy,I'm feeling defeated
+mood_unhappy,I'm feeling awful
+mood_unhappy,I don't know what to do
+mood_unhappy,I feel like giving up
+mood_unhappy,I'm really struggling
+mood_unhappy,it's been a rough day
+mood_unhappy,I'm so frustrated
+mood_unhappy,I feel broken
+mood_unhappy,I'm not feeling myself today
+bot_challenge,are you a bot?
+bot_challenge,are you a human?
+bot_challenge,am I talking to a bot?
+bot_challenge,am I talking to a human?
+bot_challenge,are you real?
+bot_challenge,are you an AI?
+bot_challenge,are you a machine?
+bot_challenge,do you have feelings?
+bot_challenge,are you a chatbot?
+bot_challenge,are you self-aware?
+bot_challenge,are you conscious?
+bot_challenge,can you think like a human?
+bot_challenge,do you have emotions?
+bot_challenge,are you alive?
+bot_challenge,are you a virtual assistant?
+bot_challenge,do you have a brain?
+bot_challenge,are you intelligent?
+bot_challenge,do you understand me like a person?
+bot_challenge,are you programmed?
+bot_challenge,can you pass the Turing test?
+bot_challenge,do you have thoughts?
+bot_challenge,do you have a name?
+bot_challenge,are you just code?
+bot_challenge,are you smarter than a human?
+bot_challenge,how do you work?
+bot_challenge,are you an advanced AI?
+bot_challenge,do you learn from me?
+bot_challenge,are you an algorithm?
+bot_challenge,do you have a personality?
+bot_challenge,what are you made of?
+bot_challenge,are you a real assistant?
+bot_challenge,can you feel emotions?
+bot_challenge,do you exist in real life?
+bot_challenge,can you think on your own?
+bot_challenge,how were you created?
+bot_challenge,who made you?
+bot_challenge,what kind of bot are you?
+bot_challenge,are you a robot?
+bot_challenge,can you talk like a human?
+bot_challenge,are you smarter than me?
+bot_challenge,do you have a physical form?
+bot_challenge,can you evolve?
+bot_challenge,are you watching me?
+bot_challenge,can you make your own decisions?
+bot_challenge,do you have free will?
+bot_challenge,can you get tired?
+bot_challenge,do you sleep?
+bot_challenge,are you always online?
+bot_challenge,are you part of a bigger system?
+bot_challenge,can you replace humans?
+bot_challenge,are you an AI assistant?
