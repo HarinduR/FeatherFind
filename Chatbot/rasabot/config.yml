@@ -48,3 +48,14 @@ policies: null
 #     max_history: 5
 #     epochs: 100
 #     constrain_similarities: true
+
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: CountVectorsFeaturizer
+  - name: custom_components.bert_intent_classifier.BERTIntentClassifier  # Your BERT classifier
+
+policies:
+  - name: MemoizationPolicy
+  - name: RulePolicy
