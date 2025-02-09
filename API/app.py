@@ -4,7 +4,6 @@ import joblib
 
 app = Flask(__name__)
 
-# Load the trained model and features
 model = joblib.load('bird_migration_model.pkl')
 feature_columns = joblib.load('model_features.pkl')
 
@@ -12,16 +11,16 @@ feature_columns = joblib.load('model_features.pkl')
 def home():
     return "Bird Migration Prediction API is running!"
 
-# API endpoint for predictions
+
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json()  # Get input data from request
-    input_df = pd.DataFrame(data, index=[0])  # Convert to DataFrame
+    data = request.get_json()  # input data from request
+    input_df = pd.DataFrame(data, index=[0]) 
 
-    # Ensure input matches the training features
+    # training features
     input_df = input_df.reindex(columns=feature_columns, fill_value=0)
 
-    # Make prediction
+    # prediction
     prediction = model.predict(input_df)
     
     if prediction[0] == 1:
