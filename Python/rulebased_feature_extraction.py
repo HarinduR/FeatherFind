@@ -121,8 +121,6 @@ def extract_features_optimized(text):
 
     return features
 
-example_text = "giant bird with green body and azure feathers. black large beak. lives in water and eats crabs. this bird was seen in south asia. also it had  blue eyes "
-example_text2 = "blue and green bird"
 features = extract_features_optimized(example_text)
 print(features)
 
@@ -155,23 +153,14 @@ def query_ontology(sparql_query):
     # Create an RDF graph
     g = rdflib.Graph()
     # Load your ontology file (adjust the filename and format as necessary)
-    g.parse("C:/Users/Daham/Documents/GitHub/FeatherFind/Python/ontology-enhnaced.owx", format="xml")
-    
+    g.parse("C:/Users/Daham/Documents/GitHub/FeatherFind/Python/ontology.owl", format="xml")
     # Execute the SPARQL query
     results = g.query(sparql_query)
     
-    # Process the results into a list of dictionaries, for example
     output = []
     for row in results:
-        # Assuming your SELECT clause returns ?bird and ?commonName
         output.append({
             "bird": str(row.bird),
             "commonName": str(row.commonName)
         })
     return output
-
-# Test the query function:
-sparql_query = build_sparql_query(features)  # features from your extraction component
-results = query_ontology(sparql_query)
-print("Ontology Query Results:")
-print(results)
