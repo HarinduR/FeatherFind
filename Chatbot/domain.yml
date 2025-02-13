@@ -8,26 +8,166 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - bird_info_generate
+  - range_prediction
+  - image_classification
+  - keyword_finder
+  - general_question
+  - feedback
+  - repeat_request
+  - thank_you
+  - help
+  - fallback  # Catch-all intent for unrecognized queries
+
+entities:
+  - bird
+  - image
+  - location
+  - keyword
+  - user_feedback
+
+slots:
+  bird:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: bird
+
+  image:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: image
+
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+
+  keyword:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: keyword
+
+  user_feedback:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: user_feedback
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
+  ## 🟢 GENERAL CHAT RESPONSES
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa. I can help you with bird-related information and other queries."
+    
+  utter_greet:
+    - text: "Hey there! Welcome to FeatherFind 🦜. How can I assist you today?"
+    - text: "Hello! Looking for bird information? Ask me anything!"
+    - text: "Hi! How can I help you with your bird-related queries today?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day, and happy birdwatching! 🦉"
+    - text: "Bye! Let me know if you need more bird-related insights!"
+    - text: "See you soon! Keep exploring nature! 🌿"
+
+  utter_affirm:
+    - text: "Great! What else would you like to know?"
+    - text: "Awesome! Let me know how else I can assist you!"
+
+  utter_deny:
+    - text: "Alright, no worries! Let me know if you need anything else."
+    - text: "Okay! I'm here whenever you have a question."
+
+  utter_mood_great:
+    - text: "That's wonderful! What bird-related question do you have today?"
+    - text: "Awesome! Anything specific you'd like help with?"
+  
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear that. Maybe learning about birds can cheer you up? 😊"
+    - text: "I hope I can help! Let me know what you need."
+
+  utter_bot_challenge:
+    - text: "I'm FeatherFind, your personal AI bird assistant. Ask me anything!"
+    - text: "I'm an AI chatbot designed for bird-related information. How can I help?"
+
+  ## 🟢 BIRD INFORMATION & KNOWLEDGE RETRIEVAL
+
+  utter_bird_info_generate:
+    - text: "Searching for information on {bird}... 🔍"
+    - text: "Gathering details about {bird}. Please wait... ⏳"
+    - text: "Here's what I found about {bird}: {retrieved_description}"
+    - text: "Interesting choice! Let me find the best details on {bird} for you."
+
+  utter_range_prediction:
+    - text: "I can predict bird migration patterns. Which bird or location are you interested in?"
+    - text: "Would you like to know about migration in {location} or a specific bird?"
+    - text: "Bird migrations are fascinating! Tell me which species you're interested in."
+
+  utter_image_classification:
+    - text: "Upload an image and I'll try to identify the bird for you! 📸"
+    - text: "Analyzing the image... Please wait a moment."
+    - text: "Let's see... This might be a {bird_species}. Want to learn more about it?"
+
+  utter_keyword_finder:
+    - text: "I can analyze bird-related keywords. Please provide the text you’d like me to extract terms from."
+    - text: "Keyword extraction is useful for bird studies! Send me your text."
+
+  ## 🟢 USER ENGAGEMENT RESPONSES
+
+  utter_general_question:
+    - text: "That's an interesting question! Let me find the best answer for you."
+    - text: "I’ll do my best to answer that! Please wait a moment."
+    - text: "Great question! Let me check my database for the best response."
+
+  utter_feedback:
+    - text: "Thank you for your feedback! It helps me improve. 😊"
+    - text: "I appreciate your input! Let me know how I can assist you better."
+
+  utter_repeat_request:
+    - text: "Would you like me to repeat my last answer?"
+    - text: "Sure! Here’s what I said before: {last_response}"
+    - text: "No problem! Let me repeat that for you."
+
+  utter_thank_you:
+    - text: "You're welcome! 😊 Let me know if you have more questions."
+    - text: "Always happy to help! Enjoy your birdwatching!"
+  
+  utter_help:
+    - text: "You can ask me about bird species, migration patterns, images, and more!"
+    - text: "Need help? Try asking something like: 'Tell me about Kingfisher' or 'Which birds migrate in winter?'" 
+
+  ## 🟢 ERROR HANDLING & FALLBACKS
+
+  utter_fallback:
+    - text: "Hmm, I didn't quite understand that. Can you try rephrasing?"
+    - text: "I'm not sure how to help with that. Could you clarify your question?"
+    - text: "That’s outside my knowledge, but I can try my best! Can you explain more?"
+
+  utter_error:
+    - text: "Oops! Something went wrong. Please try again. 🚨"
+    - text: "I encountered an issue processing your request. Could you try again?"
+
+  utter_followup_question:
+    - text: "Would you like to know more details?"
+
+  utter_more_bird_info:
+    - text: "Here are more interesting details about this bird!"
+
+  utter_help_suggestion:
+    - text: "I can assist with bird descriptions, migration predictions, and image classification. What would you like to know?"
+
+actions:
+  - action_classify_intent
+  - action_get_bird_info
+  - action_range_prediction
+  - action_image_classification
+  - action_keyword_finder
+  - action_fallback
+  - action_feedback
 
 session_config:
   session_expiration_time: 60

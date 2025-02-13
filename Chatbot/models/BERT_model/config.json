@@ -20,7 +20,8 @@
     "7": "LABEL_7",
     "8": "LABEL_8",
     "9": "LABEL_9",
-    "10": "LABEL_10"
+    "10": "LABEL_10",
+    "11": "LABEL_11"
   },
   "initializer_range": 0.02,
   "intermediate_size": 3072,
@@ -28,6 +29,7 @@
     "LABEL_0": 0,
     "LABEL_1": 1,
     "LABEL_10": 10,
+    "LABEL_11": 11,
     "LABEL_2": 2,
     "LABEL_3": 3,
     "LABEL_4": 4,
@@ -46,7 +48,7 @@
   "position_embedding_type": "absolute",
   "problem_type": "single_label_classification",
   "torch_dtype": "float32",
-  "transformers_version": "4.47.1",
+  "transformers_version": "4.48.2",
   "type_vocab_size": 2,
   "use_cache": true,
   "vocab_size": 30522

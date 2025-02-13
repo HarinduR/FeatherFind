@@ -2,29 +2,99 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+# ✅ User Greets Chatbot
+- story: User Greets Chatbot
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: greet
+    - action: utter_greet
+    - action: utter_help_suggestion  # Offers assistance
 
-- story: sad path 1
+# ✅ User Says Goodbye
+- story: User Ends Conversation
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: sad path 2
+# ✅ User Expresses Happiness
+- story: User is Feeling Good
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+    - intent: mood_great
+    - action: utter_mood_great
+
+# ✅ User Expresses Sadness
+- story: User is Feeling Down
+  steps:
+    - intent: mood_unhappy
+    - action: utter_mood_unhappy
+
+# ✅ User Challenges the Bot's Identity
+- story: User Questions Bot Identity
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+# ✅ User Requests Bird Information
+- story: User Requests Bird Information
+  steps:
+    - intent: bird_info_generate
+    - action: action_get_bird_info  # Calls Bird Info Generator Component
+    - action: utter_followup_question  # Engages user with additional details
+
+# ✅ User Wants More Information on Bird
+- story: User Asks for More Bird Details
+  steps:
+    - intent: affirm
+    - action: utter_more_bird_info  # Provides deeper insights
+
+# # ✅ User Asks About Bird Migration
+# - story: User Asks About Bird Migration
+#   steps:
+#     - intent: range_prediction
+#     - action: action_range_prediction  # Calls Migration Prediction Component
+#     - action: utter_followup_question
+
+# ✅ User Wants Bird Image Classification
+- story: User Uploads Bird Image
+  steps:
+    - intent: image_classification
+    - action: action_image_classification
+    - action: utter_followup_question
+
+# # ✅ User Asks About Bird Keywords
+# - story: User Asks About Bird Keywords
+#   steps:
+#     - intent: keyword_finder
+#     - action: action_keyword_finder  # Calls NLP Model for Keyword Matching
+#     - action: utter_followup_question
+
+# ✅ Handling Unknown or Unclear Requests
+- story: Handling Unknown Requests
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+
+- story: User asks if bot is human
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: Keep the Conversation Engaging
+  steps:
+    - intent: bird_info_generate
+    - action: action_get_bird_info
+    - action: utter_followup_question
+
+# ✅ Handling Complex Conversations with Mixed Intents
+- story: User Has Multiple Queries in One Conversation
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - action: utter_help_suggestion
+    - intent: bird_info_generate
+    - action: action_get_bird_info
+    - intent: range_prediction
+    - action: action_range_prediction
+    - intent: image_classification
+    - action: action_image_classification
+    - intent: goodbye
+    - action: utter_goodbye
