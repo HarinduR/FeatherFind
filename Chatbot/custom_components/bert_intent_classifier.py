@@ -14,7 +14,7 @@ from rasa.nlu.classifiers.classifier import IntentClassifier
 
 # ✅ Register as a Rasa NLU Component
 @DefaultV1Recipe.register(DefaultV1Recipe.ComponentType.INTENT_CLASSIFIER, is_trainable=False)
-class BERTIntentClassifier(GraphComponent, IntentClassifier):
+class BertIntentClassifier(GraphComponent, IntentClassifier):
     """Custom BERT-based Intent Classifier for Rasa."""
 
     name = "bert_intent_classifier"

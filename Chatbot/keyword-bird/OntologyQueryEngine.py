@@ -9,7 +9,7 @@ class OntologyQueryEngine:
     def query(self, sparql_query):
 
         g = rdflib.Graph()
-        g.parse("C:/Users/Daham/Documents/GitHub/FeatherFind/Python/ontology.owl", format="xml")
+        g.parse("C:/Users/Daham/Documents/GitHub/FeatherFind/Chatbot/keyword-bird/ontology.owl", format="xml")
         results = g.query(sparql_query)
         
         output = []

@@ -1,9 +1,9 @@
 from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
-from custom_components.bert_intent_classifier import BERTIntentClassifier
+from custom_components.bert_intent_classifier import BertIntentClassifier
 
 # Load BERT model
-bert_classifier = BERTIntentClassifier(config={}, model_storage=None, resource=None, execution_context=None)
+bert_classifier = BertIntentClassifier(config={}, model_storage=None, resource=None, execution_context=None)
 
 class ActionClassifyIntent(Action):
     def name(self):
