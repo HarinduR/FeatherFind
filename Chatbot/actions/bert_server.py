@@ -5,7 +5,7 @@ import torch
 app = Flask(__name__)
 
 # Load BERT Model
-model_path = "..\models\BERT_model"
+model_path = "C:/Users/Daham/Documents/GitHub/FeatherFind/Chatbot/models/BERT_model"
 tokenizer = BertTokenizer.from_pretrained(model_path)
 model = BertForSequenceClassification.from_pretrained(model_path)
 

@@ -3,7 +3,7 @@ from rasa_sdk.events import SlotSet
 from custom_components.bert_intent_classifier import BERTIntentClassifier
 
 # Load BERT model
-bert_classifier = BERTIntentClassifier()
+bert_classifier = BERTIntentClassifier(config={}, model_storage=None, resource=None, execution_context=None)
 
 class ActionClassifyIntent(Action):
     def name(self):
