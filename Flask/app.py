@@ -7,7 +7,7 @@ from PIL import Image
 app = Flask(__name__)
 
 model = tf.keras.models.load_model("new bird_classification_model.h5")
-class_names = [" This is a Blue Tailed Bee Eaterrrr", "Red Vented Bul Bul", "White Throated Kingfisher  "] 
+class_names = [" This is a Blue Tailed Bee Eaterrrr", "Red Vented Bul Bul", "White Throated Kingfisher  "]
 
 def preprocess_image(image):
     image = image.resize((224, 224))
@@ -18,7 +18,7 @@ def preprocess_image(image):
 
 @app.route("/")
 def home():
-    return render_template("draft1.html")
+    return render_template("basicPage.html")
 
 
 @app.route("/predict", methods=["POST"])
