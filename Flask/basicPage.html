@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeatherFind</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #00aaff;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            color: white;
+        }
+        .container {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+        .chat-box {
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+        .message {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            max-width: 70%;
+        }
+        .user-message {
+            background-color: #0078ff;
+            align-self: flex-end;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #555;
+            align-self: flex-start;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #2a2a2a;
+            padding: 10px;
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .search-box input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background-color: #1e1e1e;
+            color: white;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .search-box button {
+            background: #00aaff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+        .upload-box {
+            display: flex;
+            align-items: center;
+        }
+        .upload-box input[type="file"] {
+            display: none;
+        }
+        .upload-box label {
+            background: #00aaff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        footer {
+            background-color: #00aaff;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FeatherFind</h1>
+    </header>
+    
+    <div class="container">
+        <div class="chat-box" id="chatBox"></div>
+
+        <div class="search-box">
+            <div class="upload-box">
+                <input type="file" id="imageUpload" accept="image/*" onchange="previewImage()">
+                <label for="imageUpload">Upload</label>
+            </div>
+            <input type="text" id="search" placeholder="Enter your question...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FeatherFind. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            let input = document.getElementById("search");
+            let message = input.value;
+            let fileInput = document.getElementById("imageUpload");
+            let chatBox = document.getElementById("chatBox");
+
+            if (fileInput.files[0]) {
+                uploadImage();
+            }
+            
+            else if (message.trim() !== "") {
+                let userMessage = document.createElement("div");
+                userMessage.className = "message user-message";
+                userMessage.textContent = message;
+                chatBox.appendChild(userMessage);
+
+                setTimeout(() => {
+                    let botMessage = document.createElement("div");
+                    botMessage.className = "message bot-message";
+                    botMessage.textContent = "Searching for: " + message;
+                    chatBox.appendChild(botMessage);
+                }, 500);
+
+                input.value = "";
+            }
+
+           
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function previewImage() {
+            let fileInput = document.getElementById("imageUpload");
+            let file = fileInput.files[0];
+
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function(e) {
+                    // Create an image element
+                    let img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.style.maxWidth = "100%";
+                    img.style.borderRadius = "10px";
+
+                    // Create a container for the image
+                    let imageContainer = document.createElement("div");
+                    imageContainer.className = "message user-message";
+                    imageContainer.appendChild(img);
+
+                    // Append the image to the chat box
+                    let chatBox = document.getElementById("chatBox");
+                    chatBox.appendChild(imageContainer);
+
+                    // Scroll to the bottom of the chat box
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function uploadImage() {
+            let fileInput = document.getElementById("imageUpload");
+            let formData = new FormData();
+            if (fileInput.files[0]) {
+                formData.append("file", fileInput.files[0]);
+            }
+
+            fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                let chatBox = document.getElementById("chatBox");
+                let botMessage = document.createElement("div");
+                botMessage.className = "message bot-message";
+                botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}<br><strong>Confidence:</strong> ${data.confidence.toFixed(2)}</p>`;
+                chatBox.appendChild(botMessage);
+
+                // Clear the file input after upload
+                fileInput.value = "";
+
+                
+                chatBox.scrollTop = chatBox.scrollHeight;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        }
+    </script>
+</body>
+</html>
