@@ -2,12 +2,12 @@ from flask import Flask, render_template, request, jsonify
 import tensorflow as tf
 import numpy as np
 from PIL import Image
-#from flask_cors import CORS
+
 
 app = Flask(__name__)
 
 model = tf.keras.models.load_model("new bird_classification_model.h5")
-class_names = ["Blue Tailed Bee Eater", "Red Vented Bul Bul", "White Throated Kingfisher  "]  # Update with actual bird names
+class_names = [" This is a Blue Tailed Bee Eaterrrr", "Red Vented Bul Bul", "White Throated Kingfisher  "] 
 
 def preprocess_image(image):
     image = image.resize((224, 224))
