@@ -1,96 +1,189 @@
-import pandas as pd
 import joblib
+import pandas as pd
+import numpy as np
+from fuzzywuzzy import process
 
-# ✅ Load Trained Models
+# Load Models
 migration_model = joblib.load(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\migration_prediction_model.pkl")
 location_model = joblib.load(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\location_prediction_model.pkl")
-time_models = joblib.load(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\time_prediction_model.pkl")
+time_model_data = joblib.load(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\time_prediction_model.pkl")
 
-def prepare_input_for_model(user_input, model_type):
+# Extract time models and encoders
+month_model = time_model_data['month_model']
+day_model = time_model_data['day_model']
+hour_model = time_model_data['hour_model']
+county_encoder = time_model_data['county_encoder']
+locality_encoder = time_model_data['locality_encoder']
+
+# Load Data (used for interpretation)
+df_migration = pd.read_csv(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\data\migration_data.csv")
+df_location = pd.read_csv(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\data\location_data.csv")
+df_time = pd.read_csv(r"C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\data\time_data.csv")
+
+# Extract feature names from dataset
+species_list = [col.replace("COMMON NAME_", "") for col in df_migration.columns if col.startswith("COMMON NAME_")]
+county_list = [col.replace("COUNTY_", "") for col in df_migration.columns if col.startswith("COUNTY_")]
+locality_list = [col.replace("LOCALITY_", "") for col in df_migration.columns if col.startswith("LOCALITY_")]
+
+# Get expected feature names from trained models
+migration_expected_features = getattr(migration_model, "feature_names_in_", df_migration.columns)
+location_expected_features = getattr(location_model, "feature_names_in_", df_location.columns)
+
+# Helper function for fuzzy matching (handling typos and similar names)
+def fuzzy_match(user_input, choices):
+    match, score = process.extractOne(user_input, choices)
+    return match if score > 80 else None
+
+def interpret_migration_prediction(user_input):
     """
-    Prepares user input based on model type by selecting only required features.
+    Interprets user queries and retrieves meaningful migration predictions.
+
+    Args:
+    - user_input (dict): Contains user query parameters (species, location, date, time, etc.).
+
+    Returns:
+    - str: Natural language response for chatbot.
     """
-    input_df = pd.DataFrame([user_input])
+    # Extract user input
+    species = user_input.get("species", None)
+    location = user_input.get("location", None)
+    county = user_input.get("county", None)
+    date = user_input.get("date", None)
+    time = user_input.get("time", None)
+    latitude = user_input.get("LATITUDE", None)
+    longitude = user_input.get("LONGITUDE", None)
 
-    # ✅ Define expected feature sets
-    if model_type == "migration":
-        required_features = migration_model.feature_names_in_
-    elif model_type == "location":
-        required_features = location_model.feature_names_in_
-    elif model_type == "time":
-        return user_input  # No preprocessing needed for time models
+    # ✅ Handle Misspellings using Fuzzy Matching
+    if species:
+        species = fuzzy_match(species, species_list)
+    if location:
+        location = fuzzy_match(location, locality_list)
+    if county:
+        county = fuzzy_match(county, county_list)
 
-    # ✅ Ensure only trained features are passed to model
-    input_df = input_df[required_features]
+    # ✅ Convert Date & Time
+    if date and time:
+        datetime_query = pd.to_datetime(f"{date} {time}", errors="coerce")
+        year, month, day, hour, day_of_week = (
+            datetime_query.year, datetime_query.month, datetime_query.day, datetime_query.hour, datetime_query.dayofweek
+        )
+    else:
+        return "Please provide a valid date and time."
 
-    return input_df
+    # ✅ Determine Query Type
+    query_type = None
+    if species and date and time:
+        query_type = "location"
+    elif location and date and time:
+        query_type = "species"
+    elif date and time:
+        query_type = "full"
+    elif species and location:
+        query_type = "time"
 
-# ✅ Migration Prediction
-def predict_migration(user_input):
-    """
-    Predicts migration probability given user input.
-    """
-    input_features = prepare_input_for_model(user_input, "migration")
-    probability = migration_model.predict_proba(input_features)[:, 1]  # Get probability
-    return {"migration_probability": probability[0]}
+    # ✅ Handle Query Types
 
-# ✅ Location Prediction
-def predict_location(user_input):
-    """
-    Predicts possible bird species for given location and time.
-    """
-    input_features = prepare_input_for_model(user_input, "location")
-    probabilities = location_model.predict_proba(input_features)[:, 1]
-    
-    species_list = location_model.classes_  # Get species names
-    sorted_species = sorted(zip(species_list, probabilities), key=lambda x: x[1], reverse=True)
+    ### **1️⃣ Species-based Location Prediction**
+    if query_type == "location":
+        print(f"Predicting locations for species: {species} on {date} at {time}")
 
-    top_species = [f"{species} (Probability: {prob:.2f})" for species, prob in sorted_species[:5]]
+        if f"COMMON NAME_{species}" not in df_migration.columns:
+            return f"Sorry, migration data for {species} is not available."
 
-    return {"top_species_predictions": top_species}
+        # ✅ Ensure input data has all required features
+        input_data = {feature: 0 for feature in location_expected_features}
+        input_data.update({
+            "Year": year,
+            "Month": month,
+            "Day": day,
+            "Day_of_Week": day_of_week,
+            "Hour": hour,
+        })
+        if latitude is not None:
+            input_data["LATITUDE"] = latitude
+        if longitude is not None:
+            input_data["LONGITUDE"] = longitude
 
-# ✅ Time Prediction
-def predict_best_time(user_input):
-    """
-    Predicts best observation time for a given location.
-    """
-    location_encoded = time_models['locality_encoder'].transform([user_input["location"]])[0]
-    
-    best_month = time_models['month_model'].predict([[location_encoded]])[0]
-    best_day = time_models['day_model'].predict([[location_encoded]])[0]
-    best_hour = time_models['hour_model'].predict([[location_encoded]])[0]
+        # ✅ Mark the species presence
+        input_data[f"COMMON NAME_{species}"] = 1
 
-    return {"best_time": {"month": best_month, "day": best_day, "hour": best_hour}}
+        # ✅ Convert to DataFrame
+        input_df = pd.DataFrame([input_data])[location_expected_features]
 
-# ✅ Unified Prediction Function for Chatbot
-def process_user_query(user_input):
-    """
-    Determines the type of user query and returns relevant predictions.
-    """
-    response = {}
+        # ✅ Predict possible locations
+        location_probs = location_model.predict_proba(input_df)[:, 1]
+        location_scores = dict(zip(locality_list, location_probs))
+        top_locations = sorted(location_scores.items(), key=lambda x: x[1], reverse=True)[:3]
 
-    # User asks for migration probability
-    if "Year" in user_input and "LATITUDE" in user_input and "LONGITUDE" in user_input:
-        response.update(predict_migration(user_input))
+        response = f"The *{species}* is most likely to be found at:\n"
+        for loc, prob in top_locations:
+            response += f"- **{loc}**\n"
+        
+        return response
 
-    # User asks for bird species at a location
-    if "COMMON NAME_Blue-tailed Bee-eater" in user_input or "COMMON NAME_Red-vented Bulbul" in user_input:
-        response.update(predict_location(user_input))
+    ### **2️⃣ Location-based Species Prediction**
+    elif query_type == "species":
+        print(f"Predicting species for location: {location} on {date} at {time}")
 
-    # User asks for best observation time
-    if "location" in user_input:
-        response.update(predict_best_time(user_input))
+        if f"LOCALITY_{location}" not in df_migration.columns:
+            return f"Sorry, we don't have data for {location}."
 
-    return response
+        # ✅ Ensure input data has all required features
+        input_data = {feature: 0 for feature in migration_expected_features}
+        input_data.update({
+            "Year": year,
+            "Month": month,
+            "Day": day,
+            "Day_of_Week": day_of_week,
+            "Hour": hour,
+        })
+        input_data[f"LOCALITY_{location}"] = 1
 
-# ✅ Example Input Testing
-if __name__ == "__main__":
-    test_input = {
-        "Year": 2025, "Month": 3, "Day": 12, "Day_of_Week": 2, "Hour": 7,
-        "LATITUDE": 6.287, "LONGITUDE": 81.261,
-        "COUNTY_Angunakolapelessa": 0, "COUNTY_Hambantota": 1,
-        "LOCALITY_Yala": 1, "COMMON NAME_Blue-tailed Bee-eater": 1
-    }
+        # ✅ Convert to DataFrame
+        input_df = pd.DataFrame([input_data])[migration_expected_features]
 
-    result = process_user_query(test_input)
-    print("Prediction Result:", result)
+        # ✅ Predict possible species
+        species_probs = migration_model.predict_proba(input_df)[:, 1]
+        species_scores = dict(zip(species_list, species_probs))
+        top_species = sorted(species_scores.items(), key=lambda x: x[1], reverse=True)[:3]
+
+        response = f"At **{location}** on **{date} at {time}**, you are likely to see:\n"
+        for spec, prob in top_species:
+            response += f"- **{spec}**\n"
+
+        return response
+
+    ### **3️⃣ Full Prediction (Species & Locations)**
+    elif query_type == "full":
+        print(f"Predicting both species and locations for {date} at {time}")
+
+        top_locations = df_migration.groupby("LOCALITY")["OBSERVATION"].mean().sort_values(ascending=False).head(3)
+        top_species = df_migration.groupby("COMMON NAME")["OBSERVATION"].mean().sort_values(ascending=False).head(3)
+
+        response = f"On **{date} at {time}**, the best locations for birdwatching are:\n"
+        for loc in top_locations.index:
+            response += f"- **{loc}**\n"
+
+        response += "\nYou may spot these birds:\n"
+        for spec in top_species.index:
+            response += f"- **{spec}**\n"
+
+        return response
+
+    ### **4️⃣ Time-Based Prediction**
+    elif query_type == "time":
+        print(f"Predicting best times for {species} at {location}")
+
+        input_data = county_encoder.transform([[county]]) if county else locality_encoder.transform([[location]])
+        predicted_month = month_model.predict(input_data)
+        predicted_day = day_model.predict(input_data)
+        predicted_hour = hour_model.predict(input_data)
+
+        response = f"The best time to see **{species}** at **{location}** is:\n"
+        response += f"- **Month:** {predicted_month[0]}\n"
+        response += f"- **Day:** {predicted_day[0]}\n"
+        response += f"- **Hour:** {predicted_hour[0]}\n"
+
+        return response
+
+    return "Invalid query. Please provide species, location, or date/time."
