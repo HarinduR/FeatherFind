@@ -1,152 +1,133 @@
 import joblib
 import numpy as np
 import pandas as pd
-import difflib
 
-# Load Models
+# Load Migration Prediction Model (Model A)
 migration_model = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\migration_prediction_model.pkl')
+
+# Load Location Prediction Model (Model B)
 location_model = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\location_prediction_model.pkl')
-time_model_data = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\time_prediction_model.pkl')
 
-month_model = time_model_data['month_model']
-hour_model = time_model_data['hour_model']
-county_encoder = time_model_data['county_encoder']
-locality_encoder = time_model_data['locality_encoder']
-selected_features = time_model_data['selected_features']
+# Load Time Prediction Model (Model C) (Contains multiple models)
+time_models = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\time_prediction_model.pkl')
 
-# Define expected inputs for each model
-migration_features = ['Year', 'Day', 'Day_of_Week', 'Hour', 'COMMON NAME_', 'COUNTY_', 'LOCALITY_']
-location_features = ['Year', 'Month', 'Day', 'Day_of_Week', 'Hour', 'LATITUDE', 'LONGITUDE', 'COMMON NAME_']
-time_features = ['OBSERVATION', 'Year', 'Day_of_Week', 'LOCALITY_encoded', 'Is_Summer', 'Is_Winter', 'Is_Spring', 
-                 'Is_Autumn', 'Is_Morning', 'Is_Afternoon', 'Is_Evening', 'Is_Night', 'COMMON NAME_']
+# Extract components from Time Model
+month_model = time_models['month_model']
+hour_model = time_models['hour_model']
+county_encoder = time_models['county_encoder']
+locality_encoder = time_models['locality_encoder']
+selected_features_time = time_models['selected_features']
 
-# Define keyword mappings for error handling
-keyword_mapping = {
-    "year": "Year",
-    "month": "Month",
-    "day": "Day",
-    "day_of_week": "Day_of_Week",
-    "hour": "Hour",
-    "lat": "LATITUDE",
-    "long": "LONGITUDE",
-    "species": "COMMON NAME_",
-    "county": "COUNTY_",
-    "locality": "LOCALITY_",
-    "obs": "OBSERVATION"
-}
+print("✅ All models loaded successfully!")
 
-# Function to correct user input keys
-def correct_keys(user_inputs):
-    corrected_inputs = {}
-    for key, value in user_inputs.items():
-        closest_match = difflib.get_close_matches(key.lower(), keyword_mapping.keys(), n=1)
-        if closest_match:
-            corrected_inputs[keyword_mapping[closest_match[0]]] = value
-        else:
-            corrected_inputs[key] = value
-    return corrected_inputs
 
-# Function to preprocess user input for the models
-def preprocess_input(user_inputs, required_features):
+def predict_bird_migration(user_input, df):
     """
-    Ensure the user input matches the required feature format.
-    Handles missing values, applies encoding, and ensures all necessary features exist.
+    Predicts bird migration presence, possible locations, and best observation times using an interdependent model pipeline.
+
+    Args:
+    - user_input (dict): Contains species, location, date, time.
+    - df (DataFrame): The processed dataset with historical bird observations.
+
+    Returns:
+    - dict: Structured prediction results with explanations.
     """
-    user_inputs = correct_keys(user_inputs)
-    processed_input = {}
+    # Extract user inputs
+    species = user_input.get("species", None)
+    location = user_input.get("location", None)
+    date = user_input.get("date", None)
+    time = user_input.get("time", None)
 
-    for feature in required_features:
-        if feature.startswith("COMMON NAME_"):
-            if 'COMMON NAME_' in user_inputs:
-                processed_input[feature] = 1 if feature.endswith(user_inputs['COMMON NAME_']) else 0
-            else:
-                processed_input[feature] = 0
-        elif feature.startswith("COUNTY_"):
-            processed_input[feature] = 1 if user_inputs.get("COUNTY_", "").lower() in feature.lower() else 0
-        elif feature.startswith("LOCALITY_"):
-            processed_input[feature] = 1 if user_inputs.get("LOCALITY_", "").lower() in feature.lower() else 0
-        else:
-            processed_input[feature] = user_inputs.get(feature, 0)  # Default missing values to 0
-
-    return np.array([list(processed_input.values())])  # Convert to NumPy array
-
-# Function to generate meaningful chatbot responses
-def generate_response(predictions, user_inputs):
-    """
-    Translates model predictions into human-friendly text.
-    """
-    responses = []
-
-    if 'COMMON NAME_' in user_inputs:
-        species = user_inputs['COMMON NAME_']
+    # Convert date and time
+    if date and time:
+        datetime_query = pd.to_datetime(f"{date} {time}", errors="coerce")
+        year, month, day, hour, day_of_week = (
+            datetime_query.year, datetime_query.month, datetime_query.day, datetime_query.hour, datetime_query.dayofweek
+        )
     else:
-        species = "this species"
+        return {"error": "Please provide a valid date and time."}
 
-    if 'LOCALITY_' in user_inputs:
-        location = user_inputs['LOCALITY_']
-    else:
-        location = "the given area"
-
-    if 'Year' in user_inputs and 'Month' in user_inputs and 'Day' in user_inputs:
-        date_info = f"on {user_inputs['Year']}-{user_inputs['Month']}-{user_inputs['Day']}"
-    else:
-        date_info = "on the given date"
-
-    if predictions.get('migration'):
-        if predictions['migration'] == 1:
-            responses.append(f"✅ The {species} is likely to be present {date_info}.")
-        else:
-            responses.append(f"❌ The {species} is unlikely to be seen {date_info}.")
+    # **Step 1: Predict Species Presence (Model A)**
+    print(f"🔍 Checking if {species} is likely to be present on {date} at {time}...")
     
-    if predictions.get('location'):
-        responses.append(f"📍 The best locations to spot {species} are: {', '.join(predictions['location'])}.")
+    # Create feature input for Model A
+    feature_migration = {
+        "Year": year, "Day": day, "Day_of_Week": day_of_week, "Hour": hour,
+        "COUNTY_ENCODED": county_encoder.transform([user_input.get("county", "Unknown")])[0] if "county" in user_input else 0,
+        "LOCALITY_ENCODED": locality_encoder.transform([user_input.get("locality", "Unknown")])[0] if "locality" in user_input else 0,
+    }
     
-    if predictions.get('time'):
-        responses.append(f"⏰ The best time to observe {species} is at {predictions['time']} hours.")
+    # One-hot encode species
+    species_column = f"COMMON NAME_{species}"
+    for col in ["COMMON NAME_Blue-tailed Bee-eater", "COMMON NAME_Red-vented Bulbul", "COMMON NAME_White-throated Kingfisher"]:
+        feature_migration[col] = 1 if col == species_column else 0
+
+    # Convert to DataFrame
+    feature_df = pd.DataFrame([feature_migration])
     
-    return " ".join(responses)
-
-# Function to make predictions using the three models
-def predict_migration(user_inputs):
-    """
-    Main function to predict bird migration presence, locations, and best times.
-    """
-    predictions = {}
-
-    # Step 1: Migration Model (Model A) - Predict presence
-    migration_input = preprocess_input(user_inputs, migration_features)
-    migration_prob = migration_model.predict_proba(migration_input)[:, 1][0]
+    # Make migration prediction
+    migration_prob = migration_model.predict_proba(feature_df)[:, 1][0]
     
-    threshold = 0.274  # Optimal probability threshold
-    predictions['migration'] = 1 if migration_prob >= threshold else 0
+    if migration_prob < 0.5:
+        return {"result": f"❌ {species} is unlikely to be observed at this time."}
+    
+    print(f"✅ {species} is likely present! (Probability: {migration_prob:.2f})")
+    
+    # **Step 2: Predict Possible Locations (Model B)**
+    print(f"📍 Predicting possible locations for {species}...")
+    
+    # Create feature input for Model B
+    feature_location = feature_migration.copy()
+    feature_location.update({
+        "Month": month,
+        "LATITUDE": user_input.get("latitude", 0),
+        "LONGITUDE": user_input.get("longitude", 0),
+    })
+    
+    # Convert to DataFrame
+    feature_df_location = pd.DataFrame([feature_location])
+    
+    # Predict locations
+    location_prob = location_model.predict_proba(feature_df_location)[:, 1]
+    
+    # Select top-N locations
+    df["Predicted_Location_Probability"] = location_prob
+    top_locations = df.groupby("LOCALITY").mean()["Predicted_Location_Probability"].sort_values(ascending=False).head(3)
+    
+    print(f"🏞 Best Locations: {list(top_locations.index)}")
 
-    if predictions['migration'] == 1:
-        # Step 2: Location Model (Model B) - Predict locations
-        location_input = preprocess_input(user_inputs, location_features)
-        location_pred = location_model.predict(location_input)
+    # **Step 3: Predict Best Time (Model C)**
+    print(f"⏳ Predicting the best time to observe {species} in {list(top_locations.index)[0]}...")
+    
+    # Create feature input for Model C
+    feature_time = {
+        "OBSERVATION": 1,
+        "Year": year,
+        "Day_of_Week": day_of_week,
+        "LOCALITY_encoded": locality_encoder.transform([list(top_locations.index)[0]])[0] if list(top_locations.index) else 0,
+        "Is_Summer": int(month in [6, 7, 8]),
+        "Is_Winter": int(month in [12, 1, 2]),
+        "Is_Spring": int(month in [3, 4, 5]),
+        "Is_Autumn": int(month in [9, 10, 11]),
+        "Is_Morning": int(hour in range(6, 12)),
+        "Is_Afternoon": int(hour in range(12, 18)),
+        "Is_Evening": int(hour in range(18, 24)),
+        "Is_Night": int(hour in range(0, 6)),
+    }
+    
+    # Predict Month, Day, Hour
+    best_month = month_model.predict(pd.DataFrame([feature_time]))[0]
+    best_hour = hour_model.predict(pd.DataFrame([feature_time]))[0]
+    
+    print(f"📆 Best Observation Month: {best_month}, Best Hour: {best_hour}")
 
-        top_locations = [f"Location_{i}" for i, val in enumerate(location_pred[0]) if val == 1]
-        predictions['location'] = top_locations[:3]  # Return top 3 locations
-
-        # Step 3: Time Model (Model C) - Predict best time
-        if 'LOCALITY_' in user_inputs:
-            time_input = preprocess_input(user_inputs, time_features)
-            best_hour = hour_model.predict(time_input)[0]
-            predictions['time'] = best_hour
-
-    return generate_response(predictions, user_inputs)
-
-# Example user input
-user_query = {
-    "species": "Red-vented Bulbul",
-    "Year": 2025,
-    "Month": 3,
-    "Day": 15,
-    "Day_of_Week": 2,
-    "Hour": 10,
-    "LOCALITY_": "Bundala National Park"
-}
-
-# Run the prediction
-response = predict_migration(user_query)
-print(response)
+    # **Final Structured Response**
+    response = {
+        "Species": species,
+        "Observation Probability": f"{migration_prob*100:.1f}%",
+        "Best Locations": {loc: f"{prob*100:.1f}%" for loc, prob in top_locations.items()},
+        "Best Observation Month": best_month,
+        "Best Observation Hour": best_hour,
+    }
+    
+    return response
