@@ -207,34 +207,41 @@
         }
 
         function uploadImage() {
-            let fileInput = document.getElementById("imageUpload");
-            let formData = new FormData();
-            if (fileInput.files[0]) {
-                formData.append("file", fileInput.files[0]);
-            }
+    let fileInput = document.getElementById("imageUpload");
+    let formData = new FormData();
+    if (fileInput.files[0]) {
+        formData.append("file", fileInput.files[0]);
+    }
 
-            fetch("http://127.0.0.1:5000/predict", {
-                method: "POST",
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                let chatBox = document.getElementById("chatBox");
-                let botMessage = document.createElement("div");
-                botMessage.className = "message bot-message";
-                botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}<br><strong>Confidence:</strong> ${data.confidence.toFixed(2)}</p>`;
-                chatBox.appendChild(botMessage);
+    fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        let chatBox = document.getElementById("chatBox");
+        let botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
 
-                // Clear the file input after upload
-                fileInput.value = "";
-
-                
-                chatBox.scrollTop = chatBox.scrollHeight;
-            })
-            .catch(error => {
-                console.error("Error:", error);
-            });
+        if (data.result === "Sorry, Cannot Identify this image") {
+            botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}</p>`;
+        } else {
+            botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}<br><strong>Confidence:</strong> ${data.confidence.toFixed(2)}</p>`;
         }
+
+        chatBox.appendChild(botMessage);
+
+        // Clear the file input after upload
+        fileInput.value = "";
+
+        // Scroll to the bottom of the chat box
+        chatBox.scrollTop = chatBox.scrollHeight;
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+
     </script>
 </body>
 </html>
