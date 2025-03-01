@@ -2,151 +2,177 @@ from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 import numpy as np
+import re
+from difflib import get_close_matches
 
-# Initialize Flask App
+# ✅ Initialize Flask App
 app = Flask(__name__)
 
-# Load Trained Models
-migration_model = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\migration_prediction_model.pkl')
-location_model = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\location_prediction_model.pkl')
-time_model = joblib.load(r'C:\Users\Deshan\Documents\IIT LECS\DSGP Models\Migration model\models\time_prediction_model.pkl')
+# ✅ Load the trained model and encoders
+model_path = r'C:\Users\Deshan\Documents\IIT LECS\Year 2 Sem 1\DSGP\Git hub\FeatherFind\Migration model\models\migration_prediction_model.pkl'
+model_data = joblib.load(model_path)
 
-rf_final = migration_model['rf_final']
-location_rf = location_model['location_model']
-month_model = time_model['month_model']
-hour_model = time_model['hour_model']
+rf_model = model_data['rf_final']
+selected_features = model_data['selected_features']
+label_encoders = model_data['label_encoders']
 
-# Load Label Encoders
-le_species = migration_model['label_encoders']['COMMON NAME']
-le_locality = migration_model['label_encoders']['LOCALITY']
+# ✅ Valid Localities and Bird Names
+valid_localities = [
+    "Buckingham Place Hotel Tangalle", "Bundala NP General", "Bundala National Park", 
+    "Kalametiya", "Tissa Lake", "Yala National Park General", "Debarawewa Lake"
+]
 
-# Helper Functions
-def encode_inputs(species, locality):
-    species_encoded = le_species.transform([species])[0] if species in le_species.classes_ else None
-    locality_encoded = le_locality.transform([locality])[0] if locality in le_locality.classes_ else None
-    return species_encoded, locality_encoded
+valid_bird_names = ["Blue-tailed Bee-eater", "Red-vented Bulbul", "White-throated Kingfisher"]
 
-def convert_day_of_week(day_name):
-    days = {'Monday': 0, 'Tuesday': 1, 'Wednesday': 2, 'Thursday': 3, 'Friday': 4, 'Saturday': 5, 'Sunday': 6}
-    return days.get(day_name, None)
+bird_aliases = {
+    "blue tailed bird": "Blue-tailed Bee-eater",
+    "kingfisher": "White-throated Kingfisher",
+    "bulbul": "Red-vented Bulbul"
+}
 
-def convert_time_of_day(time_period):
-    time_ranges = {'morning': 7, 'afternoon': 13, 'evening': 18, 'night': 22}
-    return time_ranges.get(time_period.lower(), None)
+# ✅ Function to Correct Bird Name
+def correct_bird_name(name):
+    name = name.lower()
+    if name in bird_aliases:
+        return bird_aliases[name]
 
-# ✅ Endpoint 1: Migration Presence Prediction
-@app.route("/predict_migration_presence", methods=["GET"])
-def predict_migration_presence():
+    matches = get_close_matches(name, [b.lower() for b in valid_bird_names], n=1, cutoff=0.3)
+    if matches:
+        return next(b for b in valid_bird_names if b.lower() == matches[0])  
+    return "Unknown Bird"
+
+# ✅ Function to Correct Locality
+def correct_locality(user_input):
+    user_input = user_input.lower()
+    
+    for loc in valid_localities:
+        if user_input == loc.lower():
+            return loc
+
+    for loc in valid_localities:
+        if user_input in loc.lower():
+            return loc
+
+    manual_mappings = {
+        "bundala": "Bundala NP General",
+        "yala": "Yala National Park General",
+        "tissa": "Tissa Lake",
+        "debara": "Debarawewa Lake",
+        "kalametiya": "Kalametiya Bird Sanctuary"
+    }
+    
+    for keyword, mapped_location in manual_mappings.items():
+        if keyword in user_input:
+            return mapped_location
+
+    return "Unknown Location"
+
+# ✅ Function to Convert Day Name to Integer
+def day_name_to_int(day_name):
+    days_map = {
+        "monday": 0, "tuesday": 1, "wednesday": 2, "thursday": 3, 
+        "friday": 4, "saturday": 5, "sunday": 6
+    }
+    return days_map.get(day_name.lower(), None)
+
+# ✅ Function to Convert Time of Day to Hour Range
+def time_of_day_to_hour(time_str):
+    time_ranges = {
+        "morning": (6, 10), "afternoon": (11, 15),
+        "evening": (16, 19), "night": (20, 23)
+    }
+    return time_ranges.get(time_str.lower(), None)
+
+# ✅ Function to Extract Features from Query
+def extract_query_features(query):
+    query = query.lower()
+    
+    year_match = re.search(r'\b(20[0-9]{2})\b', query)
+    year = int(year_match.group()) if year_match else None
+
+    months_map = {
+        "january": 1, "february": 2, "march": 3, "april": 4, "may": 5, "june": 6,
+        "july": 7, "august": 8, "september": 9, "october": 10, "november": 11, "december": 12
+    }
+    month_match = re.search(r'\b(january|february|march|april|may|june|july|august|september|october|november|december)\b', query)
+    month = months_map.get(month_match.group()) if month_match else None
+
+    day_name_match = re.search(r'\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b', query)
+    day_of_week = day_name_to_int(day_name_match.group()) if day_name_match else None
+
+    time_match = re.search(r'\b(morning|afternoon|evening|night)\b', query)
+    hour_range = time_of_day_to_hour(time_match.group()) if time_match else None
+    hour = hour_range[0] if hour_range else None
+
+    locality_match = re.search(r'\b[a-zA-Z\s]+\b', query)
+    locality = correct_locality(locality_match.group()) if locality_match else "Unknown Location"
+
+    bird_name_match = re.search(r'\b(?:' + '|'.join([b.lower().replace("-", ".*") for b in valid_bird_names]) + r')\b', query)
+    bird_name = correct_bird_name(bird_name_match.group()) if bird_name_match else "Unknown Bird"
+
+    if None in [year, month, day_of_week, hour] or locality == "Unknown Location" or bird_name == "Unknown Bird":
+        return {"error": "Invalid query format. Please check your input."}
+
+    return {
+        "year": year,
+        "month": month,
+        "day_of_week": day_of_week,
+        "hour": hour,
+        "locality": locality,
+        "bird_name": bird_name
+    }
+
+# ✅ Function to Generate Meaningful Output
+def generate_output(result):
+    if "error" in result:
+        return result["error"]
+
+    presence_text = "is likely to be present" if result["predicted_presence"] == 1 else "is unlikely to be present"
+    probability = result["probability"] * 100  
+
+    return (
+        f"The {result['features_used']['bird_name']} {presence_text} at {result['features_used']['locality']} "
+        f"on {result['features_used']['month']}/{result['features_used']['year']}. "
+        f"(Confidence: {probability:.1f}%)"
+    )
+
+# ✅ Function to Predict Bird Presence
+def predict_bird_presence(query):
+    features = extract_query_features(query)
+    
+    if "error" in features:
+        return features
+
     try:
-        species = request.args.get("species")
-        year = int(request.args.get("year"))
-        month = int(request.args.get("month"))
-        day_of_week = convert_day_of_week(request.args.get("day_of_week"))
-        hour = int(request.args.get("hour"))
-        locality = request.args.get("locality")
+        locality_encoded = label_encoders['LOCALITY'].transform([features["locality"]])[0]
+        bird_name_encoded = label_encoders['COMMON NAME'].transform([features["bird_name"]])[0]
 
-        if day_of_week is None:
-            return jsonify({"error": "Invalid day of the week"}), 400
+        input_data = pd.DataFrame([[features["year"], features["month"], features["day_of_week"],
+                                     features["hour"], locality_encoded, bird_name_encoded]],
+                                  columns=selected_features)
 
-        species_encoded, locality_encoded = encode_inputs(species, locality)
-        if species_encoded is None or locality_encoded is None:
-            return jsonify({"error": "Invalid species or locality"}), 400
+        probability = rf_model.predict_proba(input_data)[:, 1][0]
+        prediction = int(probability >= 0.5)
 
-        input_data = pd.DataFrame([[year, month, day_of_week, hour, locality_encoded, species_encoded]],
-                                  columns=['Year', 'Month', 'Day_of_Week', 'Hour', 'LOCALITY_ENCODED', 'COMMON NAME_ENCODED'])
+        result = {
+            "query": query,
+            "predicted_presence": prediction,
+            "probability": round(probability, 3),
+            "features_used": features
+        }
 
-        prob = rf_final.predict_proba(input_data)[:, 1][0]
-        presence = "Yes" if prob >= 0.5 else "No"
-
-        return jsonify({
-            "species": species,
-            "locality": locality,
-            "presence": presence,
-            "confidence": f"{prob:.2%}"
-        })
+        return generate_output(result)
 
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return {"error": f"Prediction error: {str(e)}"}
 
-# ✅ Endpoint 2: Best Locations for Bird Species
-@app.route("/predict_bird_location", methods=["GET"])
-def predict_bird_location():
-    try:
-        species = request.args.get("species")
-        year = int(request.args.get("year"))
-        month = int(request.args.get("month"))
-        day_of_week = convert_day_of_week(request.args.get("day_of_week"))
-        time_period = request.args.get("time_period")
+# ✅ Flask Route for Prediction
+@app.route('/predict', methods=['GET'])
+def predict():
+    query = request.args.get('query', '')
+    result = predict_bird_presence(query)
+    return jsonify({"result": result})
 
-        if day_of_week is None:
-            return jsonify({"error": "Invalid day of the week"}), 400
-
-        species_encoded, _ = encode_inputs(species, None)
-        if species_encoded is None:
-            return jsonify({"error": "Invalid species"}), 400
-
-        time_hour = convert_time_of_day(time_period)
-        if time_hour is None:
-            return jsonify({"error": "Invalid time period (choose morning, afternoon, evening, or night)"}), 400
-
-        input_data = pd.DataFrame([[year, month, day_of_week, time_hour, species_encoded]],
-                                  columns=['Year', 'Month', 'Day_of_Week', 'Hour', 'COMMON NAME_ENCODED'])
-
-        probabilities = location_rf.predict_proba(input_data)[:, 1]
-        location_predictions = sorted(zip(le_locality.classes_, probabilities), key=lambda x: x[1], reverse=True)[:10]
-
-        return jsonify({
-            "species": species,
-            "time_period": time_period,
-            "best_locations": [{ "location": loc, "probability": f"{prob:.1%}"} for loc, prob in location_predictions]
-        })
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-# ✅ Endpoint 3: Best Time for Birdwatching
-@app.route("/predict_best_time", methods=["GET"])
-def predict_best_time():
-    try:
-        species = request.args.get("species")
-        locality = request.args.get("locality")
-        year = int(request.args.get("year"))
-        day_of_week = convert_day_of_week(request.args.get("day_of_week"))
-        season = request.args.get("season")
-        time_period = request.args.get("time_period")
-
-        if day_of_week is None:
-            return jsonify({"error": "Invalid day of the week"}), 400
-
-        species_encoded, locality_encoded = encode_inputs(species, locality)
-        if species_encoded is None or locality_encoded is None:
-            return jsonify({"error": "Invalid species or locality"}), 400
-
-        features = {'OBSERVATION': 1, 'Year': year, 'Day_of_Week': day_of_week,
-                    'Is_Summer': 0, 'Is_Winter': 0, 'Is_Spring': 0, 'Is_Autumn': 0,
-                    'Is_Morning': 0, 'Is_Afternoon': 0, 'Is_Evening': 0, 'Is_Night': 0}
-
-        if season in features:
-            features[season] = 1
-        if time_period in features:
-            features[time_period] = 1
-
-        input_data = pd.DataFrame([[1, year, day_of_week, species_encoded, locality_encoded] + list(features.values())[3:]],
-                                  columns=['OBSERVATION', 'Year', 'Day_of_Week', 'COMMON NAME_ENCODED', 'LOCALITY_ENCODED'] + list(features.keys())[3:])
-
-        best_month = month_model.predict(input_data)[0]
-        best_hour = hour_model.predict(input_data)[0]
-
-        return jsonify({
-            "species": species,
-            "locality": locality,
-            "best_month": int(best_month),
-            "best_hour": int(best_hour)
-        })
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-# Run Flask Server
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+# ✅ Run Flask App
+if __name__ == '__main__':
+    app.run(debug=True)
