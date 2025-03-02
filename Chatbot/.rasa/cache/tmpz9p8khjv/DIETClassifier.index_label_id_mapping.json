@@ -1,0 +1,19 @@
+{
+  "0": "affirm",
+  "1": "bird_info_generate",
+  "2": "bot_challenge",
+  "3": "deny",
+  "4": "fallback",
+  "5": "feedback",
+  "6": "general_question",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "help",
+  "10": "image_classification",
+  "11": "keyword_finder",
+  "12": "mood_great",
+  "13": "mood_unhappy",
+  "14": "range_prediction",
+  "15": "repeat_request",
+  "16": "thank_you"
+}
