@@ -226,8 +226,9 @@
         if (data.result === "Sorry, Cannot Identify this image") {
             botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}</p>`;
         } else {
-            botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}<br><strong>Confidence:</strong> ${data.confidence.toFixed(2)}</p>`;
-        }
+            botMessage.innerHTML = `<p><strong>Result:</strong> ${data.result}<br><strong>Confidence:</strong> ${data.confidence}</p>`;
+
+            }
 
         chatBox.appendChild(botMessage);
 
