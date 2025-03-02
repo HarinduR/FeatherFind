@@ -4,6 +4,7 @@ import numpy as np
 import re
 from difflib import get_close_matches
 from rapidfuzz import process
+import datetime
 
 # ✅ Load the trained model and encoders
 model_path = r'C:\Users\Deshan\Documents\IIT LECS\Year 2 Sem 1\DSGP\Git hub\FeatherFind\Migration model\models\migration_prediction_model.pkl'
@@ -70,6 +71,11 @@ def correct_locality(user_input):
 
     return "Unknown Location"  # No match found
 
+
+
+
+
+
 # ✅ Function: Convert Day Name to Integer
 def day_name_to_int(day_name):
     days_map = {
@@ -87,6 +93,8 @@ def time_of_day_to_hour(time_str):
     return time_ranges.get(time_str.lower(), None)
 
 # ✅ Function: Extract Features from Query
+import datetime
+
 def extract_query_features(query):
     query = query.lower()
     
@@ -117,19 +125,58 @@ def extract_query_features(query):
         hour_range = time_of_day_to_hour(time_match.group()) if time_match else None
         hour = hour_range[0] if hour_range else None
 
-    # ✅ Extract Locality Using Improved Matching
+    # Extract Locality
     locality_match = re.search(r'\b[a-zA-Z\s]+\b', query)
-    locality = correct_locality(locality_match.group()) if locality_match else "Unknown Location"
+    locality = correct_locality(locality_match.group()) if locality_match else None
 
     # Extract Bird Name
     bird_name_match = re.search(r'\b(?:' + '|'.join([b.lower().replace("-", ".*") for b in valid_bird_names]) + r')\b', query)
-    bird_name = correct_bird_name(bird_name_match.group()) if bird_name_match else "Unknown Bird"
+    bird_name = correct_bird_name(bird_name_match.group()) if bird_name_match else None
 
-    # ✅ Return an Error Dictionary Instead of `None`
-    if None in [year, month, day_of_week, hour] or locality == "Unknown Location" or bird_name == "Unknown Bird":
-        missing = [k for k, v in zip(["Year", "Month", "Day_of_Week", "Hour", "Locality", "Bird Name"],
-                                     [year, month, day_of_week, hour, locality, bird_name]) if v is None or v.startswith("Unknown")]
-        return {"error": f"Missing or incorrect inputs: {', '.join(missing)}"}
+    # ✅ Handle Missing Values With Default Assignments
+    missing_inputs = []
+
+    if year is None:
+        year = 2025
+        print("⚠️ Year is necessary to run the model. Since you didn't input it, year is 2025 by default. If you want another year, please enter it:")
+        new_year = input().strip()
+        if new_year.isdigit():
+            year = int(new_year)
+
+    if month is None:
+        month = datetime.datetime.now().month  # Get current month
+        print(f"⚠️ Month is necessary to run. Since you didn't input it, month is {month} by default. If you want another month, please enter it:")
+        new_month = input().strip().lower()
+        if new_month in months_map:
+            month = months_map[new_month]
+
+    if day_of_week is None:
+        day_of_week = datetime.datetime.today().weekday()  # Get current day of the week
+        print(f"⚠️ A day in the week is necessary to run. Since you didn't input it, day of week is {list(day_name_to_int.keys())[day_of_week].capitalize()} by default. If you want another day, please enter it (Monday-Sunday):")
+        new_day = input().strip().lower()
+        if new_day in day_name_to_int.keys():
+            day_of_week = day_name_to_int(new_day)
+
+    if hour is None:
+        hour = datetime.datetime.now().hour  # Get current hour
+        print(f"⚠️ Hour or a time period is necessary to run. Since you didn't input it, hour is {hour} by default. If you want another hour or a time period (morning, day, afternoon, evening), please enter it:")
+        new_hour = input().strip().lower()
+        if new_hour.isdigit():
+            hour = int(new_hour)
+        elif new_hour in time_of_day_to_hour.keys():
+            hour = time_of_day_to_hour[new_hour][0]
+
+    if locality is None or locality == "Unknown Location":
+        print("⚠️ A location should be entered to run the models. Please select a location from the list below:")
+        print("\n".join(valid_localities))
+        locality = input("Enter the correct locality: ").strip()
+        locality = correct_locality(locality)
+
+    if bird_name is None or bird_name == "Unknown Bird":
+        print("⚠️ A bird species should be entered to run the models. Please select a bird species from the list below:")
+        print("\n".join(valid_bird_names))
+        bird_name = input("Enter the correct bird species: ").strip()
+        bird_name = correct_bird_name(bird_name)
 
     return {
         "year": year,
@@ -139,6 +186,8 @@ def extract_query_features(query):
         "locality": locality,
         "bird_name": bird_name
     }
+
+
 
 def generate_meaningful_query(result, original_query):
     """
@@ -182,6 +231,8 @@ def generate_meaningful_query(result, original_query):
     )
 
     return query_sentence
+
+
 
 # ✅ Function: Predict Bird Presence
 def predict_bird_presence(query):
@@ -229,3 +280,5 @@ def predict_bird_presence(query):
 
     except Exception as e:
         return {"error": f"Prediction error: {str(e)}"}
+
+
