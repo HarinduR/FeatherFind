@@ -1,5 +1,5 @@
 absl-py==1.4.0
-accelerate==1.3.0
+# accelerate==1.3.0
 aio-pika==8.2.3
 aiofiles==24.1.0
 aiogram==2.15
@@ -32,13 +32,13 @@ colorhash==1.2.1
 confluent-kafka==2.8.0
 cryptography==44.0.0
 cycler==0.12.1
-dask==2022.10.2
-datasets==3.2.0
+# dask==2022.10.2
+# datasets==3.2.0
 dill==0.3.8
 dnspython==2.3.0
 docopt==0.6.2
 exceptiongroup==1.2.2
-faiss-cpu==1.10.0
+# faiss-cpu==1.10.0
 fbmessenger==6.0.0
 filelock==3.17.0
 fire==0.7.0
@@ -55,16 +55,16 @@ google-pasta==0.2.0
 greenlet==3.1.1
 grpcio==1.70.0
 h11==0.14.0
-h5py==3.12.1
+# h5py==3.12.1
 httpcore==1.0.7
 httptools==0.6.4
 httpx==0.28.1
-huggingface-hub==0.28.1
+# huggingface-hub==0.28.1
 humanfriendly==10.0
 idna==3.10
 itsdangerous==2.2.0
-jax==0.4.30
-jaxlib==0.4.30
+# jax==0.4.30
+# jaxlib==0.4.30
 Jinja2==3.1.5
 jmespath==1.0.1
 joblib==1.4.2
@@ -74,17 +74,17 @@ jsonpointer==3.0.0
 jsonschema==4.17.3
 keras==2.12.0
 kiwisolver==1.4.8
-langchain==0.3.17
-langchain-core==0.3.33
+# langchain==0.3.17
+# langchain-core==0.3.33
 langchain-text-splitters==0.3.5
 langsmith==0.3.4
 libclang==18.1.1
 locket==1.0.0
 Markdown==3.7
 MarkupSafe==3.0.2
-matplotlib==3.5.3
+# matplotlib==3.5.3
 mattermostwrapper==2.2
-ml_dtypes==0.5.1
+# ml_dtypes==0.5.1
 mpmath==1.3.0
 msgpack==1.1.0
 multidict==5.2.0
@@ -96,7 +96,7 @@ opt_einsum==3.4.0
 orjson==3.10.15
 packaging==20.9
 pamqp==3.2.1
-pandas==2.2.3
+# pandas==2.2.3
 partd==1.4.2
 pillow==11.1.0
 pluggy==1.5.0
@@ -110,7 +110,6 @@ pyarrow==19.0.0
 pyasn1==0.6.1
 pyasn1_modules==0.4.1
 pycparser==2.22
-pydantic==1.10.9
 pydantic_core==2.27.2
 pydot==1.4.2
 PyJWT==2.10.1
