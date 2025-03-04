@@ -15,7 +15,7 @@ from rasa.nlu.classifiers.classifier import IntentClassifier
 # ✅ Register as a Rasa NLU Component
 @DefaultV1Recipe.register(DefaultV1Recipe.ComponentType.INTENT_CLASSIFIER, is_trainable=False)
 class BertIntentClassifier(GraphComponent, IntentClassifier):
-    """Custom BERT-based Intent Classifier for Rasa."""
+
 
     name = "bert_intent_classifier"
     provides = ["intent"]
@@ -30,7 +30,7 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
         resource: Resource,
         execution_context: ExecutionContext,
     ) -> None:
-        """Initialize the BERT Intent Classifier."""
+
         super().__init__()
 
         self._model_storage = model_storage
@@ -39,7 +39,7 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
 
         # ✅ Define model directory
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(base_dir, "../models/BERT_model")
+        model_path = os.path.join(base_dir, "../models/BERT_model2")
 
         # ✅ Load Tokenizer & Model
         logging.info("🔹 Loading BERT tokenizer & model for intent classification...")
@@ -48,18 +48,41 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
 
         # ✅ Define intent mapping (Make sure it matches your dataset)
         self.intent_mapping = {
-            5: "greet",
-            4: "goodbye",
             0: "affirm",
-            3: "deny",
-            8: "mood_great",
-            9: "mood_unhappy",
-            2: "bot_challenge",
-            1: "bird_info_generate",
-            10: "range_prediction",
-            6: "image_classification",
-            7: "keyword_finder",
-            11: "thank_you",
+            1: "agree_soft",
+            2: "agree_strong",
+            3: "bird_info_generate",
+            4: "bot_challenge",
+            5: "bot_opinion",
+            6: "deny",
+            7: "dismiss_casual",
+            8: "fallback",
+            9: "feedback_negative",
+            10: "feedback_positive",
+            11: "feedback_suggestions",
+            12: "fun_fact",
+            13: "general_question",
+            14: "goodbye",
+            15: "greet_checking_in",
+            16: "greet_formal",
+            17: "greet_good_afternoon",
+            18: "greet_good_evening",
+            19: "greet_good_morning",
+            20: "greet_good_night",
+            21: "greet_hi",
+            22: "greet_welcome",
+            23: "help",
+            24: "image_classification",
+            25: "keyword_finder",
+            26: "mood_excited",
+            27: "mood_great",
+            28: "mood_unhappy",
+            29: "non_birds",
+            30: "range_prediction",
+            31: "repeat_request",
+            32: "thank_you",
+            33: "user_opinion",
+            34: "user_preferences"
         }
 
         logging.info("✅ BERT Intent Classifier loaded successfully.")
@@ -72,7 +95,6 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
         resource: Resource,
         execution_context: ExecutionContext,
     ) -> "BertIntentClassifier":
-        """Creates an instance of this component."""
         return cls(config, model_storage, resource, execution_context)
 
     def train(self, training_data: TrainingData) -> None:

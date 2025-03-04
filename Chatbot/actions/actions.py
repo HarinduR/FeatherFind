@@ -1,7 +1,7 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from custom_components.bert_intent_classifier import BertIntentClassifier
-from BirdInfoGenerater.src.bird_info_generator import BirdInfoRetriever  # If used
+# from BirdInfoGenerater.src.bird_info_generator import BirdInfoRetriever  # If used
 import logging
 
 # Initialize Logger

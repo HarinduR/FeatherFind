@@ -90,7 +90,7 @@ msgpack==1.1.0
 multidict==5.2.0
 multiprocess==0.70.16
 networkx==2.6.3
-numpy==1.26.4
+numpy==1.23.5
 oauthlib==3.2.2
 opt_einsum==3.4.0
 orjson==3.10.15
