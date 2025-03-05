@@ -20,6 +20,7 @@ language: en
 #     min_ngram: 2
 #     max_ngram: 4
 #   - name: DIETClassifier
+#     intent_ranking_length: 3
 #     epochs: 100
 #   - name: EntitySynonymMapper
 #   - name: ResponseSelector
@@ -51,13 +52,7 @@ pipeline:
     ambiguity_threshold: 0.1
   - name: custom_components.bert_intent_classifier.BertIntentClassifier 
 
-# policies:
-#   - name: MemoizationPolicy
-#   - name: RulePolicy
-#   - name: TEDPolicy
-#     max_history: 5
-#     epochs: 200
-#     constrain_similarities: true
+
 policies:
   - name: MemoizationPolicy
   - name: RulePolicy

@@ -5,84 +5,206 @@ stories:
 # ✅ User Greets Chatbot
 - story: User Greets Chatbot
   steps:
-    - intent: greet
-    - action: utter_greet
-    - action: utter_help_suggestion  # Offers assistance
+  - intent: greet_hi
+  - action: utter_greet_hi
 
-# ✅ User Says Goodbye
-- story: User Ends Conversation
+- story: User Says morning
   steps:
-    - intent: goodbye
-    - action: utter_goodbye
-
-# ✅ User Expresses Happiness
-- story: User is Feeling Good
+  - intent: greet_good_morning
+  - action: utter_greet_good_morning
+  
+- story: User Says afternoon
   steps:
-    - intent: mood_great
-    - action: utter_mood_great
+  - intent: greet_good_afternoon
+  - action: utter_greet_good_afternoon
 
-# ✅ User Expresses Sadness
-- story: User is Feeling Down
+- story: User Says evening
   steps:
-    - intent: mood_unhappy
-    - action: utter_mood_unhappy
+  - intent: greet_good_evening
+  - action: utter_greet_good_evening
 
-# ✅ User Challenges the Bot's Identity
-- story: User Questions Bot Identity
+- story: User Says night
   steps:
-    - intent: bot_challenge
-    - action: utter_iamabot
+  - intent: greet_good_night
+  - action: utter_greet_good_night
 
-# ✅ User Requests Bird Information
-- story: User Requests Bird Information
+- story: user Greet Formaly(how do you do)
   steps:
-    - intent: bird_info_generate
-    - action: action_get_bird_info  # Calls Bird Info Generator Component
-    - action: utter_followup_question  # Engages user with additional details
+  - intent: greet_formal
+  - action: utter_greet_formal
 
-# ✅ User Wants More Information on Bird
-- story: User Asks for More Bird Details
+- story: user Greet welcome
   steps:
-    - intent: affirm
-    - action: utter_more_bird_info  # Provides deeper insights
+  - intent: greet_welcome
+  - action: utter_greet_welcome
 
-# # ✅ User Asks About Bird Migration
-# - story: User Asks About Bird Migration
-#   steps:
-#     - intent: range_prediction
-#     - action: action_range_prediction  # Calls Migration Prediction Component
-#     - action: utter_followup_question
-
-# ✅ User Wants Bird Image Classification
-- story: User Uploads Bird Image
+- story: User Checks In(how are you)
   steps:
-    - intent: image_classification
-    - action: action_image_classification
-    - action: utter_followup_question
+  - intent: greet_checking_in
+  - action: utter_greet_checking_in
 
-# # ✅ User Asks About Bird Keywords
-# - story: User Asks About Bird Keywords
-#   steps:
-#     - intent: keyword_finder
-#     - action: action_keyword_finder  # Calls NLP Model for Keyword Matching
-#     - action: utter_followup_question
-
-# ✅ Handling Unknown or Unclear Requests
-- story: Handling Unknown Requests
+- story: User Says Goodbye
   steps:
-    - intent: nlu_fallback
-    - action: utter_fallback
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: User asks if bot is human
+- story: User Affirms
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- story: User Denies
+  steps:
+  - intent: deny
+  - action: utter_deny
+
+- story: User Thanks the Bot
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: bot agree with user soft
+  steps:
+  - intent: agree_soft
+  - action: utter_agree_soft
+
+- story: bot agree with user strong
+  steps:
+  - intent: agree_strong
+  - action: utter_agree_strong
+
+- story: User Expresses great
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+
+- story: User Expresses Excitement
+  steps:
+  - intent: mood_excited
+  - action: utter_mood_excited
+
+- story: User Expresses Unhappiness
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+
+- story: User Challenges Bot
   steps:
   - intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_bot_challenge
 
-- story: Keep the Conversation Engaging
+- story: User Challenges Bot
   steps:
-    - intent: bird_info_generate
-    - action: action_get_bird_info
-    - action: utter_followup_question
+  - intent: bot_opinion
+  - action: utter_bot_opinion
+
+- story: User ask general question
+  steps:
+  - intent: general_question
+  - action: utter_general_question
+
+- story: User Asks for Help
+  steps:
+  - intent: help
+  - action: utter_help
+
+- story: User Asks for Help
+  steps:
+  - intent: fun_fact
+  - action: utter_fun_fact
+
+- story: User Gives Positive Feedback
+  steps:
+  - intent: feedback_positive
+  - action: utter_feedback_positive
+
+- story: User Gives Negative Feedback
+  steps:
+  - intent: feedback_negative
+  - action: utter_feedback_negative
+
+- story: User Provides Suggestions
+  steps:
+  - intent: feedback_suggestions
+  - action: utter_feedback_suggestions
+
+- story: User prefer something
+  steps:
+  - intent: user_preferences
+  - action: utter_user_preferences
+
+- story: give user opinion
+  steps:
+  - intent: user_opinion
+  - action: utter_user_opinion
+
+- story: User Provides nonbird related quarry 
+  steps:
+  - intent: non_birds
+  - action: utter_non_birds
+
+- story: User says repeat question
+  steps:
+  - intent: repeat_request
+  - action: utter_repeat_request
+
+- story: User Provides unmatched intent
+  steps:
+  - intent: fallback
+  - action: utter_fallback
+
+# ✅ User Requests Bird Information
+
+- story: Bird Information Generation with Context
+  steps:
+  - intent: bird_info_generate
+    entities:
+      - bird: "eagle"
+  - slot_was_set:
+      - bird: "eagle"
+  - action: action_get_bird_info
+  - intent: general_question
+  - action: action_get_bird_info
+  - intent: feedback_positive
+  - action: utter_feedback_positive
+
+- story: Advanced Bird Range Prediction
+  steps:
+  - intent: range_prediction
+    entities:
+      - bird: "sparrow"
+      - location: "Sri lanka"
+  - slot_was_set:
+      - bird: "sparrow"
+      - location: "Alaska"
+  - action: action_range_prediction
+  - intent: general_question
+  - action: utter_general_question
+  - intent: feedback_suggestions
+  - action: utter_feedback_suggestions
+
+- story: Image Classification Multi-Turn Interaction
+  steps:
+  - intent: image_classification
+  - action: action_image_classification
+  - intent: repeat_request
+  - action: action_image_classification
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Keyword Finder with Follow-up Questions
+  steps:
+  - intent: keyword_finder
+    entities:
+      - keyword: "habitat"
+  - slot_was_set:
+      - keyword: "habitat"
+  - action: action_keyword_finder
+  - intent: general_question
+  - action: utter_general_question
+  - intent: feedback_negative
+  - action: utter_feedback_negative
+
 
 # ✅ Handling Complex Conversations with Mixed Intents
 - story: User Has Multiple Queries in One Conversation
@@ -98,3 +220,25 @@ stories:
     - action: action_image_classification
     - intent: goodbye
     - action: utter_goodbye
+
+- story: User Requests Image Classification and Bird Information Together
+  steps:
+  - intent: image_classification
+  - action: action_image_classification
+  - intent: bird_info_generate
+  - action: action_get_bird_info
+  - intent: general_question
+  - action: utter_general_question
+
+- story: Multi-Intent Task Handling (Keyword Finder + Range Prediction)
+  steps:
+  - intent: keyword_finder
+    entities:
+      - keyword: "migration"
+  - slot_was_set:
+      - keyword: "migration"
+  - action: action_keyword_finder
+  - intent: range_prediction
+  - action: action_range_prediction
+  - intent: general_question
+  - action: utter_general_question
