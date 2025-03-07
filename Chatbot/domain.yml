@@ -123,6 +123,9 @@ responses:
   utter_iamabot:
     - text: "I am a chatbot, powered by Rasa. I can help you with bird-related informations."
     
+  utter_greet:
+    - text: "Hello! Welcome to FeatherFind. How can I assist you today? \nI can help you to explore the Birds using images your texts and prompts."
+
   utter_greet_hi:
     - text: "Hey there! Welcome to FeatherFind. How can I assist you today?"
     - text: "Hello! Looking for bird information? Ask me anything!"

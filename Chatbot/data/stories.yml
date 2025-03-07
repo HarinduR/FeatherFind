@@ -164,7 +164,7 @@ stories:
       - bird: "eagle"
   - action: action_get_bird_info
   - intent: general_question
-  - action: action_get_bird_info
+  - action: utter_general_question
   - intent: feedback_positive
   - action: utter_feedback_positive
 
@@ -188,9 +188,9 @@ stories:
   - intent: image_classification
   - action: action_image_classification
   - intent: repeat_request
-  - action: action_image_classification
+  - action: utter_repeat_request
   - intent: deny
-  - action: utter_goodbye
+  - action: utter_deny  
 
 - story: Keyword Finder with Follow-up Questions
   steps:

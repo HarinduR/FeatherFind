@@ -41,17 +41,21 @@ pipeline:
     analyzer: char_wb
     min_ngram: 2
     max_ngram: 4
+  - name: DIETClassifier
+    intent_ranking_length: 5
+    epochs: 100
+    constrain_similarities: true
+  - name: custom_components.bert_intent_classifier.BertIntentClassifier 
   - name: ResponseSelector
     epochs: 100
-    se_masked_language_model: true
-    intent_classification: true
-    entity_recognition: true
-    use_multi_intents: true
+    retrieval_intent: True
+    use_masked_language_model: False  
+    intent_classification: True
+    entity_recognition: True
+    use_multi_intents: True
   - name: FallbackClassifier
-    threshold: 0.3
-    ambiguity_threshold: 0.1
-  - name: custom_components.bert_intent_classifier.BertIntentClassifier 
-
+    threshold: 0.4
+    ambiguity_threshold: 0.2
 
 policies:
   - name: MemoizationPolicy
