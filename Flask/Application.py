@@ -1,5 +1,3 @@
-
-
 from flask import Flask, render_template, request, jsonify
 import tensorflow as tf
 import numpy as np
@@ -15,7 +13,7 @@ bird_classifier_model = tf.keras.models.load_model("check_try_model.h5")  # Seco
 class_names = ["Blue Tailed Bee Eater", "Red Vented Bul Bul", "White Throated Kingfisher", "Unknown"]
 
 def preprocess_image(image):
-    # Convert image to RGB if it's in a different format (e.g., PNG with transparency)
+    # Convert image to RGB if it's in a different format
     if image.mode != "RGB":
         image = image.convert("RGB")
     # Resize and normalize the image
@@ -36,12 +34,12 @@ def predict():
     file = request.files["file"]
     image = Image.open(file)
 
-    # Preprocess image (including PNG-to-JPG conversion if necessary)
+    # Preprocess image
     processed_image = preprocess_image(image)
 
     # Run the first model to check
     bird_prediction = bird_detector_model.predict(processed_image)
-    is_bird = np.argmax(bird_prediction, axis=1)[0]  # 0 = Bird (3birds), 1 = Not a Bird (randomclass2)
+    is_bird = np.argmax(bird_prediction, axis=1)[0]
 
     if is_bird == 1:
         return jsonify({"result": "Sorry, Cannot Identify this image"})
