@@ -65,13 +65,8 @@ stories:
 
 - story: bot agree with user soft
   steps:
-  - intent: agree_soft
-  - action: utter_agree_soft
-
-- story: bot agree with user strong
-  steps:
-  - intent: agree_strong
-  - action: utter_agree_strong
+  - intent: agree
+  - action: utter_agree
 
 - story: User Expresses great
   steps:
@@ -108,11 +103,6 @@ stories:
   - intent: help
   - action: utter_help
 
-- story: User Asks for Help
-  steps:
-  - intent: fun_fact
-  - action: utter_fun_fact
-
 - story: User Gives Positive Feedback
   steps:
   - intent: feedback_positive
@@ -123,20 +113,10 @@ stories:
   - intent: feedback_negative
   - action: utter_feedback_negative
 
-- story: User Provides Suggestions
-  steps:
-  - intent: feedback_suggestions
-  - action: utter_feedback_suggestions
-
 - story: User prefer something
   steps:
   - intent: user_preferences
   - action: utter_user_preferences
-
-- story: give user opinion
-  steps:
-  - intent: user_opinion
-  - action: utter_user_opinion
 
 - story: User Provides nonbird related quarry 
   steps:
@@ -180,8 +160,6 @@ stories:
   - action: action_range_prediction
   - intent: general_question
   - action: utter_general_question
-  - intent: feedback_suggestions
-  - action: utter_feedback_suggestions
 
 - story: Image Classification Multi-Turn Interaction
   steps:

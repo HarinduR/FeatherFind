@@ -2,7 +2,6 @@ version: "3.1"
 
 rules:
 
-# ✅ Basic Responses
 - rule: Greet User
   steps:
   - intent: greet_hi
@@ -63,15 +62,10 @@ rules:
   - intent: deny
   - action: utter_deny
 
-- rule: Bot Softly Agrees
+- rule: Bot Agrees
   steps:
-  - intent: agree_soft
-  - action: utter_agree_soft
-
-- rule: Bot Strongly Agrees
-  steps:
-  - intent: agree_strong
-  - action: utter_agree_strong
+  - intent: agree
+  - action: utter_agree
 
 - rule: User Feels Great
   steps:
@@ -108,11 +102,6 @@ rules:
   - intent: help
   - action: utter_help
 
-- rule: User Requests Fun Fact
-  steps:
-  - intent: fun_fact
-  - action: utter_fun_fact
-
 - rule: User Gives Positive Feedback
   steps:
   - intent: feedback_positive
@@ -123,20 +112,10 @@ rules:
   - intent: feedback_negative
   - action: utter_feedback_negative
 
-- rule: User Provides Suggestions
-  steps:
-  - intent: feedback_suggestions
-  - action: utter_feedback_suggestions
-
 - rule: User Sets Preferences
   steps:
   - intent: user_preferences
   - action: utter_user_preferences
-
-- rule: User Shares an Opinion
-  steps:
-  - intent: user_opinion
-  - action: utter_user_opinion
 
 - rule: User Asks Non-Bird Related Query
   steps:
@@ -153,7 +132,6 @@ rules:
   - intent: fallback
   - action: utter_fallback
 
-# ✅ Rules for Core Features
 - rule: Respond to Bird Information Request
   steps:
   - intent: bird_info_generate

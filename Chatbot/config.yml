@@ -43,7 +43,7 @@ pipeline:
     max_ngram: 4
   - name: DIETClassifier
     intent_ranking_length: 5
-    epochs: 100
+    epochs: 200
     constrain_similarities: true
   - name: custom_components.bert_intent_classifier.BertIntentClassifier 
   - name: ResponseSelector
@@ -54,8 +54,8 @@ pipeline:
     entity_recognition: True
     use_multi_intents: True
   - name: FallbackClassifier
-    threshold: 0.4
-    ambiguity_threshold: 0.2
+    threshold: 0.3
+    ambiguity_threshold: 0.1
 
 policies:
   - name: MemoizationPolicy
