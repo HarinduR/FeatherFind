@@ -1,7 +1,7 @@
 import os
 import torch
 import logging
-from typing import Any, Dict, List, Optional, Text, Type
+from typing import Any, Dict, List, Text
 
 from transformers import BertTokenizer, BertForSequenceClassification
 from rasa.engine.recipes.default_recipe import DefaultV1Recipe
@@ -15,11 +15,8 @@ from rasa.nlu.classifiers.classifier import IntentClassifier
 @DefaultV1Recipe.register(DefaultV1Recipe.ComponentType.INTENT_CLASSIFIER, is_trainable=False)
 class BertIntentClassifier(GraphComponent, IntentClassifier):
 
-
     name = "bert_intent_classifier"
     provides = ["intent"]
-    requires = []
-    defaults = {}
     language_list = ["en"]
 
     def __init__(
@@ -29,56 +26,50 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
         resource: Resource,
         execution_context: ExecutionContext,
     ) -> None:
-
         super().__init__()
 
         self._model_storage = model_storage
         self._resource = resource
-        self._execution_context = execution_context
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        model_path = os.path.join(base_dir, "../models/BERT_model4")
+        model_path = os.path.join(base_dir, "../models/BERT_model5")
 
-        logging.info("🔹 Loading BERT tokenizer & model for intent classification...")
-        self.tokenizer = BertTokenizer.from_pretrained(model_path)
-        self.model = BertForSequenceClassification.from_pretrained(model_path)
+        try:
+            logging.info("✅ Loading BERT tokenizer & model for intent classification...")
+            self.tokenizer = BertTokenizer.from_pretrained(model_path)
+            self.model = BertForSequenceClassification.from_pretrained(model_path)
+            logging.info("✅ BERT Intent Classifier loaded successfully.")
+        except Exception as e:
+            logging.error(f" Error loading BERT model: {e}")
+            raise RuntimeError("BERT model could not be loaded. Ensure the model files exist at the specified path.")
 
         self.intent_mapping = {
-            0: "affirm",
-            1: "agree",
-            2: "bird_info_generate",
-            3: "bot_challenge",
-            4: "bot_opinion",
-            5: "deny",
-            6: "fallback",
-            7: "feedback_negative",
-            8: "feedback_positive",
-            # 9: "feedback_suggestions",
-            # 10: "fun_fact",
-            9: "general_question",
-            10: "goodbye",
-            11: "greet_checking_in",
-            12: "greet_formal",
-            13: "greet_good_afternoon",
-            14: "greet_good_evening",
-            15: "greet_good_morning",
-            16: "greet_good_night",
-            17: "greet_hi",
-            18: "greet_welcome",
-            19: "help",
-            20: "image_classification",
-            21: "keyword_finder",
-            22: "mood_excited",
-            23: "mood_great",
-            24: "mood_unhappy",
-            25: "non_birds",
-            36: "range_prediction",
-            27: "repeat_request",
-            28: "thank_you",
-            29: "user_preferences"
+            0: "affirm", 
+            1: "agree", 
+            2: "bird_info_generate", 
+            3: "bot_challenge", 
+            4: "deny", 
+            5: "feedback_negative", 
+            6: "feedback_positive", 
+            7: "general_question", 
+            8: "goodbye",
+            9: "greet_checking_in", 
+            10: "greet_good_afternoon", 
+            11: "greet_good_evening", 
+            12: "greet_good_morning", 
+            13: "greet_good_night",
+            14: "greet_hi", 
+            15: "help", 
+            16: "image_classification", 
+            17: "keyword_finder",
+            18: "mood_excited", 
+            19: "mood_great", 
+            20: "mood_unhappy", 
+            21: "non_birds", 
+            22: "range_prediction",
+            23: "repeat_request", 
+            24: "thank_you", 
         }
-
-        logging.info("✅ BERT Intent Classifier loaded successfully.")
 
     @classmethod
     def create(
@@ -88,31 +79,48 @@ class BertIntentClassifier(GraphComponent, IntentClassifier):
         resource: Resource,
         execution_context: ExecutionContext,
     ) -> "BertIntentClassifier":
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(base_dir, "../models/BERT_model5")
+
+        if os.path.exists(model_path):
+            logging.info(f"✅ Reloading BERT model from {model_path}")
+            return cls(config, model_storage, resource, execution_context)
+
+        logging.warning(f"Model path {model_path} not found. Ensure the model exists.")
         return cls(config, model_storage, resource, execution_context)
 
-    def train(self, training_data: TrainingData) -> None:
-        pass
-
     def process(self, messages: List[Message]) -> List[Message]:
-        for message in messages:
-            text = message.get("text")
-            logging.info(f"🔹 Predicting intent for: {text}")
+        texts = [message.get("text") for message in messages]
+        logging.info(f"✅ Processing batch of {len(texts)} messages.")
 
-            inputs = self.tokenizer(text, return_tensors="pt", truncation=True, padding=True)
+        inputs = self.tokenizer(texts, return_tensors="pt", truncation=True, padding=True)
 
+        try:
             with torch.no_grad():
                 outputs = self.model(**inputs)
-
             logits = outputs.logits
-            predicted_class = torch.argmax(logits, dim=1).item()
-            intent_name = self.intent_mapping.get(predicted_class, "fallback")
-            confidence = float(torch.nn.functional.softmax(logits, dim=1)[0][predicted_class])
+        except Exception as e:
+            logging.error(f" Error during model inference: {e}")
+            return messages
 
-            logging.info(f"✅ Predicted intent: {intent_name} (Confidence: {confidence})")
+        for i, message in enumerate(messages):
+            predicted_class = torch.argmax(logits[i]).item()
+            confidence = float(torch.nn.functional.softmax(logits, dim=1)[i][predicted_class])
 
+            if confidence < 0.3:
+                intent_name = "fallback"
+                logging.warning(f"Low confidence ({confidence:.2f}). Using fallback intent.")
+            else:
+                intent_name = self.intent_mapping.get(predicted_class, "fallback")
+
+            logging.info(f"✅ Predicted intent: {intent_name} (Confidence: {confidence:.2f})")
             message.set("intent", {"name": intent_name, "confidence": confidence})
 
         return messages
 
     def persist(self, file_name: str, model_dir: str) -> None:
-        pass
+        save_path = os.path.join(model_dir, file_name)
+        self.model.save_pretrained(save_path)
+        self.tokenizer.save_pretrained(save_path)
+        logging.info(f"Model persisted to {save_path}.")
+

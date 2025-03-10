@@ -2,7 +2,6 @@ version: "3.1"
 
 stories:
 
-# ✅ User Greets Chatbot
 - story: User Greets Chatbot
   steps:
   - intent: greet_hi
@@ -27,16 +26,6 @@ stories:
   steps:
   - intent: greet_good_night
   - action: utter_greet_good_night
-
-- story: user Greet Formaly(how do you do)
-  steps:
-  - intent: greet_formal
-  - action: utter_greet_formal
-
-- story: user Greet welcome
-  steps:
-  - intent: greet_welcome
-  - action: utter_greet_welcome
 
 - story: User Checks In(how are you)
   steps:
@@ -88,11 +77,6 @@ stories:
   - intent: bot_challenge
   - action: utter_bot_challenge
 
-- story: User Challenges Bot
-  steps:
-  - intent: bot_opinion
-  - action: utter_bot_opinion
-
 - story: User ask general question
   steps:
   - intent: general_question
@@ -113,11 +97,6 @@ stories:
   - intent: feedback_negative
   - action: utter_feedback_negative
 
-- story: User prefer something
-  steps:
-  - intent: user_preferences
-  - action: utter_user_preferences
-
 - story: User Provides nonbird related quarry 
   steps:
   - intent: non_birds
@@ -128,95 +107,100 @@ stories:
   - intent: repeat_request
   - action: utter_repeat_request
 
-- story: User Provides unmatched intent
-  steps:
-  - intent: fallback
-  - action: utter_fallback
-
-# ✅ User Requests Bird Information
-
-- story: Bird Information Generation with Context
+# Multi-Bird Information Retrieval
+- story: User Requests Information on Multiple Birds
   steps:
   - intent: bird_info_generate
     entities:
+      - bird: "kingfisher"
       - bird: "eagle"
   - slot_was_set:
-      - bird: "eagle"
+      - bird: ["kingfisher", "eagle"]
   - action: action_get_bird_info
   - intent: general_question
   - action: utter_general_question
   - intent: feedback_positive
   - action: utter_feedback_positive
 
-- story: Advanced Bird Range Prediction
-  steps:
-  - intent: range_prediction
-    entities:
-      - bird: "sparrow"
-      - location: "Sri lanka"
-  - slot_was_set:
-      - bird: "sparrow"
-      - location: "Alaska"
-  - action: action_range_prediction
-  - intent: general_question
-  - action: utter_general_question
-
-- story: Image Classification Multi-Turn Interaction
-  steps:
-  - intent: image_classification
-  - action: action_image_classification
-  - intent: repeat_request
-  - action: utter_repeat_request
-  - intent: deny
-  - action: utter_deny  
-
-- story: Keyword Finder with Follow-up Questions
+- story: User Describes a Bird with Multiple Attributes
   steps:
   - intent: keyword_finder
     entities:
-      - keyword: "habitat"
+      - color: "red"
+      - color: "blue"
+      - body_part: "long beak"
   - slot_was_set:
-      - keyword: "habitat"
+      - color: ["red", "blue"]
+      - body_part: ["long beak"]
   - action: action_keyword_finder
   - intent: general_question
   - action: utter_general_question
   - intent: feedback_negative
   - action: utter_feedback_negative
 
-
-# ✅ Handling Complex Conversations with Mixed Intents
-- story: User Has Multiple Queries in One Conversation
+- story: User Requests Range Prediction for Multiple Birds
   steps:
-    - intent: greet
-    - action: utter_greet
-    - action: utter_help_suggestion
-    - intent: bird_info_generate
-    - action: action_get_bird_info
-    - intent: range_prediction
-    - action: action_range_prediction
-    - intent: image_classification
-    - action: action_image_classification
-    - intent: goodbye
-    - action: utter_goodbye
+  - intent: range_prediction
+    entities:
+      - bird: "blue-tailed bee-eater"
+      - bird: "sparrow"
+      - location: "Sri Lanka"
+      - date: "April 2025"
+      - time: "morning"
+  - slot_was_set:
+      - bird: ["blue-tailed bee-eater", "sparrow"]
+      - location: "Sri Lanka"
+      - date: "April 2025"
+      - time: "morning"
+  - action: action_range_prediction
+  - intent: general_question
+  - action: utter_general_question
 
-- story: User Requests Image Classification and Bird Information Together
+- story: User Requests Image Classification & Bird Info Together
   steps:
   - intent: image_classification
   - action: action_image_classification
   - intent: bird_info_generate
+    entities:
+      - bird: "kingfisher"
+  - slot_was_set:
+      - bird: "kingfisher"
   - action: action_get_bird_info
   - intent: general_question
   - action: utter_general_question
+  - intent: feedback_positive
+  - action: utter_feedback_positive
 
-- story: Multi-Intent Task Handling (Keyword Finder + Range Prediction)
+- story: User Describes a Bird and Asks for Classification
   steps:
   - intent: keyword_finder
     entities:
-      - keyword: "migration"
+      - color: "yellow"
+      - color: "black"
+      - body_part: "curved beak"
   - slot_was_set:
-      - keyword: "migration"
+      - color: ["yellow", "black"]
+      - body_part: ["curved beak"]
   - action: action_keyword_finder
+  - intent: image_classification
+  - action: action_image_classification
+  - intent: general_question
+  - action: utter_general_question
+
+- story: User Requests Migration Prediction with Time & Location
+  steps:
   - intent: range_prediction
+    entities:
+      - bird: "falcon"
+      - location: "India"
+      - date: "December"
+      - time: "evening"
+  - slot_was_set:
+      - bird: "falcon"
+      - location: "India"
+      - date: "December"
+      - time: "evening"
   - action: action_range_prediction
   - intent: general_question
   - action: utter_general_question
+

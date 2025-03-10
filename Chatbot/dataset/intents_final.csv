@@ -101,6 +101,44 @@ bird_info_generate,How do rollers perform aerial displays during mating?,
 bird_info_generate,Describe the silent flight of a tawny owl,
 bird_info_generate,What are the adaptations of storm petrels for ocean life?,
 bird_info_generate,Describe the aggressive food-stealing behavior of jaegers,
+bird_info_generate,How do [spoonbills](bird) use their beaks to find food?
+bird_info_generate,Tell me about the camouflage abilities of [bitterns](bird)
+bird_info_generate,What are the migration routes of [arctic terns](bird)?
+bird_info_generate,How do [choughs](bird) use tools to find food?
+bird_info_generate,What are the territorial behaviors of [shrikes](bird)?
+bird_info_generate,Describe the wing patterns of a [painted bunting](bird)
+bird_info_generate,How do [jabirus](bird) find prey in wetlands?
+bird_info_generate,What are the migratory behaviors of [snow geese](bird)?
+bird_info_generate,Tell me about the underwater hunting skills of [grebes](bird)
+bird_info_generate,How do [pratincoles](bird) balance between land and water habitats?
+bird_info_generate,Describe the aggressive territorial defense of [mockingbirds](bird)
+bird_info_generate,What makes the call of a [bellbird](bird) so loud?
+bird_info_generate,How do [harpy eagles](bird) catch large prey?
+bird_info_generate,Tell me about the elaborate nests of [sociable weavers](bird)
+bird_info_generate,What are the camouflage techniques of [snipe](bird)?
+bird_info_generate,Describe the synchronized flying patterns of [geese](bird)
+bird_info_generate,I want to know about the [kingfisher](bird)
+bird_info_generate,I have a description about this [bird](bird)
+bird_info_generate,I have a description about above [bird](bird)
+range_prediction,When is the best time to see a Bluetailed Beeeater in Bundala NP General  during a summer morning on�sunday�in�2025?
+range_prediction,What types of habitats do migratory birds prefer in [Sri Lanka](location)?
+range_prediction,Which birds migrate from [Sri Lanka](location) to South Asia?
+range_prediction,Where do the migratory stints in [Sri Lanka](location) originate from?
+range_prediction,Can I find a [Redvented Bulbul](bird) in [Tissamaharama](location) on Friday afternoon in January 2025?
+range_prediction,Will I be able to see a [Bluetailed Beeeater](bird) in [Bundala](location) on a Friday at 10:00 a.m. in April 2025?
+range_prediction,Where can I find a [Bluetailed Beeeater](bird) on a Friday morning in January 2025?
+range_prediction,When is the best time to see a [Bluetailed Beeeater](bird) in [Bundala National Park](location) during a summer morning on Sunday in 2025?
+range_prediction,Which months are best for spotting the [Indian Pitta](bird) in [Sri Lanka](location)?
+range_prediction,Can I see a [Barn Swallow](bird) in [Colombo](location) in February 2025?
+range_prediction,Where do [Blackcapped Kingfishers](bird) migrate to in December?
+range_prediction,When can I see [Greater Flamingos](bird) in [Bundala National Park](location)?
+range_prediction,Will I spot a [Eurasian Spoonbill](bird) in [Yala National Park](location) in August 2025?
+range_prediction,Which migratory birds arrive in [Sri Lanka](location) during the winter?
+range_prediction,Is it possible to see an [Amur Falcon](bird) in [Anuradhapura](location) in October?
+range_prediction,When is the peak migration season for [Bartailed Godwits](bird)?
+range_prediction,Will I see a [White Wagtail](bird) in [Kumana](location) in early January?
+range_prediction,Can I spot a [Common Sandpiper](bird) at [Wilpattu National Park](location) in September?
+range_prediction,What time of the year do [Arctic Terns](bird) migrate over [Sri Lanka](location)?
 range_prediction,Where can I see the flamingo in Sri Lanka?
 range_prediction,Which birds migrate through Sri Lanka during winter?
 range_prediction,How do birds find their way back to Sri Lanka?
@@ -206,6 +244,21 @@ range_prediction,How do conservation efforts in Sri Lanka support migratory bird
 range_prediction,What types of habitats do migratory birds prefer in Sri Lanka?
 range_prediction,Which birds migrate from Sri Lanka to South Asia?
 range_prediction,Where do the migratory stints in Sri Lanka originate from?
+image_classification,Identify this bird from my [photo](bird_image)
+image_classification,What bird is in this [picture](bird_image)?
+image_classification,Can you recognize this bird from the [image](bird_image)?
+image_classification,What species is this bird in my [photo](bird_image)?
+image_classification,Tell me the name of the bird in this [image](bird_image).
+image_classification,Which bird is shown in this [picture](bird_image)?
+image_classification,Find the bird species from my uploaded [image](bird_image).
+image_classification,Detect the bird in this [photo](bird_image).
+image_classification,What type of bird is in this [picture](bird_image)?
+image_classification,Can you analyze this bird [image](bird_image)?
+image_classification,Show me details about this bird from my [image](bird_image).
+image_classification,Identify the bird from this [snapshot](bird_image).
+image_classification,What bird do you see in this [photo](bird_image)?
+image_classification,Help me recognize this bird.
+image_classification,Can you classify this bird?
 image_classification,Identify this bird from my photo,
 image_classification,What bird is in this picture?,
 image_classification,Can you recognize this bird from the image?,
@@ -302,6 +355,20 @@ image_classification,Can you confirm if this bird is part of the pheasant family
 image_classification,Does this bird have a distinctive song?
 image_classification,What bird species is known for this feather pattern?
 image_classification,Identify this bird using image classification technology.
+keyword_finder,I saw a bird with [black feathers and a red beak with a blue patch on its wings](bird_description).
+keyword_finder,A bird with [a small head blue and yellow body and a tall wing with blue feathers](bird_description).
+keyword_finder,What bird has [a bright yellow belly black wings and a curved beak](bird_description)?
+keyword_finder,I saw a bird with [a long tail white head and sharp claws](bird_description).
+keyword_finder,Which bird has [red eyes a small yellow beak and white spots on its wings](bird_description)?
+keyword_finder,Can you find a bird with [brown and orange feathers and a long beak](bird_description)?
+keyword_finder,A bird with [green wings a red chest and a small black head](bird_description)�what could it be?
+keyword_finder,What bird has [blue eyes an orange body and white patches on its tail](bird_description)?
+keyword_finder,I spotted a bird with [a purple crest red beak and long legs](bird_description)�can you identify it?
+keyword_finder,Which bird has [a golden body long neck and webbed feet](bird_description)?
+keyword_finder,I saw a bird with [a white throat brown body and a tail shaped like a fan](bird_description).
+keyword_finder,Can you find a bird with [a spotted blackandwhite pattern on its back](bird_description)?
+keyword_finder,What is the name of a bird that has [a long curved beak and green plumage](bird_description)?
+keyword_finder,I noticed a bird with [a thick yellow beak red feet and brown feathers](bird_description).
 keyword_finder,Which bird has a bright red forehead and a black body?
 keyword_finder,Find a bird with a white chest and long slender wings.
 keyword_finder,What bird has a striped tail and a curved beak?
@@ -450,8 +517,8 @@ greet,hey team,
 greet,hi folks,
 greet,hi everyone,
 greet,hey chatbot,
-greet,"chatbot, hello", 
-greet,"greetings, bot", 
+greet,"chatbot hello" 
+greet,"greetings bot" 
 greet,hey AI,
 greet,how’s life?,
 greet,how’s your day?,
@@ -552,7 +619,7 @@ goodbye,have a nice evening,
 goodbye,keep in touch,
 goodbye,see you in a bit,
 goodbye,all the best,
-goodbye,"farewell, friend", 
+goodbye,"farewell friend" 
 goodbye,I'm off,
 goodbye,I'm leaving,
 goodbye,time to go,
@@ -631,7 +698,7 @@ affirm,that's true,
 affirm,agreed,
 affirm,sounds great,
 affirm,sounds perfect,
-affirm,"yes, 100% sure",
+affirm,"yes 100% sure",
 affirm,okay,
 affirm,ok,
 affirm,right,
@@ -651,9 +718,9 @@ affirm,naturally,
 affirm,you got it,
 affirm,precisely,
 affirm,couldn't agree more,
-affirm,"sure,  why not",
+affirm,"sure  why not",
 affirm,go ahead,
-affirm,"yes, please", 
+affirm,"yes please" 
 affirm,undoubtedly,
 affirm,I second that,
 affirm,quite so,
@@ -735,25 +802,25 @@ deny,doesn't sound good,
 deny,I wouldn't say so,
 deny,out of the question,
 deny,forget it,
-deny,"no, never", 
+deny,"no never" 
 deny,not this time,
 deny,I refuse,
 deny,I decline,
 deny,no sir,
 deny,no ma'am,
 deny,that's incorrect,
-deny,"no,  thank you",
+deny,"no  thank you",
 deny,unlikely,
-deny,"nope,  not happening",
+deny,"nope  not happening",
 deny,I'd prefer not to,
 deny,absolutely not,
 deny,I can't,
 deny,not a fan,
-deny,"no,  I don't",
+deny,"no  I don't",
 deny,I reject that,
 deny,I'm not sure about that,
 deny,I wouldn't bet on it,
-deny,"no,  not really",
+deny,"no  not really",
 deny,not my thing,
 deny,I won't,
 deny,I don't approve,
@@ -803,7 +870,7 @@ mood_great,I'm in the best mood,
 mood_great,everything is going my way,
 mood_great,I'm feeling so blessed,
 mood_great,it's a beautiful day,
-mood_great,"can't complain,  feeling great",
+mood_great,"can't complain  feeling great",
 mood_great,I'm in high spirits,
 mood_great,super excited about today,
 mood_great,best day ever,
@@ -1111,3 +1178,591 @@ thank_you,I appreciate you!
 thank_you,A heartfelt thank you!
 thank_you,I truly appreciate your effort!
 thank_you,Thanks for being so helpful!
+greet_good_morning,Good morning!
+greet_good_morning,Morning!
+greet_good_morning,Rise and shine!
+greet_good_morning,Top of the morning!
+greet_good_morning,Hope you have a great morning!
+greet_good_morning,Morning bot!
+greet_good_morning,Woke up now talking to you!
+greet_good_morning,A fresh morning to you!
+greet_good_morning,Hello good morning!
+greet_good_morning,Morning how's the day going?
+greet_good_morning,Good morning chatbot!
+greet_good_morning,Rise and shine AI!
+greet_good_morning,Good morning assistant!
+greet_good_morning,How's your morning?
+greet_good_morning,Good morning what can you do?
+greet_good_morning,Morning tell me something interesting!
+greet_good_morning,What's the news this morning?
+greet_good_morning,Morning vibes! Let's chat!
+greet_good_morning,Good morning I need help.
+greet_good_morning,What's up this morning?
+greet_good_morning,Hey how's your morning so far?
+greet_good_morning,Hope you're having a good morning.
+greet_good_morning,Good morning tell me a bird fact!
+greet_good_morning,Morning AI any updates?
+greet_good_morning,Let's start the day with some bird facts!
+greet_good_morning,Wishing you a bright morning!
+greet_good_morning,Morning ready to learn something new?
+greet_good_morning,AI what's trending this morning?
+greet_good_morning,Let's make this morning productive!
+greet_good_morning,Another day another chat with AI!
+greet_good_morning,Good morning got any recommendations?
+greet_good_morning,Tell me something exciting this morning!
+greet_good_morning,A wonderful morning to you!
+greet_good_morning,Morning AI share a fun fact!
+greet_good_morning,Any bird migration updates this morning?
+greet_good_morning,Good morning time to chat!
+greet_good_morning,AI let's kick off the morning with knowledge!
+greet_good_morning,Give me some morning motivation!
+greet_good_morning,What’s new in the world of birds this morning?
+greet_good_morning,A perfect morning for learning!
+greet_good_morning,How’s your system running this morning?
+greet_good_morning,Morning AI tell me a random fact!
+greet_good_morning,What’s on the agenda today chatbot?
+greet_good_morning,Tell me something about birds this morning!
+greet_good_morning,Let’s start the day with knowledge!
+greet_good_morning,AI tell me a joke to start the morning!
+greet_good_morning,A good morning for a great chat!
+greet_good_morning,Start my day with something cool!
+greet_good_morning,Morning AI do you have a fun fact for me?
+greet_good_morning,Good morning assistant! Let's get to work.
+greet_good_morning,Good morning! Inspire me today.
+greet_good_morning,What do you have for me this morning AI?
+greet_good_morning,Morning chatbot let’s talk!
+greet_good_morning,How’s the bot doing this morning?
+greet_good_morning,Give me a weather update this morning!
+greet_good_morning,AI what should I learn today?
+greet_good_morning,Tell me a bird story this morning!
+greet_good_morning,Morning chatbot any new updates?
+greet_good_morning,What’s the best thing about today’s morning?
+greet_good_morning,AI surprise me with something new!
+greet_good_morning,I’m ready for some morning knowledge!
+greet_good_morning,Let’s chat about birds this morning!
+greet_good_morning,How’s the AI world this morning?
+greet_good_morning,AI do birds wake up early?
+greet_good_morning,What’s a good morning routine for a bird watcher?
+greet_good_morning,Can you give me an interesting morning quiz?
+greet_good_afternoon,Good afternoon!
+greet_good_afternoon,Afternoon!
+greet_good_afternoon,Hey good afternoon!
+greet_good_afternoon,Hope you're having a good afternoon!
+greet_good_afternoon,Hello how's your afternoon?
+greet_good_afternoon,What's up this afternoon?
+greet_good_afternoon,Good afternoon chatbot!
+greet_good_afternoon,AI how's the afternoon treating you?
+greet_good_afternoon,Sunny afternoon today!
+greet_good_afternoon,Hello good afternoon!
+greet_good_afternoon,Hey bot what's happening?
+greet_good_afternoon,Afternoon vibes! Let's talk!
+greet_good_afternoon,Good afternoon got any bird facts?
+greet_good_afternoon,Chatbot how's your afternoon?
+greet_good_afternoon,Hey AI good afternoon!
+greet_good_afternoon,Tell me something cool this afternoon!
+greet_good_afternoon,What can we do this afternoon?
+greet_good_afternoon,Afternoon bot let's chat!
+greet_good_afternoon,Good afternoon any updates?
+greet_good_afternoon,Hey how's your day so far?
+greet_good_afternoon,AI let's talk about birds this afternoon!
+greet_good_afternoon,Having a good afternoon?
+greet_good_afternoon,AI tell me a fun fact this afternoon.
+greet_good_afternoon,Good afternoon let's learn something!
+greet_good_afternoon,AI suggest something for this afternoon.
+greet_good_afternoon,What’s happening in the bird world this afternoon?
+greet_good_afternoon,Afternoon chatbot tell me some news!
+greet_good_afternoon,How’s the weather this afternoon?
+greet_good_afternoon,AI tell me a bird fact for the afternoon!
+greet_good_afternoon,Any migration updates for this afternoon?
+greet_good_afternoon,Chatbot let’s chat about nature!
+greet_good_afternoon,Any fun bird stories this afternoon?
+greet_good_afternoon,Let’s learn something before the day ends!
+greet_good_afternoon,AI how do birds rest in the afternoon?
+greet_good_afternoon,Suggest a bird-related activity for this afternoon!
+greet_good_afternoon,What’s a fun fact about birds in the afternoon?
+greet_good_afternoon,Tell me an interesting bird call this afternoon!
+greet_good_afternoon,Afternoon learning session chatbot?
+greet_good_afternoon,Hey AI do birds take naps in the afternoon?
+greet_good_afternoon,What’s the best way to observe birds in the afternoon?
+greet_good_afternoon,Let’s talk about nature this afternoon!
+greet_good_afternoon,AI any cool trivia for me?
+greet_good_afternoon,What’s a unique bird behavior in the afternoon?
+greet_good_afternoon,Afternoon chatbot let’s have some fun facts!
+greet_good_afternoon,Tell me something mind-blowing this afternoon!
+greet_good_afternoon,How do birds communicate in the afternoon?
+greet_good_afternoon,Chatbot let’s explore new bird species this afternoon!
+greet_good_afternoon,Any famous bird migration routes this afternoon?
+greet_good_afternoon,AI let’s do a bird quiz this afternoon!
+greet_good_afternoon,What’s a fun bird-related challenge for the afternoon?
+greet_good_afternoon,What can we do this afternoon?
+greet_good_afternoon,"Afternoon bot let's chat!"
+greet_good_afternoon,"Good afternoon any updates?"
+greet_good_afternoon,"Hey how's your day so far?"
+general_question,How do you work?
+general_question,What can you do?
+general_question,What kind of assistant are you?
+general_question,How do you process questions?
+general_question,Can you learn new things?
+general_question,How do you understand language?
+general_question,How do you generate answers?
+general_question,Do you follow rules or think independently?
+general_question,Are you connected to the internet?
+general_question,Do you store conversations?
+general_question,Can you predict the future?
+general_question,Can you give opinions?
+general_question,Do you have access to live data?
+general_question,How do you recognize words?
+general_question,Can you help with everything?
+general_question,What is your purpose?
+general_question,What technology do you use?
+general_question,Do you remember past conversations?
+general_question,Can you understand different languages?
+general_question,Can you show emotions in responses?
+general_question,Do you make mistakes?
+general_question,How do you learn from interactions?
+general_question,Can you update yourself?
+general_question,Can you be creative?
+general_question,What are your limitations?
+general_question,How do you process natural language?
+general_question,Can you understand complex questions?
+general_question,What happens if you don’t know the answer?
+general_question,Do you improve over time?
+general_question,How do you make predictions?
+general_question,Can you understand slang?
+general_question,How accurate are your responses?
+general_question,What sources do you use for answers?
+general_question,Do you track user behavior?
+general_question,Can you detect emotions in text?
+general_question,What happens if I ask something inappropriate?
+general_question,Can you solve riddles?
+general_question,Do you get tired or slow down?
+general_question,How fast can you generate responses?
+general_question,Are your answers always correct?
+general_question,Can you correct yourself?
+general_question,Do you store personal information?
+general_question,Can you provide step-by-step instructions?
+general_question,Can you handle multiple topics at once?
+general_question,How do you handle ambiguous questions?
+general_question,Can you summarize long texts?
+general_question,What happens if two users ask the same question?
+general_question,How do you know what is relevant?
+general_question,Can you understand humor?
+general_question,How do you handle sarcasm?
+general_question,Can you generate stories?
+general_question,Do you know about recent events?
+general_question,Can you explain complex concepts simply?
+general_question,How do you handle conflicting information?
+general_question,Do you prefer short or long responses?
+general_question,Can you generate code?
+general_question,Can you help with research?
+general_question,How do you ensure factual accuracy?
+general_question,What happens if I ask a nonsense question?
+general_question,Do you have memory?
+general_question,Can you provide examples for explanations?
+general_question,How do you determine confidence in answers?
+general_question,Can you compare two things?
+general_question,Can you generate quizzes or tests?
+general_question,What’s your best feature?
+general_question,How do you learn from feedback?
+general_question,Can you improve my writing?
+general_question,How do you decide what to show first?
+general_question,Can you analyze data?
+general_question,Can you generate unique ideas?
+general_question,How do you understand synonyms?
+general_question,Can you detect typos?
+general_question,Can you suggest improvements in writing?
+general_question,What’s your biggest weakness?
+general_question,Can you roleplay different characters?
+general_question,Can you write poetry?
+general_question,Do you know all languages?
+general_question,How do you handle incomplete questions?
+general_question,What makes you different from other AI?
+general_question,How do you verify sources?
+general_question,Can you generate text in different styles?
+general_question,Can you tell jokes?
+general_question,How do you prioritize user questions?
+general_question,What happens if multiple users ask at once?
+general_question,Can you simulate conversations?
+general_question,Can you help me brainstorm ideas?
+general_question,What’s the most interesting fact you know?
+general_question,Can you generate alternative solutions?
+general_question,Do you have a personality?
+general_question,Can you write essays?
+general_question,How do you measure accuracy?
+general_question,Can you recognize different writing styles?
+general_question,Can you improve existing text?
+general_question,Can you detect biases in text?
+general_question,Do you learn from past mistakes?
+general_question,Can you understand incomplete thoughts?
+general_question,Can you generate summaries of articles?
+general_question,How do you recognize important details?
+general_question,Can you assist in creative writing?
+general_question,How do you rank relevant information?
+feedback_positive,You're doing great!
+feedback_positive,I love this chatbot!
+feedback_positive,This is so helpful thank you!
+feedback_positive,You're amazing!
+feedback_positive,This chatbot is so smart!
+feedback_positive,You answered my question perfectly.
+feedback_positive,Wow you know a lot!
+feedback_positive,I enjoy talking to you!
+feedback_positive,You're really helpful!
+feedback_positive,I appreciate your help!
+feedback_positive,This is exactly what I needed!
+feedback_positive,Great response!
+feedback_positive,I'm impressed with your knowledge.
+feedback_positive,This bot is so cool!
+feedback_positive,I wish all chatbots were like this!
+feedback_positive,Thank you for the information!
+feedback_positive,You just made my day!
+feedback_positive,I love learning from you!
+feedback_positive,Best chatbot I've used!
+feedback_positive,This is better than I expected!
+feedback_positive,You explain things really well!
+feedback_positive,I'd rate you 5 stars!
+feedback_positive,Keep up the great work!
+feedback_positive,I'm having fun chatting with you!
+feedback_positive,You are really smart!
+feedback_positive,That was a perfect answer!
+feedback_positive,You always provide useful information.
+feedback_positive,I trust your answers!
+feedback_positive,You're my favorite chatbot!
+feedback_positive,Very impressive AI!
+feedback_positive,You make learning fun.
+feedback_positive,You're so responsive!
+feedback_positive,You're really good at understanding me.
+feedback_positive,That was a well-explained answer!
+feedback_positive,You gave me exactly what I needed.
+feedback_positive,Wow that was fast!
+feedback_positive,Best response I've gotten today!
+feedback_positive,This bot is awesome!
+feedback_positive,Thanks for making things easier.
+feedback_positive,You're improving every time I chat!
+feedback_positive,This was a very insightful answer.
+feedback_positive,I appreciate your patience.
+feedback_positive,You’re getting better all the time!
+feedback_positive,You helped me solve my problem.
+feedback_positive,I love how you explain things.
+feedback_positive,That was very informative!
+feedback_positive,You just made my work easier.
+feedback_positive,I enjoy chatting with you!
+feedback_positive,You're more helpful than other bots.
+feedback_positive,That was exactly what I was looking for.
+feedback_positive,You are very knowledgeable.
+feedback_positive,You make chatting so much fun.
+feedback_positive,Your knowledge is impressive.
+feedback_positive,That was an excellent response.
+feedback_positive,Your answer was spot on!
+feedback_positive,Thanks for always helping me!
+feedback_positive,You’re always reliable.
+feedback_positive,That was a great explanation.
+feedback_positive,I appreciate the detailed response!
+feedback_positive,That was a very accurate answer!
+feedback_positive,You always give me the best answers.
+feedback_positive,You gave me a great idea!
+feedback_positive,This is why I love AI!
+feedback_positive,You just saved me a lot of time.
+feedback_positive,That was a brilliant suggestion.
+feedback_positive,You make problem-solving easier.
+feedback_positive,You sound so intelligent!
+feedback_positive,You're better than I expected.
+feedback_positive,Every answer you give is helpful.
+feedback_positive,This is exactly what I needed to hear.
+feedback_positive,Thank you that was very useful!
+feedback_positive,You make technology feel more human.
+feedback_positive,You’re the best AI assistant!
+feedback_positive,That was an interesting fact!
+feedback_positive,You always help me understand things.
+feedback_positive,I enjoy learning from you.
+feedback_positive,Your answers are always insightful.
+feedback_positive,I'm impressed by how much you know.
+feedback_positive,Your responses feel natural.
+feedback_positive,This bot is so advanced!
+feedback_positive,That was an unexpected but helpful answer!
+feedback_positive,You're a great assistant!
+feedback_positive,That was a great recommendation!
+feedback_positive,You gave me a new perspective.
+feedback_positive,You provide very clear explanations.
+feedback_positive,That answer was so well thought out.
+feedback_positive,I appreciate how quickly you respond!
+feedback_positive,This is the smartest chatbot I've used.
+feedback_positive,That was a super helpful suggestion!
+feedback_positive,You always give relevant information.
+feedback_positive,You're really fun to talk to.
+feedback_positive,I like how you think!
+feedback_positive,Your advice is always great!
+feedback_positive,Thanks for answering my question so well!
+feedback_positive,You always provide interesting insights.
+feedback_positive,This chatbot is a game changer!
+feedback_positive,I feel like I'm learning so much from you.
+feedback_positive,Your intelligence amazes me!
+feedback_positive,AI like you makes life easier.
+feedback_positive,I really appreciate the help!
+feedback_negative,That's not what I was asking.
+feedback_negative,Your answer doesn't make sense.
+feedback_negative,I don't think that's correct.
+feedback_negative,That didn't help me.
+feedback_negative,You misunderstood my question.
+feedback_negative,Can you try again?
+feedback_negative,This chatbot isn't very useful.
+feedback_negative,That wasn't the answer I wanted.
+feedback_negative,You're wrong about that.
+feedback_negative,I was expecting a different answer.
+feedback_negative,That was confusing.
+feedback_negative,You need to improve.
+feedback_negative,Can you give me a better answer?
+feedback_negative,I don't understand what you mean.
+feedback_negative,That response was too vague.
+feedback_negative,You need more details in your answers.
+feedback_negative,This isn't helpful.
+feedback_negative,I don't like this chatbot.
+feedback_negative,Your information is outdated.
+feedback_negative,That was a useless response.
+feedback_negative,Try again but give me a better answer.
+feedback_negative,This bot doesn't work well.
+feedback_negative,You keep repeating the same thing.
+feedback_negative,That's incorrect information.
+feedback_negative,I want to report a mistake.
+feedback_negative,Your answer is incomplete.
+feedback_negative,That doesn't answer my question at all.
+feedback_negative,You're not making sense.
+feedback_negative,Can you give a more detailed response?
+feedback_negative,Your response was irrelevant.
+feedback_negative,You're missing key details.
+feedback_negative,That's a bad explanation.
+feedback_negative,I don't trust your response.
+feedback_negative,Your answer is too short.
+feedback_negative,That was a generic response.
+feedback_negative,You need to be more precise.
+feedback_negative,I'm not satisfied with that answer.
+feedback_negative,That was disappointing.
+feedback_negative,That was a robotic answer.
+feedback_negative,I expected a better explanation.
+feedback_negative,You need to improve your accuracy.
+feedback_negative,This is frustrating.
+feedback_negative,That was misleading.
+feedback_negative,You're giving me the wrong information.
+feedback_negative,I was looking for something else.
+feedback_negative,Your response was off-topic.
+feedback_negative,That was a lazy answer.
+feedback_negative,Your responses lack depth.
+feedback_negative,This is why people don't trust AI.
+feedback_negative,You need to work on your responses.
+feedback_negative,That was a poor response.
+feedback_negative,Your answer contradicts what I read.
+feedback_negative,That was too generic.
+feedback_negative,You're repeating yourself too much.
+feedback_negative,That was not the best explanation.
+feedback_negative,You should provide more sources.
+feedback_negative,You're not being specific enough.
+feedback_negative,That explanation was unclear.
+feedback_negative,I still don’t understand.
+feedback_negative,Can you be more detailed?
+feedback_negative,Your logic doesn't add up.
+feedback_negative,You completely missed the point.
+feedback_negative,Your response was too basic.
+feedback_negative,That's not a helpful response.
+feedback_negative,Your answer feels automated.
+feedback_negative,That’s not what I asked for.
+feedback_negative,You didn’t give me any new information.
+feedback_negative,Try again that wasn’t helpful.
+feedback_negative,That response was useless.
+feedback_negative,This bot needs improvement.
+feedback_negative,That didn’t answer my question at all.
+feedback_negative,Your explanation was way off.
+feedback_negative,That was a terrible suggestion.
+feedback_negative,Can you stop repeating yourself?
+non_birds,What do rabbits eat?
+non_birds,How do dogs communicate with humans?
+non_birds,What is the lifespan of a cat?
+non_birds,How does photosynthesis work in plants?
+non_birds,Tell me about the history of the Roman Empire.
+non_birds,Who is the president of the United States?
+non_birds,What are the benefits of meditation?
+non_birds,How do electric cars work?
+non_birds,What are the side effects of too much caffeine?
+non_birds,What is the largest planet in the solar system?
+non_birds,How does artificial intelligence work?
+non_birds,What is cryptocurrency and how does it work?
+non_birds,How do whales communicate underwater?
+non_birds,What is quantum physics in simple terms?
+non_birds,Can you explain the theory of relativity?
+non_birds,How do I start investing in stocks?
+non_birds,What are some healthy meal options?
+non_birds,How do I train my dog to sit?
+non_birds,What is climate change and how does it affect the planet?
+non_birds,How does the human brain process emotions?
+non_birds,What are the symptoms of common cold?
+non_birds,How does WiFi work?
+non_birds,What is the history behind Halloween?
+non_birds,How do bees make honey?
+non_birds,What are the major world religions?
+non_birds,How does a rocket launch into space?
+non_birds,What are the different types of clouds?
+non_birds,Who wrote the book "1984"?
+non_birds,What is the capital city of Japan?
+non_birds,How do plants absorb nutrients?
+non_birds,How does the stock market work?
+non_birds,What is the best way to learn a new language?
+non_birds,How does a refrigerator keep food cold?
+non_birds,What are the benefits of drinking green tea?
+non_birds,What is the fastest land animal?
+non_birds,How do volcanoes erupt?
+non_birds,How does a compass work?
+non_birds,What are some common programming languages?
+non_birds,How do airplanes stay in the air?
+non_birds,What is a black hole?
+non_birds,How does a 3D printer work?
+non_birds,What are the symptoms of depression?
+non_birds,What is the difference between a crocodile and an alligator?
+non_birds,How do people celebrate Christmas in different countries?
+non_birds,What are the different types of musical instruments?
+non_birds,How does a car engine work?
+non_birds,How do jellyfish sting their prey?
+non_birds,What is renewable energy?
+non_birds,How do humans perceive colors?
+non_birds,What are the major world oceans?
+non_birds,How do magnets work?
+non_birds,What are some historical wonders of the world?
+non_birds,How does a microwave heat food?
+non_birds,What is the process of making chocolate?
+non_birds,What is the role of DNA in genetics?
+non_birds,How do fish breathe underwater?
+non_birds,What are the basic human rights?
+non_birds,How does the immune system fight viruses?
+non_birds,What is the significance of the moon landing?
+non_birds,How do submarines operate underwater?
+non_birds,What is the history of space exploration?
+non_birds,How do earthquakes happen?
+non_birds,What are some major scientific discoveries?
+non_birds,How does a GPS system work?
+non_birds,What are the best ways to reduce stress?
+non_birds,How do vaccines work?
+non_birds,What is the history of the Olympic Games?
+non_birds,How do ants communicate?
+non_birds,What is the purpose of the United Nations?
+non_birds,How does a piano produce sound?
+non_birds,How do people train for marathons?
+non_birds,What are the fundamental laws of physics?
+non_birds,What is the role of mitochondria in cells?
+non_birds,How does Bluetooth technology function?
+non_birds,What is the difference between asteroids and comets?
+non_birds,How do stars form in space?
+non_birds,What is the origin of the internet?
+non_birds,How do plants survive in the desert?
+non_birds,What are the different types of energy sources?
+non_birds,How do scientists measure time in space?
+non_birds,What are the effects of global warming?
+non_birds,How does the digestive system process food?
+non_birds,What is the purpose of the human appendix?
+non_birds,How do caterpillars transform into butterflies?
+non_birds,What are some famous archaeological discoveries?
+non_birds,How do electric circuits work?
+non_birds,What are the different types of bridges?
+non_birds,How does the water cycle work?
+non_birds,What is the history of the Great Wall of China?
+non_birds,How does the nervous system function?
+non_birds,What are some common cooking techniques?
+non_birds,How do plants produce oxygen?
+non_birds,What are the effects of space travel on the human body?
+non_birds,How does a telescope magnify objects?
+non_birds,What are the different types of musical genres?
+non_birds,How do scientists classify animals?
+non_birds,What are some major philosophical theories?
+non_birds,How does an electric guitar work?
+non_birds,What is the science behind baking bread?
+non_birds,How do forensic scientists solve crimes?
+non_birds,What is the role of the Supreme Court?
+greet_good_night,Good night!
+greet_good_night,Night!
+greet_good_night,Sleep well!
+greet_good_night,See you tomorrow!
+greet_good_night,AI good night!
+greet_good_night,Good night chatbot!
+greet_good_night,AI I'm off to bed.
+greet_good_night,AI say something before I sleep.
+greet_good_night,Tell me a bedtime bird story!
+greet_good_night,AI wish me goodnight!
+greet_good_night,I'm going to sleep AI!
+greet_good_night,What's a relaxing bird sound?
+greet_good_night,AI any nighttime bird songs?
+greet_good_night,Good night see you tomorrow!
+greet_good_night,AI can I hear a calming bird fact?
+greet_good_night,Sleepy time AI!
+greet_good_night,AI any facts about night birds?
+greet_good_night,Good night AI. You're awesome!
+greet_good_night,I need a relaxing bird sound to sleep.
+greet_good_night,AI tell me about owls before bed.
+greet_good_night,AI I'll chat with you tomorrow!
+greet_good_night,Can you play a night bird sound?
+greet_good_night,AI tell me about a night bird!
+greet_good_night,AI wish me goodnight!
+greet_good_night,AI talk to you in the morning!
+greet_good_night,Have a peaceful night AI.
+greet_good_night,What birds are active at night?
+greet_good_night,AI tell me a story about owls.
+greet_good_night,AI do birds sleep at night?
+greet_good_night,Good night and thanks for the chat!
+greet_good_night,Tell me a fun bird fact before I sleep.
+greet_good_night,What bird sounds are soothing?
+greet_good_night,AI any night sky facts?
+greet_good_night,Let’s wrap up the day AI!
+greet_good_night,AI say something relaxing.
+greet_good_night,Can you play an owl hoot sound?
+greet_good_night,AI do birds dream?
+greet_good_night,What’s the best nighttime bird?
+greet_good_night,AI tell me something interesting before bed.
+greet_formal,Good day to you.
+greet_formal,Greetings!
+greet_formal,It is a pleasure to meet you.
+greet_formal,How do you do?
+greet_formal,Wishing you a wonderful day.
+greet_formal,Good day assistant.
+greet_formal,How may I assist you today?
+greet_formal,Greetings chatbot.
+greet_formal,I hope you are having a pleasant day.
+greet_formal,Good day! How can I be of service?
+greet_formal,Nice to meet you.
+greet_formal,Hello good to see you.
+greet_formal,Hope you're doing well today.
+greet_formal,I wish you a great day.
+greet_formal,It is good to be here.
+greet_formal,A warm greeting to you.
+greet_formal,I extend my greetings to you.
+greet_formal,Hello chatbot how do you do?
+greet_formal,Wishing you a productive day.
+greet_formal,May your day be excellent.
+greet_formal,I look forward to our conversation.
+greet_formal,I am happy to interact with you.
+greet_formal,Greetings and best wishes.
+greet_formal,I appreciate this opportunity to chat.
+greet_formal,It is a pleasure engaging with you.
+greet_formal,Hope you're having a fantastic day.
+greet_formal,What a wonderful day to converse!
+greet_formal,Always a pleasure to talk with you.
+greet_formal,I extend my warm regards to you.
+greet_welcome,Welcome!
+greet_welcome,Glad to have you here!
+greet_welcome,It's great to see you.
+greet_welcome,Welcome back!
+greet_welcome,Happy to see you again.
+greet_welcome,Welcome aboard!
+greet_welcome,Hope you enjoy your time here.
+greet_welcome,A warm welcome to you!
+greet_welcome,Welcome to FeatherFind!
+greet_welcome,Thanks for joining us today!
+greet_welcome,Happy to assist you!
+greet_welcome,Welcome to our chatbot service!
+greet_welcome,How can I help you today?
+greet_welcome,Enjoy your stay!
+greet_welcome,Welcome! What can I do for you?
+greet_welcome,Great to have you here.
+greet_welcome,I'm here to help—welcome!
+greet_welcome,Welcome feel free to ask anything!
+greet_welcome,We're happy to have you here!
+greet_welcome,Welcome! Looking forward to our chat.
+greet_welcome,I hope you have a great experience!
+greet_welcome,Welcome let's explore bird knowledge together!
+greet_welcome,Welcome! Let's talk about birds.
+greet_welcome,Thank you for stopping by!
+greet_welcome,Welcome enjoy learning about birds!

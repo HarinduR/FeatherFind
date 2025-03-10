@@ -27,16 +27,6 @@ rules:
   - intent: greet_good_night
   - action: utter_greet_good_night
 
-- rule: Formal Greeting
-  steps:
-  - intent: greet_formal
-  - action: utter_greet_formal
-
-- rule: Welcome Greeting
-  steps:
-  - intent: greet_welcome
-  - action: utter_greet_welcome
-
 - rule: User Checking In
   steps:
   - intent: greet_checking_in
@@ -87,11 +77,6 @@ rules:
   - intent: bot_challenge
   - action: utter_bot_challenge
 
-- rule: User Asks Bot's Opinion
-  steps:
-  - intent: bot_opinion
-  - action: utter_bot_opinion
-
 - rule: User Asks General Question
   steps:
   - intent: general_question
@@ -112,11 +97,6 @@ rules:
   - intent: feedback_negative
   - action: utter_feedback_negative
 
-- rule: User Sets Preferences
-  steps:
-  - intent: user_preferences
-  - action: utter_user_preferences
-
 - rule: User Asks Non-Bird Related Query
   steps:
   - intent: non_birds
@@ -126,11 +106,6 @@ rules:
   steps:
   - intent: repeat_request
   - action: utter_repeat_request
-
-- rule: Handle Unmatched Intent
-  steps:
-  - intent: fallback
-  - action: utter_fallback
 
 - rule: Respond to Bird Information Request
   steps:

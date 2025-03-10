@@ -5,21 +5,17 @@ intents:
   - agree
   - bird_info_generate
   - bot_challenge
-  - bot_opinion
   - deny
-  - fallback
   - feedback_negative
   - feedback_positive
   - general_question
   - goodbye
   - greet_checking_in
-  - greet_formal
   - greet_good_afternoon
   - greet_good_evening
   - greet_good_morning
   - greet_good_night
   - greet_hi
-  - greet_welcome
   - help
   - image_classification
   - keyword_finder
@@ -30,7 +26,6 @@ intents:
   - range_prediction
   - repeat_request
   - thank_you
-  - user_preferences
 
 entities:
   - bird
@@ -47,69 +42,100 @@ entities:
 
 slots:
   bird:
-    type: text
+    type: list  
     mappings:
       - type: from_entity
         entity: bird
+        strategy: append
+        intent: 
+          - bird_info_generate
+          - range_prediction
 
   description:
     type: text
     mappings:
       - type: from_entity
         entity: description
+        intent:
+          - bird_info_generate
+          - keyword_finder
 
   image:
     type: text
     mappings:
       - type: from_entity
         entity: image
+        intent:
+          - image_classification
 
   location:
     type: text
     mappings:
       - type: from_entity
         entity: location
+        intent:
+          - range_prediction
 
   date:
     type: text
     mappings:
       - type: from_entity
         entity: date
+        intent:
+          - range_prediction
 
   time:
     type: text
     mappings:
       - type: from_entity
         entity: time
+        intent:
+          - range_prediction
 
   keyword:
     type: text
     mappings:
       - type: from_entity
         entity: keyword
+        intent:
+          - keyword_finder
 
   color:
-    type: text
+    type: list 
     mappings:
       - type: from_entity
         entity: color
+        strategy: append
+        intent:
+          - keyword_finder
 
   body_part:
-    type: text
+    type: list 
     mappings:
       - type: from_entity
         entity: body_part
+        strategy: append
+        intent:
+          - keyword_finder
 
   user_feedback:
     type: text
     mappings:
       - type: from_entity
         entity: user_feedback
+        intent:
+          - feedback_positive
+          - feedback_negative
 
   retrieved_description:  
     type: text
     mappings:
-      - type: custom
+      - type: custom 
+
+  last_user_query:
+    type: text
+    mappings:
+      - type: from_text
 
 responses:
 
@@ -142,20 +168,10 @@ responses:
     - text: "Good night!"
     - text: "Good night! Sweet dreams!"
 
-  utter_greet_formal:
-    - text: "Thank you! How may I assist you with bird-related information today?"
-    - text: "Welcome! I’m here to help with all your bird-related queries."
-    - text: "Hello, and good day! How can I be of service in your bird exploration?"
-
-  utter_greet_welcome:
-    - text: "Welcome to FeatherFind! Your go-to assistant for all things birds!"
-    - text: "Hello and welcome! I’m here to provide you with bird insights and more!"
-    - text: "FeatherFind welcomes you! Ask me anything about birds!"
-
   utter_greet_checking_in:
-    - text: "Thanks I'm fine, How’s your birdwatching journey going?"
-    - text: "Thanks I'm good, Hope you’re having a great time! Need any bird facts or insights?"
-    - text: "Hello I'm here! Anything new you’d like to learn about birds today?"
+    - text: "Thanks for asking! How’s your birdwatching journey going?"
+    - text: "I'm here to help! Need any bird insights today?"
+    - text: "Hey! Anything new you’d like to learn about birds?"
 
   utter_goodbye:
     - text: "Goodbye! Have a great day, and happy birdwatching!"
@@ -228,13 +244,6 @@ responses:
     - text: "Your kind words mean a lot! Thanks for your feedback."
     - text: "That makes me happy to hear! Let me know if you need more assistance."
 
-  utter_bot_opinion:
-    - text: "I don't have personal opinions, but I can provide facts! What would you like to know?"
-
-  utter_user_preferences:
-    - text: "Tell me what details matter to you, and I’ll store them for future reference."
-    - text: "I’d be happy to personalize your experience! What preferences do you have?"
-
   utter_agree:
     - text: "I see your point! That's an interesting perspective."
     - text: "I get what you're saying! That makes sense."
@@ -248,16 +257,17 @@ responses:
     - text: "FeatherFind is all about birds, but I can try to help with other topics!"
 
   utter_repeat_request:
-    - text: "No problem! Let me repeat that for you. \n\n {last_response}"
+    - text: "No problem! Here's what I found: \n\n {last_response} \n\n Would you like more details?"
     - text: "I can say that again if you’d like! Just let me know. \n\n {last_response}"
 
   utter_fallback:
-    - text: "Hmm, I didn't quite understand that. Can you try again? "
-    - text: "FeatherFind is all about birds, I'm not sure how to help with that. Could you clarify your question? "
+    - text: "Hmm, I didn't quite understand that. Can you try again? Or perhaps rephrase your question?"
+    - text: "FeatherFind specializes in bird information. Could you clarify your question so I can assist better?"
     - text: "That’s outside my knowledge, but I can try my best! Can you explain more?"
+    - text: "I'm not sure what you mean. Maybe try asking about a bird, location, or migration pattern?"
 
   utter_error:
-    - text: "Oops! Something went wrong. Please try again."
+    - text: "Oops! Something went wrong. Try again or check if your question needs more details."
     - text: "I encountered an issue processing your request. Could you try again?"
     - text: "Uh-oh! Something went wrong on my end. Let’s try that again!"
 
@@ -281,7 +291,7 @@ actions:
   - action_range_prediction
   - action_image_classification
   - action_keyword_finder
-  - action_bird_infor_generating
+  - action_bird_info_generating
   - action_fallback
   - action_feedback
 
