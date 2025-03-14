@@ -1,13 +1,10 @@
 import json
 
-# Load dataset
 with open("../RAG_dataset/gpt2_finetune_dataset.json", "r", encoding="utf-8") as f:
     dataset = json.load(f)
 
-# Output file
 OUTPUT_FILE = "gpt2_training_data.txt"
 
-# Convert dataset to training text format
 with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
     for entry in dataset:
         f.write(f"### Instruction:\n{entry['instruction']}\n")

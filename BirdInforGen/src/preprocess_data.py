@@ -1,7 +1,7 @@
 import pandas as pd
 
 input_file = "../dataset/dataset.csv"  
-output_file = "../dataset/cleaned.csv"  
+output_file = "../RAG_dataset/cleaned.csv"  
 
 print("Loading dataset...")
 df = pd.read_csv(input_file, encoding="utf-8") 

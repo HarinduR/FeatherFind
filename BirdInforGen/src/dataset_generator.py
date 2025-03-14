@@ -1,11 +1,9 @@
 import pandas as pd
 import json
 
-# 🔹 File Paths
-CSV_FILE = "../RAG_dataset/dataset.csv" 
+CSV_FILE = "../RAG_dataset/cleaned.csv" 
 OUTPUT_JSON = "../RAG_dataset/gpt2_finetune_dataset.json" 
 
-# 🔹 Template for dataset generation
 QUESTION_TEMPLATES = {
     "Scientific Name": "What is the scientific name of the {name}?",
     "Conservation Status": "What is the conservation status of the {name}?",
@@ -29,17 +27,14 @@ RESPONSE_TEMPLATES = {
     "Range": "The {name} is primarily found in {value}.",
 }
 
-# 🔹 Load Dataset
 df = pd.read_csv(CSV_FILE)
 
-# 🔹 Convert CSV into JSON format for GPT-2 fine-tuning
 dataset = []
 
 for _, row in df.iterrows():
     name = row["Name"]
     scientific_name = row["Scientific Name"]
     
-    # 🔹 Generate prompts for each feature
     for feature, question_template in QUESTION_TEMPLATES.items():
         question = question_template.format(name=name)
         retrieved_chunk = row[feature]
@@ -52,7 +47,6 @@ for _, row in df.iterrows():
             "enhanced_response": enhanced_response
         })
 
-    # 🔹 Generate full description
     full_description = (
         f"The {name} (*{scientific_name}*) is {row['Size']}. "
         f"It is known for {row['Distinctive Features']}. "
@@ -65,10 +59,9 @@ for _, row in df.iterrows():
         "instruction": "Enhance the following bird description with a smooth and engaging narrative.",
         "question": FINAL_DESCRIPTION_TEMPLATE.format(name=name),
         "retrieved_chunk": full_description,
-        "enhanced_response": full_description  # This will be fine-tuned to be more engaging later
+        "enhanced_response": full_description 
     })
 
-# 🔹 Save JSON file
 with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
     json.dump(dataset, f, indent=4)
 
