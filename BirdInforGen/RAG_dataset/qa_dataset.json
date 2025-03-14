@@ -1,0 +1,1002 @@
+[
+    {
+        "question": "What is the scientific name of the Red-Vented Bulbul?",
+        "retrieved_chunk": "Pycnonotus cafer",
+        "enhanced_response": "The scientific name of the Red-Vented Bulbul is *Pycnonotus cafer*."
+    },
+    {
+        "question": "What is the conservation status of the Red-Vented Bulbul?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Red-Vented Bulbul is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Red-Vented Bulbul?",
+        "retrieved_chunk": "Black crest, white rump, red vent under tail",
+        "enhanced_response": "The Red-Vented Bulbul has the following distinctive features: Black crest, white rump, red vent under tail."
+    },
+    {
+        "question": "What size is the Red-Vented Bulbul?",
+        "retrieved_chunk": "Medium-sized",
+        "enhanced_response": "The Red-Vented Bulbul is Medium-sized in size."
+    },
+    {
+        "question": "Where does the Red-Vented Bulbul live?",
+        "retrieved_chunk": "Often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest",
+        "enhanced_response": "The Red-Vented Bulbul is found in the following habitat: Often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest."
+    },
+    {
+        "question": "How does the Red-Vented Bulbul behave?",
+        "retrieved_chunk": "Conspicuous and sometimes gregarious",
+        "enhanced_response": "The behavior of the Red-Vented Bulbul is described as: Conspicuous and sometimes gregarious."
+    },
+    {
+        "question": "Where can the Red-Vented Bulbul be found?",
+        "retrieved_chunk": "Native to South and Southeast Asia. Introduced to Kuwait, Qatar, UAE, Oman, and some Polynesian islands, including Hawaii",
+        "enhanced_response": "The range of the Red-Vented Bulbul includes: Native to South and Southeast Asia. Introduced to Kuwait, Qatar, UAE, Oman, and some Polynesian islands, including Hawaii."
+    },
+    {
+        "question": "Tell me about the Red-Vented Bulbul.",
+        "retrieved_chunk": "The Red-Vented Bulbul (*Pycnonotus cafer*) is Medium-sized, commonly found in Often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest. It is recognized by its Black crest, white rump, red vent under tail. This species is known to be Conspicuous and sometimes gregarious. It has a conservation status of \"Least Concern\" and is primarily found in Native to South and Southeast Asia. Introduced to Kuwait, Qatar, UAE, Oman, and some Polynesian islands, including Hawaii.",
+        "enhanced_response": "The Red-Vented Bulbul (*Pycnonotus cafer*) is Medium-sized, commonly found in Often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest. It is recognized by its Black crest, white rump, red vent under tail. This species is known to be Conspicuous and sometimes gregarious. It has a conservation status of \"Least Concern\" and is primarily found in Native to South and Southeast Asia. Introduced to Kuwait, Qatar, UAE, Oman, and some Polynesian islands, including Hawaii."
+    },
+    {
+        "question": "What is the scientific name of the Blue-Tailed Bee-Eater?",
+        "retrieved_chunk": "Merops philippinus",
+        "enhanced_response": "The scientific name of the Blue-Tailed Bee-Eater is *Merops philippinus*."
+    },
+    {
+        "question": "What is the conservation status of the Blue-Tailed Bee-Eater?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Blue-Tailed Bee-Eater is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Blue-Tailed Bee-Eater?",
+        "retrieved_chunk": "Thin black mask, rufous throat, elongated central tail feathers (in adults), broad and sharply pointed wings, long tail, and long bill",
+        "enhanced_response": "The Blue-Tailed Bee-Eater has the following distinctive features: Thin black mask, rufous throat, elongated central tail feathers (in adults), broad and sharply pointed wings, long tail, and long bill."
+    },
+    {
+        "question": "What size is the Blue-Tailed Bee-Eater?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Blue-Tailed Bee-Eater is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Blue-Tailed Bee-Eater live?",
+        "retrieved_chunk": "Open country",
+        "enhanced_response": "The Blue-Tailed Bee-Eater is found in the following habitat: Open country."
+    },
+    {
+        "question": "How does the Blue-Tailed Bee-Eater behave?",
+        "retrieved_chunk": "Frequently seen in flight or perched on exposed snags or telephone wires",
+        "enhanced_response": "The behavior of the Blue-Tailed Bee-Eater is described as: Frequently seen in flight or perched on exposed snags or telephone wires."
+    },
+    {
+        "question": "Where can the Blue-Tailed Bee-Eater be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Blue-Tailed Bee-Eater includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Blue-Tailed Bee-Eater.",
+        "retrieved_chunk": "The Blue-Tailed Bee-Eater (*Merops philippinus*) is a bird of varying sizes, commonly found in Open country. It is recognized by its Thin black mask, rufous throat, elongated central tail feathers (in adults), broad and sharply pointed wings, long tail, and long bill. This species is known to be Frequently seen in flight or perched on exposed snags or telephone wires. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Blue-Tailed Bee-Eater (*Merops philippinus*) is a bird of varying sizes, commonly found in Open country. It is recognized by its Thin black mask, rufous throat, elongated central tail feathers (in adults), broad and sharply pointed wings, long tail, and long bill. This species is known to be Frequently seen in flight or perched on exposed snags or telephone wires. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the White-Throated Kingfisher?",
+        "retrieved_chunk": "Halcyon smyrnensis",
+        "enhanced_response": "The scientific name of the White-Throated Kingfisher is *Halcyon smyrnensis*."
+    },
+    {
+        "question": "What is the conservation status of the White-Throated Kingfisher?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The White-Throated Kingfisher is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the White-Throated Kingfisher?",
+        "retrieved_chunk": "Large head, electric-blue back and wings, heavy red bill, snow-white throat patch",
+        "enhanced_response": "The White-Throated Kingfisher has the following distinctive features: Large head, electric-blue back and wings, heavy red bill, snow-white throat patch."
+    },
+    {
+        "question": "What size is the White-Throated Kingfisher?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The White-Throated Kingfisher is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the White-Throated Kingfisher live?",
+        "retrieved_chunk": "Near wetlands, lakes, agricultural fields, and clearings",
+        "enhanced_response": "The White-Throated Kingfisher is found in the following habitat: Near wetlands, lakes, agricultural fields, and clearings."
+    },
+    {
+        "question": "How does the White-Throated Kingfisher behave?",
+        "retrieved_chunk": "Frequently seen perched on fence posts and telephone lines; gives jarring, raptor-like descending trills and cackles, often in flight",
+        "enhanced_response": "The behavior of the White-Throated Kingfisher is described as: Frequently seen perched on fence posts and telephone lines; gives jarring, raptor-like descending trills and cackles, often in flight."
+    },
+    {
+        "question": "Where can the White-Throated Kingfisher be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the White-Throated Kingfisher includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the White-Throated Kingfisher.",
+        "retrieved_chunk": "The White-Throated Kingfisher (*Halcyon smyrnensis*) is a bird of varying sizes, commonly found in Near wetlands, lakes, agricultural fields, and clearings. It is recognized by its Large head, electric-blue back and wings, heavy red bill, snow-white throat patch. This species is known to be Frequently seen perched on fence posts and telephone lines; gives jarring, raptor-like descending trills and cackles, often in flight. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The White-Throated Kingfisher (*Halcyon smyrnensis*) is a bird of varying sizes, commonly found in Near wetlands, lakes, agricultural fields, and clearings. It is recognized by its Large head, electric-blue back and wings, heavy red bill, snow-white throat patch. This species is known to be Frequently seen perched on fence posts and telephone lines; gives jarring, raptor-like descending trills and cackles, often in flight. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Gray-Headed Swamphen?",
+        "retrieved_chunk": "Porphyrio poliocephalus",
+        "enhanced_response": "The scientific name of the Gray-Headed Swamphen is *Porphyrio poliocephalus*."
+    },
+    {
+        "question": "What is the conservation status of the Gray-Headed Swamphen?",
+        "retrieved_chunk": "not well-documented",
+        "enhanced_response": "The Gray-Headed Swamphen is classified as 'not well-documented', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Gray-Headed Swamphen?",
+        "retrieved_chunk": "Red bill and forehead shield, red legs and feet with long toes, fluffy white \u201cunderpants\u201d",
+        "enhanced_response": "The Gray-Headed Swamphen has the following distinctive features: Red bill and forehead shield, red legs and feet with long toes, fluffy white \u201cunderpants\u201d."
+    },
+    {
+        "question": "What size is the Gray-Headed Swamphen?",
+        "retrieved_chunk": "Very large",
+        "enhanced_response": "The Gray-Headed Swamphen is Very large in size."
+    },
+    {
+        "question": "Where does the Gray-Headed Swamphen live?",
+        "retrieved_chunk": "Marshy, vegetated freshwater bodies such as swamps, rivers, and lakes",
+        "enhanced_response": "The Gray-Headed Swamphen is found in the following habitat: Marshy, vegetated freshwater bodies such as swamps, rivers, and lakes."
+    },
+    {
+        "question": "How does the Gray-Headed Swamphen behave?",
+        "retrieved_chunk": "Often clumsy, feeds at muddy water edges, in reeds, and on floating vegetation; usually in small groups",
+        "enhanced_response": "The behavior of the Gray-Headed Swamphen is described as: Often clumsy, feeds at muddy water edges, in reeds, and on floating vegetation; usually in small groups."
+    },
+    {
+        "question": "Where can the Gray-Headed Swamphen be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Gray-Headed Swamphen includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Gray-Headed Swamphen.",
+        "retrieved_chunk": "The Gray-Headed Swamphen (*Porphyrio poliocephalus*) is Very large, commonly found in Marshy, vegetated freshwater bodies such as swamps, rivers, and lakes. It is recognized by its Red bill and forehead shield, red legs and feet with long toes, fluffy white \u201cunderpants\u201d. This species is known to be Often clumsy, feeds at muddy water edges, in reeds, and on floating vegetation; usually in small groups. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Gray-Headed Swamphen (*Porphyrio poliocephalus*) is Very large, commonly found in Marshy, vegetated freshwater bodies such as swamps, rivers, and lakes. It is recognized by its Red bill and forehead shield, red legs and feet with long toes, fluffy white \u201cunderpants\u201d. This species is known to be Often clumsy, feeds at muddy water edges, in reeds, and on floating vegetation; usually in small groups. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the White-Breasted Waterhen?",
+        "retrieved_chunk": "Amaurornis phoenicurus",
+        "enhanced_response": "The scientific name of the White-Breasted Waterhen is *Amaurornis phoenicurus*."
+    },
+    {
+        "question": "What is the conservation status of the White-Breasted Waterhen?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The White-Breasted Waterhen is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the White-Breasted Waterhen?",
+        "retrieved_chunk": "Chickenlike appearance, rusty patch under the tail",
+        "enhanced_response": "The White-Breasted Waterhen has the following distinctive features: Chickenlike appearance, rusty patch under the tail."
+    },
+    {
+        "question": "What size is the White-Breasted Waterhen?",
+        "retrieved_chunk": "Medium-sized",
+        "enhanced_response": "The White-Breasted Waterhen is Medium-sized in size."
+    },
+    {
+        "question": "Where does the White-Breasted Waterhen live?",
+        "retrieved_chunk": "Meadows, ditches, riversides, marshes, parks, and farmlands",
+        "enhanced_response": "The White-Breasted Waterhen is found in the following habitat: Meadows, ditches, riversides, marshes, parks, and farmlands."
+    },
+    {
+        "question": "How does the White-Breasted Waterhen behave?",
+        "retrieved_chunk": "Often seen foraging in the open; often found in close proximity to humans",
+        "enhanced_response": "The behavior of the White-Breasted Waterhen is described as: Often seen foraging in the open; often found in close proximity to humans."
+    },
+    {
+        "question": "Where can the White-Breasted Waterhen be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the White-Breasted Waterhen includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the White-Breasted Waterhen.",
+        "retrieved_chunk": "The White-Breasted Waterhen (*Amaurornis phoenicurus*) is Medium-sized, commonly found in Meadows, ditches, riversides, marshes, parks, and farmlands. It is recognized by its Chickenlike appearance, rusty patch under the tail. This species is known to be Often seen foraging in the open; often found in close proximity to humans. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The White-Breasted Waterhen (*Amaurornis phoenicurus*) is Medium-sized, commonly found in Meadows, ditches, riversides, marshes, parks, and farmlands. It is recognized by its Chickenlike appearance, rusty patch under the tail. This species is known to be Often seen foraging in the open; often found in close proximity to humans. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Red-Wattled Lapwing?",
+        "retrieved_chunk": "Vanellus indicus",
+        "enhanced_response": "The scientific name of the Red-Wattled Lapwing is *Vanellus indicus*."
+    },
+    {
+        "question": "What is the conservation status of the Red-Wattled Lapwing?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Red-Wattled Lapwing is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Red-Wattled Lapwing?",
+        "retrieved_chunk": "Red wattles in front of the eyes, red bill with black tip, black breast and throat, white cheek patch",
+        "enhanced_response": "The Red-Wattled Lapwing has the following distinctive features: Red wattles in front of the eyes, red bill with black tip, black breast and throat, white cheek patch."
+    },
+    {
+        "question": "What size is the Red-Wattled Lapwing?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Red-Wattled Lapwing is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Red-Wattled Lapwing live?",
+        "retrieved_chunk": "Found around water bodies, agricultural fields, and dry land",
+        "enhanced_response": "The Red-Wattled Lapwing is found in the following habitat: Found around water bodies, agricultural fields, and dry land."
+    },
+    {
+        "question": "How does the Red-Wattled Lapwing behave?",
+        "retrieved_chunk": "Usually found in small groups; runs a short distance to pick up food from the ground",
+        "enhanced_response": "The behavior of the Red-Wattled Lapwing is described as: Usually found in small groups; runs a short distance to pick up food from the ground."
+    },
+    {
+        "question": "Where can the Red-Wattled Lapwing be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Red-Wattled Lapwing includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Red-Wattled Lapwing.",
+        "retrieved_chunk": "The Red-Wattled Lapwing (*Vanellus indicus*) is a bird of varying sizes, commonly found in Found around water bodies, agricultural fields, and dry land. It is recognized by its Red wattles in front of the eyes, red bill with black tip, black breast and throat, white cheek patch. This species is known to be Usually found in small groups; runs a short distance to pick up food from the ground. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Red-Wattled Lapwing (*Vanellus indicus*) is a bird of varying sizes, commonly found in Found around water bodies, agricultural fields, and dry land. It is recognized by its Red wattles in front of the eyes, red bill with black tip, black breast and throat, white cheek patch. This species is known to be Usually found in small groups; runs a short distance to pick up food from the ground. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Little Cormorant?",
+        "retrieved_chunk": "Microcarbo niger",
+        "enhanced_response": "The scientific name of the Little Cormorant is *Microcarbo niger*."
+    },
+    {
+        "question": "What is the conservation status of the Little Cormorant?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Little Cormorant is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Little Cormorant?",
+        "retrieved_chunk": "Flat head, sharply hooked bill, small size compared to other cormorants",
+        "enhanced_response": "The Little Cormorant has the following distinctive features: Flat head, sharply hooked bill, small size compared to other cormorants."
+    },
+    {
+        "question": "What size is the Little Cormorant?",
+        "retrieved_chunk": "Smallest of the cormorants found in the region",
+        "enhanced_response": "The Little Cormorant is Smallest of the cormorants found in the region in size."
+    },
+    {
+        "question": "Where does the Little Cormorant live?",
+        "retrieved_chunk": "Inland water bodies",
+        "enhanced_response": "The Little Cormorant is found in the following habitat: Inland water bodies."
+    },
+    {
+        "question": "How does the Little Cormorant behave?",
+        "retrieved_chunk": "Frequently seen swimming with its body low in the water, often perches upright on a rock to dry itself with outstretched wings",
+        "enhanced_response": "The behavior of the Little Cormorant is described as: Frequently seen swimming with its body low in the water, often perches upright on a rock to dry itself with outstretched wings."
+    },
+    {
+        "question": "Where can the Little Cormorant be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Little Cormorant includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Little Cormorant.",
+        "retrieved_chunk": "The Little Cormorant (*Microcarbo niger*) is Smallest of the cormorants found in the region, commonly found in Inland water bodies. It is recognized by its Flat head, sharply hooked bill, small size compared to other cormorants. This species is known to be Frequently seen swimming with its body low in the water, often perches upright on a rock to dry itself with outstretched wings. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Little Cormorant (*Microcarbo niger*) is Smallest of the cormorants found in the region, commonly found in Inland water bodies. It is recognized by its Flat head, sharply hooked bill, small size compared to other cormorants. This species is known to be Frequently seen swimming with its body low in the water, often perches upright on a rock to dry itself with outstretched wings. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Black-Headed Ibis?",
+        "retrieved_chunk": "Threskiornis melanocephalus",
+        "enhanced_response": "The scientific name of the Black-Headed Ibis is *Threskiornis melanocephalus*."
+    },
+    {
+        "question": "What is the conservation status of the Black-Headed Ibis?",
+        "retrieved_chunk": "Near Threatened",
+        "enhanced_response": "The Black-Headed Ibis is classified as 'Near Threatened', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Black-Headed Ibis?",
+        "retrieved_chunk": "Bare black head and neck, down-curved black bill",
+        "enhanced_response": "The Black-Headed Ibis has the following distinctive features: Bare black head and neck, down-curved black bill."
+    },
+    {
+        "question": "What size is the Black-Headed Ibis?",
+        "retrieved_chunk": "Large",
+        "enhanced_response": "The Black-Headed Ibis is Large in size."
+    },
+    {
+        "question": "Where does the Black-Headed Ibis live?",
+        "retrieved_chunk": "Wetlands, agricultural fields, coastal areas, dry fields, and human-modified landscapes",
+        "enhanced_response": "The Black-Headed Ibis is found in the following habitat: Wetlands, agricultural fields, coastal areas, dry fields, and human-modified landscapes."
+    },
+    {
+        "question": "How does the Black-Headed Ibis behave?",
+        "retrieved_chunk": "Probes into mud and shallow water with its long, down-curved bill, sometimes submerging its entire head while foraging",
+        "enhanced_response": "The behavior of the Black-Headed Ibis is described as: Probes into mud and shallow water with its long, down-curved bill, sometimes submerging its entire head while foraging."
+    },
+    {
+        "question": "Where can the Black-Headed Ibis be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Black-Headed Ibis includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Black-Headed Ibis.",
+        "retrieved_chunk": "The Black-Headed Ibis (*Threskiornis melanocephalus*) is Large, commonly found in Wetlands, agricultural fields, coastal areas, dry fields, and human-modified landscapes. It is recognized by its Bare black head and neck, down-curved black bill. This species is known to be Probes into mud and shallow water with its long, down-curved bill, sometimes submerging its entire head while foraging. It has a conservation status of \"Near Threatened\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Black-Headed Ibis (*Threskiornis melanocephalus*) is Large, commonly found in Wetlands, agricultural fields, coastal areas, dry fields, and human-modified landscapes. It is recognized by its Bare black head and neck, down-curved black bill. This species is known to be Probes into mud and shallow water with its long, down-curved bill, sometimes submerging its entire head while foraging. It has a conservation status of \"Near Threatened\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Indian Pond-Heron?",
+        "retrieved_chunk": "Ardeola grayii",
+        "enhanced_response": "The scientific name of the Indian Pond-Heron is *Ardeola grayii*."
+    },
+    {
+        "question": "What is the conservation status of the Indian Pond-Heron?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Indian Pond-Heron is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Indian Pond-Heron?",
+        "retrieved_chunk": "Dark reddish brown back, yellowish head, neck, and breast in breeding plumage; strikingly white in flight",
+        "enhanced_response": "The Indian Pond-Heron has the following distinctive features: Dark reddish brown back, yellowish head, neck, and breast in breeding plumage; strikingly white in flight."
+    },
+    {
+        "question": "What size is the Indian Pond-Heron?",
+        "retrieved_chunk": "Small",
+        "enhanced_response": "The Indian Pond-Heron is Small in size."
+    },
+    {
+        "question": "Where does the Indian Pond-Heron live?",
+        "retrieved_chunk": "Aquatic habitats across the Indian subcontinent",
+        "enhanced_response": "The Indian Pond-Heron is found in the following habitat: Aquatic habitats across the Indian subcontinent."
+    },
+    {
+        "question": "How does the Indian Pond-Heron behave?",
+        "retrieved_chunk": "Solitary, but large numbers gather where food is plentiful; prone to seasonally local movements and vagrancy",
+        "enhanced_response": "The behavior of the Indian Pond-Heron is described as: Solitary, but large numbers gather where food is plentiful; prone to seasonally local movements and vagrancy."
+    },
+    {
+        "question": "Where can the Indian Pond-Heron be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Indian Pond-Heron includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Indian Pond-Heron.",
+        "retrieved_chunk": "The Indian Pond-Heron (*Ardeola grayii*) is Small, commonly found in Aquatic habitats across the Indian subcontinent. It is recognized by its Dark reddish brown back, yellowish head, neck, and breast in breeding plumage; strikingly white in flight. This species is known to be Solitary, but large numbers gather where food is plentiful; prone to seasonally local movements and vagrancy. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Indian Pond-Heron (*Ardeola grayii*) is Small, commonly found in Aquatic habitats across the Indian subcontinent. It is recognized by its Dark reddish brown back, yellowish head, neck, and breast in breeding plumage; strikingly white in flight. This species is known to be Solitary, but large numbers gather where food is plentiful; prone to seasonally local movements and vagrancy. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Little Egret?",
+        "retrieved_chunk": "Egretta garzetta",
+        "enhanced_response": "The scientific name of the Little Egret is *Egretta garzetta*."
+    },
+    {
+        "question": "What is the conservation status of the Little Egret?",
+        "retrieved_chunk": "not well-documented",
+        "enhanced_response": "The Little Egret is classified as 'not well-documented', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Little Egret?",
+        "retrieved_chunk": "Wispy head plumes and white plumes on the lower back in breeding adults; slender dark bill, yellowish feet (\"golden slippers\")",
+        "enhanced_response": "The Little Egret has the following distinctive features: Wispy head plumes and white plumes on the lower back in breeding adults; slender dark bill, yellowish feet (\"golden slippers\")."
+    },
+    {
+        "question": "What size is the Little Egret?",
+        "retrieved_chunk": "Small",
+        "enhanced_response": "The Little Egret is Small in size."
+    },
+    {
+        "question": "Where does the Little Egret live?",
+        "retrieved_chunk": "Wetlands, lakes, rivers, marshes, estuaries",
+        "enhanced_response": "The Little Egret is found in the following habitat: Wetlands, lakes, rivers, marshes, estuaries."
+    },
+    {
+        "question": "How does the Little Egret behave?",
+        "retrieved_chunk": "Occurs as singles or in small loose groups; nests and roosts communally",
+        "enhanced_response": "The behavior of the Little Egret is described as: Occurs as singles or in small loose groups; nests and roosts communally."
+    },
+    {
+        "question": "Where can the Little Egret be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Little Egret includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Little Egret.",
+        "retrieved_chunk": "The Little Egret (*Egretta garzetta*) is Small, commonly found in Wetlands, lakes, rivers, marshes, estuaries. It is recognized by its Wispy head plumes and white plumes on the lower back in breeding adults; slender dark bill, yellowish feet (\"golden slippers\"). This species is known to be Occurs as singles or in small loose groups; nests and roosts communally. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Little Egret (*Egretta garzetta*) is Small, commonly found in Wetlands, lakes, rivers, marshes, estuaries. It is recognized by its Wispy head plumes and white plumes on the lower back in breeding adults; slender dark bill, yellowish feet (\"golden slippers\"). This species is known to be Occurs as singles or in small loose groups; nests and roosts communally. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Purple Heron?",
+        "retrieved_chunk": "Ardea purpurea",
+        "enhanced_response": "The scientific name of the Purple Heron is *Ardea purpurea*."
+    },
+    {
+        "question": "What is the conservation status of the Purple Heron?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Purple Heron is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Purple Heron?",
+        "retrieved_chunk": "Rusty head and streaky neck, extensively rusty brown on upperparts (juvenile)",
+        "enhanced_response": "The Purple Heron has the following distinctive features: Rusty head and streaky neck, extensively rusty brown on upperparts (juvenile)."
+    },
+    {
+        "question": "What size is the Purple Heron?",
+        "retrieved_chunk": "Large",
+        "enhanced_response": "The Purple Heron is Large in size."
+    },
+    {
+        "question": "Where does the Purple Heron live?",
+        "retrieved_chunk": "Fresh marshes with tall reeds and other vegetation",
+        "enhanced_response": "The Purple Heron is found in the following habitat: Fresh marshes with tall reeds and other vegetation."
+    },
+    {
+        "question": "How does the Purple Heron behave?",
+        "retrieved_chunk": "Often more retiring than Gray Heron; rarely seen in open situations",
+        "enhanced_response": "The behavior of the Purple Heron is described as: Often more retiring than Gray Heron; rarely seen in open situations."
+    },
+    {
+        "question": "Where can the Purple Heron be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Purple Heron includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Purple Heron.",
+        "retrieved_chunk": "The Purple Heron (*Ardea purpurea*) is Large, commonly found in Fresh marshes with tall reeds and other vegetation. It is recognized by its Rusty head and streaky neck, extensively rusty brown on upperparts (juvenile). This species is known to be Often more retiring than Gray Heron; rarely seen in open situations. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Purple Heron (*Ardea purpurea*) is Large, commonly found in Fresh marshes with tall reeds and other vegetation. It is recognized by its Rusty head and streaky neck, extensively rusty brown on upperparts (juvenile). This species is known to be Often more retiring than Gray Heron; rarely seen in open situations. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Brahminy Kite?",
+        "retrieved_chunk": "Haliastur indus",
+        "enhanced_response": "The scientific name of the Brahminy Kite is *Haliastur indus*."
+    },
+    {
+        "question": "What is the conservation status of the Brahminy Kite?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Brahminy Kite is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Brahminy Kite?",
+        "retrieved_chunk": "Rounded tail, white head and breast contrasting with brick brown plumage",
+        "enhanced_response": "The Brahminy Kite has the following distinctive features: Rounded tail, white head and breast contrasting with brick brown plumage."
+    },
+    {
+        "question": "What size is the Brahminy Kite?",
+        "retrieved_chunk": "Medium-sized",
+        "enhanced_response": "The Brahminy Kite is Medium-sized in size."
+    },
+    {
+        "question": "Where does the Brahminy Kite live?",
+        "retrieved_chunk": "Inland and coastal wetlands in tropical Asia; restricted to coastal wetlands in Australia",
+        "enhanced_response": "The Brahminy Kite is found in the following habitat: Inland and coastal wetlands in tropical Asia; restricted to coastal wetlands in Australia."
+    },
+    {
+        "question": "How does the Brahminy Kite behave?",
+        "retrieved_chunk": "No information available",
+        "enhanced_response": "The behavior of the Brahminy Kite is described as: No information available."
+    },
+    {
+        "question": "Where can the Brahminy Kite be found?",
+        "retrieved_chunk": "Tropical Asia and coastal wetlands in Australia",
+        "enhanced_response": "The range of the Brahminy Kite includes: Tropical Asia and coastal wetlands in Australia."
+    },
+    {
+        "question": "Tell me about the Brahminy Kite.",
+        "retrieved_chunk": "The Brahminy Kite (*Haliastur indus*) is Medium-sized, commonly found in Inland and coastal wetlands in tropical Asia; restricted to coastal wetlands in Australia. It is recognized by its Rounded tail, white head and breast contrasting with brick brown plumage. This species is known to be No information available. It has a conservation status of \"Least Concern\" and is primarily found in Tropical Asia and coastal wetlands in Australia.",
+        "enhanced_response": "The Brahminy Kite (*Haliastur indus*) is Medium-sized, commonly found in Inland and coastal wetlands in tropical Asia; restricted to coastal wetlands in Australia. It is recognized by its Rounded tail, white head and breast contrasting with brick brown plumage. This species is known to be No information available. It has a conservation status of \"Least Concern\" and is primarily found in Tropical Asia and coastal wetlands in Australia."
+    },
+    {
+        "question": "What is the scientific name of the Rose-Ringed Parakeet?",
+        "retrieved_chunk": "Psittacula krameri",
+        "enhanced_response": "The scientific name of the Rose-Ringed Parakeet is *Psittacula krameri*."
+    },
+    {
+        "question": "What is the conservation status of the Rose-Ringed Parakeet?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Rose-Ringed Parakeet is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Rose-Ringed Parakeet?",
+        "retrieved_chunk": "Long slender tail, bright red bill, narrow black-and-pink neck ring in males",
+        "enhanced_response": "The Rose-Ringed Parakeet has the following distinctive features: Long slender tail, bright red bill, narrow black-and-pink neck ring in males."
+    },
+    {
+        "question": "What size is the Rose-Ringed Parakeet?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Rose-Ringed Parakeet is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Rose-Ringed Parakeet live?",
+        "retrieved_chunk": "Woodland, parks, gardens",
+        "enhanced_response": "The Rose-Ringed Parakeet is found in the following habitat: Woodland, parks, gardens."
+    },
+    {
+        "question": "How does the Rose-Ringed Parakeet behave?",
+        "retrieved_chunk": "Nests in cavities, including holes in buildings; raucous and social, often appearing in noisy groups",
+        "enhanced_response": "The behavior of the Rose-Ringed Parakeet is described as: Nests in cavities, including holes in buildings; raucous and social, often appearing in noisy groups."
+    },
+    {
+        "question": "Where can the Rose-Ringed Parakeet be found?",
+        "retrieved_chunk": "Native to Africa and South Asia, introduced worldwide, including Europe, the Caribbean, Japan, and Hawaii",
+        "enhanced_response": "The range of the Rose-Ringed Parakeet includes: Native to Africa and South Asia, introduced worldwide, including Europe, the Caribbean, Japan, and Hawaii."
+    },
+    {
+        "question": "Tell me about the Rose-Ringed Parakeet.",
+        "retrieved_chunk": "The Rose-Ringed Parakeet (*Psittacula krameri*) is a bird of varying sizes, commonly found in Woodland, parks, gardens. It is recognized by its Long slender tail, bright red bill, narrow black-and-pink neck ring in males. This species is known to be Nests in cavities, including holes in buildings; raucous and social, often appearing in noisy groups. It has a conservation status of \"Least Concern\" and is primarily found in Native to Africa and South Asia, introduced worldwide, including Europe, the Caribbean, Japan, and Hawaii.",
+        "enhanced_response": "The Rose-Ringed Parakeet (*Psittacula krameri*) is a bird of varying sizes, commonly found in Woodland, parks, gardens. It is recognized by its Long slender tail, bright red bill, narrow black-and-pink neck ring in males. This species is known to be Nests in cavities, including holes in buildings; raucous and social, often appearing in noisy groups. It has a conservation status of \"Least Concern\" and is primarily found in Native to Africa and South Asia, introduced worldwide, including Europe, the Caribbean, Japan, and Hawaii."
+    },
+    {
+        "question": "What is the scientific name of the Brown-Headed Barbet?",
+        "retrieved_chunk": "Psilopogon zeylanicus",
+        "enhanced_response": "The scientific name of the Brown-Headed Barbet is *Psilopogon zeylanicus*."
+    },
+    {
+        "question": "What is the conservation status of the Brown-Headed Barbet?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Brown-Headed Barbet is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Brown-Headed Barbet?",
+        "retrieved_chunk": "Prominent pale streaks on brown head and breast, white speckling on shoulders",
+        "enhanced_response": "The Brown-Headed Barbet has the following distinctive features: Prominent pale streaks on brown head and breast, white speckling on shoulders."
+    },
+    {
+        "question": "What size is the Brown-Headed Barbet?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Brown-Headed Barbet is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Brown-Headed Barbet live?",
+        "retrieved_chunk": "Prefers drier woodlands",
+        "enhanced_response": "The Brown-Headed Barbet is found in the following habitat: Prefers drier woodlands."
+    },
+    {
+        "question": "How does the Brown-Headed Barbet behave?",
+        "retrieved_chunk": "Heard more often than seen",
+        "enhanced_response": "The behavior of the Brown-Headed Barbet is described as: Heard more often than seen."
+    },
+    {
+        "question": "Where can the Brown-Headed Barbet be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Brown-Headed Barbet includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Brown-Headed Barbet.",
+        "retrieved_chunk": "The Brown-Headed Barbet (*Psilopogon zeylanicus*) is a bird of varying sizes, commonly found in Prefers drier woodlands. It is recognized by its Prominent pale streaks on brown head and breast, white speckling on shoulders. This species is known to be Heard more often than seen. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Brown-Headed Barbet (*Psilopogon zeylanicus*) is a bird of varying sizes, commonly found in Prefers drier woodlands. It is recognized by its Prominent pale streaks on brown head and breast, white speckling on shoulders. This species is known to be Heard more often than seen. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Spotted Dove?",
+        "retrieved_chunk": "Spilopelia chinensis",
+        "enhanced_response": "The scientific name of the Spotted Dove is *Spilopelia chinensis*."
+    },
+    {
+        "question": "What is the conservation status of the Spotted Dove?",
+        "retrieved_chunk": "not well-documented",
+        "enhanced_response": "The Spotted Dove is classified as 'not well-documented', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Spotted Dove?",
+        "retrieved_chunk": "White-spotted black nape patch",
+        "enhanced_response": "The Spotted Dove has the following distinctive features: White-spotted black nape patch."
+    },
+    {
+        "question": "What size is the Spotted Dove?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Spotted Dove is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Spotted Dove live?",
+        "retrieved_chunk": "Open forests, fields, and parks; introduced to several regions around the world",
+        "enhanced_response": "The Spotted Dove is found in the following habitat: Open forests, fields, and parks; introduced to several regions around the world."
+    },
+    {
+        "question": "How does the Spotted Dove behave?",
+        "retrieved_chunk": "Often tame and approachable; coos loudly and often",
+        "enhanced_response": "The behavior of the Spotted Dove is described as: Often tame and approachable; coos loudly and often."
+    },
+    {
+        "question": "Where can the Spotted Dove be found?",
+        "retrieved_chunk": "Much of Asia; introduced to several regions around the world",
+        "enhanced_response": "The range of the Spotted Dove includes: Much of Asia; introduced to several regions around the world."
+    },
+    {
+        "question": "Tell me about the Spotted Dove.",
+        "retrieved_chunk": "The Spotted Dove (*Spilopelia chinensis*) is a bird of varying sizes, commonly found in Open forests, fields, and parks; introduced to several regions around the world. It is recognized by its White-spotted black nape patch. This species is known to be Often tame and approachable; coos loudly and often. It has a conservation status of \"not well-documented\" and is primarily found in Much of Asia; introduced to several regions around the world.",
+        "enhanced_response": "The Spotted Dove (*Spilopelia chinensis*) is a bird of varying sizes, commonly found in Open forests, fields, and parks; introduced to several regions around the world. It is recognized by its White-spotted black nape patch. This species is known to be Often tame and approachable; coos loudly and often. It has a conservation status of \"not well-documented\" and is primarily found in Much of Asia; introduced to several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Asian Koel?",
+        "retrieved_chunk": "Eudynamys scolopaceus",
+        "enhanced_response": "The scientific name of the Asian Koel is *Eudynamys scolopaceus*."
+    },
+    {
+        "question": "What is the conservation status of the Asian Koel?",
+        "retrieved_chunk": "not well-documented",
+        "enhanced_response": "The Asian Koel is classified as 'not well-documented', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Asian Koel?",
+        "retrieved_chunk": "Dull lime-green bill (males), white dots on wings and streaking on head and throat (females and immatures)",
+        "enhanced_response": "The Asian Koel has the following distinctive features: Dull lime-green bill (males), white dots on wings and streaking on head and throat (females and immatures)."
+    },
+    {
+        "question": "What size is the Asian Koel?",
+        "retrieved_chunk": "Large",
+        "enhanced_response": "The Asian Koel is Large in size."
+    },
+    {
+        "question": "Where does the Asian Koel live?",
+        "retrieved_chunk": "Interior of dense trees in many habitats, including inner cities and fields",
+        "enhanced_response": "The Asian Koel is found in the following habitat: Interior of dense trees in many habitats, including inner cities and fields."
+    },
+    {
+        "question": "How does the Asian Koel behave?",
+        "retrieved_chunk": "Usually secretive; females lay eggs in the nests of other large birds like crows, shrikes, and starlings",
+        "enhanced_response": "The behavior of the Asian Koel is described as: Usually secretive; females lay eggs in the nests of other large birds like crows, shrikes, and starlings."
+    },
+    {
+        "question": "Where can the Asian Koel be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Asian Koel includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Asian Koel.",
+        "retrieved_chunk": "The Asian Koel (*Eudynamys scolopaceus*) is Large, commonly found in Interior of dense trees in many habitats, including inner cities and fields. It is recognized by its Dull lime-green bill (males), white dots on wings and streaking on head and throat (females and immatures). This species is known to be Usually secretive; females lay eggs in the nests of other large birds like crows, shrikes, and starlings. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Asian Koel (*Eudynamys scolopaceus*) is Large, commonly found in Interior of dense trees in many habitats, including inner cities and fields. It is recognized by its Dull lime-green bill (males), white dots on wings and streaking on head and throat (females and immatures). This species is known to be Usually secretive; females lay eggs in the nests of other large birds like crows, shrikes, and starlings. It has a conservation status of \"not well-documented\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Common Tailorbird?",
+        "retrieved_chunk": "Orthotomus sutorius",
+        "enhanced_response": "The scientific name of the Common Tailorbird is *Orthotomus sutorius*."
+    },
+    {
+        "question": "What is the conservation status of the Common Tailorbird?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Common Tailorbird is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Common Tailorbird?",
+        "retrieved_chunk": "Long bill; builds nest by stitching leaves together",
+        "enhanced_response": "The Common Tailorbird has the following distinctive features: Long bill; builds nest by stitching leaves together."
+    },
+    {
+        "question": "What size is the Common Tailorbird?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Common Tailorbird is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Common Tailorbird live?",
+        "retrieved_chunk": "Parks, gardens, and wooded areas across South and Southeast Asia",
+        "enhanced_response": "The Common Tailorbird is found in the following habitat: Parks, gardens, and wooded areas across South and Southeast Asia."
+    },
+    {
+        "question": "How does the Common Tailorbird behave?",
+        "retrieved_chunk": "Known for stitching leaves together to build nests; \u201ctuii-tuii\u2026\u201d and \u201cwhee-whee\u2026\u201d calls are often part of daily life sounds in human habitation",
+        "enhanced_response": "The behavior of the Common Tailorbird is described as: Known for stitching leaves together to build nests; \u201ctuii-tuii\u2026\u201d and \u201cwhee-whee\u2026\u201d calls are often part of daily life sounds in human habitation."
+    },
+    {
+        "question": "Where can the Common Tailorbird be found?",
+        "retrieved_chunk": "South and Southeast Asia",
+        "enhanced_response": "The range of the Common Tailorbird includes: South and Southeast Asia."
+    },
+    {
+        "question": "Tell me about the Common Tailorbird.",
+        "retrieved_chunk": "The Common Tailorbird (*Orthotomus sutorius*) is a bird of varying sizes, commonly found in Parks, gardens, and wooded areas across South and Southeast Asia. It is recognized by its Long bill; builds nest by stitching leaves together. This species is known to be Known for stitching leaves together to build nests; \u201ctuii-tuii\u2026\u201d and \u201cwhee-whee\u2026\u201d calls are often part of daily life sounds in human habitation. It has a conservation status of \"Least Concern\" and is primarily found in South and Southeast Asia.",
+        "enhanced_response": "The Common Tailorbird (*Orthotomus sutorius*) is a bird of varying sizes, commonly found in Parks, gardens, and wooded areas across South and Southeast Asia. It is recognized by its Long bill; builds nest by stitching leaves together. This species is known to be Known for stitching leaves together to build nests; \u201ctuii-tuii\u2026\u201d and \u201cwhee-whee\u2026\u201d calls are often part of daily life sounds in human habitation. It has a conservation status of \"Least Concern\" and is primarily found in South and Southeast Asia."
+    },
+    {
+        "question": "What is the scientific name of the Yellow-Billed Babbler?",
+        "retrieved_chunk": "Argya affinis",
+        "enhanced_response": "The scientific name of the Yellow-Billed Babbler is *Argya affinis*."
+    },
+    {
+        "question": "What is the conservation status of the Yellow-Billed Babbler?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Yellow-Billed Babbler is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Yellow-Billed Babbler?",
+        "retrieved_chunk": "Pale spot in front of eyes, pale crown contrasting with dark throat and cheeks, blank-faced appearance",
+        "enhanced_response": "The Yellow-Billed Babbler has the following distinctive features: Pale spot in front of eyes, pale crown contrasting with dark throat and cheeks, blank-faced appearance."
+    },
+    {
+        "question": "What size is the Yellow-Billed Babbler?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Yellow-Billed Babbler is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Yellow-Billed Babbler live?",
+        "retrieved_chunk": "Prefers drier habitats than the Jungle Babbler",
+        "enhanced_response": "The Yellow-Billed Babbler is found in the following habitat: Prefers drier habitats than the Jungle Babbler."
+    },
+    {
+        "question": "How does the Yellow-Billed Babbler behave?",
+        "retrieved_chunk": "Gregarious and noisy",
+        "enhanced_response": "The behavior of the Yellow-Billed Babbler is described as: Gregarious and noisy."
+    },
+    {
+        "question": "Where can the Yellow-Billed Babbler be found?",
+        "retrieved_chunk": "Southern India and Sri Lanka",
+        "enhanced_response": "The range of the Yellow-Billed Babbler includes: Southern India and Sri Lanka."
+    },
+    {
+        "question": "Tell me about the Yellow-Billed Babbler.",
+        "retrieved_chunk": "The Yellow-Billed Babbler (*Argya affinis*) is a bird of varying sizes, commonly found in Prefers drier habitats than the Jungle Babbler. It is recognized by its Pale spot in front of eyes, pale crown contrasting with dark throat and cheeks, blank-faced appearance. This species is known to be Gregarious and noisy. It has a conservation status of \"Least Concern\" and is primarily found in Southern India and Sri Lanka.",
+        "enhanced_response": "The Yellow-Billed Babbler (*Argya affinis*) is a bird of varying sizes, commonly found in Prefers drier habitats than the Jungle Babbler. It is recognized by its Pale spot in front of eyes, pale crown contrasting with dark throat and cheeks, blank-faced appearance. This species is known to be Gregarious and noisy. It has a conservation status of \"Least Concern\" and is primarily found in Southern India and Sri Lanka."
+    },
+    {
+        "question": "What is the scientific name of the White-Bellied Drongo?",
+        "retrieved_chunk": "Dicrurus caerulescens",
+        "enhanced_response": "The scientific name of the White-Bellied Drongo is *Dicrurus caerulescens*."
+    },
+    {
+        "question": "What is the conservation status of the White-Bellied Drongo?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The White-Bellied Drongo is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the White-Bellied Drongo?",
+        "retrieved_chunk": "Distinctively forked tail, white belly in white-bellied form",
+        "enhanced_response": "The White-Bellied Drongo has the following distinctive features: Distinctively forked tail, white belly in white-bellied form."
+    },
+    {
+        "question": "What size is the White-Bellied Drongo?",
+        "retrieved_chunk": "Small",
+        "enhanced_response": "The White-Bellied Drongo is Small in size."
+    },
+    {
+        "question": "Where does the White-Bellied Drongo live?",
+        "retrieved_chunk": "Dry and open forests across the Indian subcontinent",
+        "enhanced_response": "The White-Bellied Drongo is found in the following habitat: Dry and open forests across the Indian subcontinent."
+    },
+    {
+        "question": "How does the White-Bellied Drongo behave?",
+        "retrieved_chunk": "No information available",
+        "enhanced_response": "The behavior of the White-Bellied Drongo is described as: No information available."
+    },
+    {
+        "question": "Where can the White-Bellied Drongo be found?",
+        "retrieved_chunk": "Indian subcontinent",
+        "enhanced_response": "The range of the White-Bellied Drongo includes: Indian subcontinent."
+    },
+    {
+        "question": "Tell me about the White-Bellied Drongo.",
+        "retrieved_chunk": "The White-Bellied Drongo (*Dicrurus caerulescens*) is Small, commonly found in Dry and open forests across the Indian subcontinent. It is recognized by its Distinctively forked tail, white belly in white-bellied form. This species is known to be No information available. It has a conservation status of \"Least Concern\" and is primarily found in Indian subcontinent.",
+        "enhanced_response": "The White-Bellied Drongo (*Dicrurus caerulescens*) is Small, commonly found in Dry and open forests across the Indian subcontinent. It is recognized by its Distinctively forked tail, white belly in white-bellied form. This species is known to be No information available. It has a conservation status of \"Least Concern\" and is primarily found in Indian subcontinent."
+    },
+    {
+        "question": "What is the scientific name of the Black-Hooded Oriole?",
+        "retrieved_chunk": "Oriolus xanthornus",
+        "enhanced_response": "The scientific name of the Black-Hooded Oriole is *Oriolus xanthornus*."
+    },
+    {
+        "question": "What is the conservation status of the Black-Hooded Oriole?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Black-Hooded Oriole is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Black-Hooded Oriole?",
+        "retrieved_chunk": "Black head and breast, black band towards the tail tip in flight",
+        "enhanced_response": "The Black-Hooded Oriole has the following distinctive features: Black head and breast, black band towards the tail tip in flight."
+    },
+    {
+        "question": "What size is the Black-Hooded Oriole?",
+        "retrieved_chunk": "Medium-sized",
+        "enhanced_response": "The Black-Hooded Oriole is Medium-sized in size."
+    },
+    {
+        "question": "Where does the Black-Hooded Oriole live?",
+        "retrieved_chunk": "Wooded gardens, groves, and open forests",
+        "enhanced_response": "The Black-Hooded Oriole is found in the following habitat: Wooded gardens, groves, and open forests."
+    },
+    {
+        "question": "How does the Black-Hooded Oriole behave?",
+        "retrieved_chunk": "Often feeds on fruiting trees with a preference for figs",
+        "enhanced_response": "The behavior of the Black-Hooded Oriole is described as: Often feeds on fruiting trees with a preference for figs."
+    },
+    {
+        "question": "Where can the Black-Hooded Oriole be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Black-Hooded Oriole includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Black-Hooded Oriole.",
+        "retrieved_chunk": "The Black-Hooded Oriole (*Oriolus xanthornus*) is Medium-sized, commonly found in Wooded gardens, groves, and open forests. It is recognized by its Black head and breast, black band towards the tail tip in flight. This species is known to be Often feeds on fruiting trees with a preference for figs. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Black-Hooded Oriole (*Oriolus xanthornus*) is Medium-sized, commonly found in Wooded gardens, groves, and open forests. It is recognized by its Black head and breast, black band towards the tail tip in flight. This species is known to be Often feeds on fruiting trees with a preference for figs. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Pied Kingfisher?",
+        "retrieved_chunk": "Ceryle rudis",
+        "enhanced_response": "The scientific name of the Pied Kingfisher is *Ceryle rudis*."
+    },
+    {
+        "question": "What is the conservation status of the Pied Kingfisher?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Pied Kingfisher is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Pied Kingfisher?",
+        "retrieved_chunk": "Short, bushy crest; glossy all-dark bill; distinctly patterned head and breast",
+        "enhanced_response": "The Pied Kingfisher has the following distinctive features: Short, bushy crest; glossy all-dark bill; distinctly patterned head and breast."
+    },
+    {
+        "question": "What size is the Pied Kingfisher?",
+        "retrieved_chunk": "a bird of varying sizes",
+        "enhanced_response": "The Pied Kingfisher is a bird of varying sizes in size."
+    },
+    {
+        "question": "Where does the Pied Kingfisher live?",
+        "retrieved_chunk": "Waterside habitats from lakes to estuaries to mangroves",
+        "enhanced_response": "The Pied Kingfisher is found in the following habitat: Waterside habitats from lakes to estuaries to mangroves."
+    },
+    {
+        "question": "How does the Pied Kingfisher behave?",
+        "retrieved_chunk": "Often hovers over water when seeking prey; frequently seen perched in pairs or small groups",
+        "enhanced_response": "The behavior of the Pied Kingfisher is described as: Often hovers over water when seeking prey; frequently seen perched in pairs or small groups."
+    },
+    {
+        "question": "Where can the Pied Kingfisher be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Pied Kingfisher includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Pied Kingfisher.",
+        "retrieved_chunk": "The Pied Kingfisher (*Ceryle rudis*) is a bird of varying sizes, commonly found in Waterside habitats from lakes to estuaries to mangroves. It is recognized by its Short, bushy crest; glossy all-dark bill; distinctly patterned head and breast. This species is known to be Often hovers over water when seeking prey; frequently seen perched in pairs or small groups. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Pied Kingfisher (*Ceryle rudis*) is a bird of varying sizes, commonly found in Waterside habitats from lakes to estuaries to mangroves. It is recognized by its Short, bushy crest; glossy all-dark bill; distinctly patterned head and breast. This species is known to be Often hovers over water when seeking prey; frequently seen perched in pairs or small groups. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Greater Coucal?",
+        "retrieved_chunk": "Centropus sinensis",
+        "enhanced_response": "The scientific name of the Greater Coucal is *Centropus sinensis*."
+    },
+    {
+        "question": "What is the conservation status of the Greater Coucal?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Greater Coucal is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Greater Coucal?",
+        "retrieved_chunk": "Long and heavy black tail, deep red eyes, rusty wings, glossy underparts",
+        "enhanced_response": "The Greater Coucal has the following distinctive features: Long and heavy black tail, deep red eyes, rusty wings, glossy underparts."
+    },
+    {
+        "question": "What size is the Greater Coucal?",
+        "retrieved_chunk": "Large",
+        "enhanced_response": "The Greater Coucal is Large in size."
+    },
+    {
+        "question": "Where does the Greater Coucal live?",
+        "retrieved_chunk": "Common across a range of habitats except very dense forests",
+        "enhanced_response": "The Greater Coucal is found in the following habitat: Common across a range of habitats except very dense forests."
+    },
+    {
+        "question": "How does the Greater Coucal behave?",
+        "retrieved_chunk": "Similar to Lesser Coucal; lacks white streaks on wings seen on Lesser Coucal",
+        "enhanced_response": "The behavior of the Greater Coucal is described as: Similar to Lesser Coucal; lacks white streaks on wings seen on Lesser Coucal."
+    },
+    {
+        "question": "Where can the Greater Coucal be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Greater Coucal includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Greater Coucal.",
+        "retrieved_chunk": "The Greater Coucal (*Centropus sinensis*) is Large, commonly found in Common across a range of habitats except very dense forests. It is recognized by its Long and heavy black tail, deep red eyes, rusty wings, glossy underparts. This species is known to be Similar to Lesser Coucal; lacks white streaks on wings seen on Lesser Coucal. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Greater Coucal (*Centropus sinensis*) is Large, commonly found in Common across a range of habitats except very dense forests. It is recognized by its Long and heavy black tail, deep red eyes, rusty wings, glossy underparts. This species is known to be Similar to Lesser Coucal; lacks white streaks on wings seen on Lesser Coucal. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Rock Pigeon?",
+        "retrieved_chunk": "Columba livia",
+        "enhanced_response": "The scientific name of the Rock Pigeon is *Columba livia*."
+    },
+    {
+        "question": "What is the conservation status of the Rock Pigeon?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Rock Pigeon is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Rock Pigeon?",
+        "retrieved_chunk": "Variable plumage; some identical to wild-type, others can be completely black, white, or orangey-brown",
+        "enhanced_response": "The Rock Pigeon has the following distinctive features: Variable plumage; some identical to wild-type, others can be completely black, white, or orangey-brown."
+    },
+    {
+        "question": "What size is the Rock Pigeon?",
+        "retrieved_chunk": "Fairly large",
+        "enhanced_response": "The Rock Pigeon is Fairly large in size."
+    },
+    {
+        "question": "Where does the Rock Pigeon live?",
+        "retrieved_chunk": "Cliffs and caves from western Europe to central Asia; cities and farmland",
+        "enhanced_response": "The Rock Pigeon is found in the following habitat: Cliffs and caves from western Europe to central Asia; cities and farmland."
+    },
+    {
+        "question": "How does the Rock Pigeon behave?",
+        "retrieved_chunk": "Often in large flocks",
+        "enhanced_response": "The behavior of the Rock Pigeon is described as: Often in large flocks."
+    },
+    {
+        "question": "Where can the Rock Pigeon be found?",
+        "retrieved_chunk": "Worldwide (wild and feral populations)",
+        "enhanced_response": "The range of the Rock Pigeon includes: Worldwide (wild and feral populations)."
+    },
+    {
+        "question": "Tell me about the Rock Pigeon.",
+        "retrieved_chunk": "The Rock Pigeon (*Columba livia*) is Fairly large, commonly found in Cliffs and caves from western Europe to central Asia; cities and farmland. It is recognized by its Variable plumage; some identical to wild-type, others can be completely black, white, or orangey-brown. This species is known to be Often in large flocks. It has a conservation status of \"Least Concern\" and is primarily found in Worldwide (wild and feral populations).",
+        "enhanced_response": "The Rock Pigeon (*Columba livia*) is Fairly large, commonly found in Cliffs and caves from western Europe to central Asia; cities and farmland. It is recognized by its Variable plumage; some identical to wild-type, others can be completely black, white, or orangey-brown. This species is known to be Often in large flocks. It has a conservation status of \"Least Concern\" and is primarily found in Worldwide (wild and feral populations)."
+    },
+    {
+        "question": "What is the scientific name of the Lesser Whistling-Duck?",
+        "retrieved_chunk": "Dendrocygna javanica",
+        "enhanced_response": "The scientific name of the Lesser Whistling-Duck is *Dendrocygna javanica*."
+    },
+    {
+        "question": "What is the conservation status of the Lesser Whistling-Duck?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Lesser Whistling-Duck is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Lesser Whistling-Duck?",
+        "retrieved_chunk": "Chestnut-fringed feathers, orange-yellow eyering",
+        "enhanced_response": "The Lesser Whistling-Duck has the following distinctive features: Chestnut-fringed feathers, orange-yellow eyering."
+    },
+    {
+        "question": "What size is the Lesser Whistling-Duck?",
+        "retrieved_chunk": "Small",
+        "enhanced_response": "The Lesser Whistling-Duck is Small in size."
+    },
+    {
+        "question": "Where does the Lesser Whistling-Duck live?",
+        "retrieved_chunk": "Shallow water bodies with abundant vegetation",
+        "enhanced_response": "The Lesser Whistling-Duck is found in the following habitat: Shallow water bodies with abundant vegetation."
+    },
+    {
+        "question": "How does the Lesser Whistling-Duck behave?",
+        "retrieved_chunk": "Gregarious, often found in flocks; flies with rapid wingbeats on broad dark wings",
+        "enhanced_response": "The behavior of the Lesser Whistling-Duck is described as: Gregarious, often found in flocks; flies with rapid wingbeats on broad dark wings."
+    },
+    {
+        "question": "Where can the Lesser Whistling-Duck be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Lesser Whistling-Duck includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Lesser Whistling-Duck.",
+        "retrieved_chunk": "The Lesser Whistling-Duck (*Dendrocygna javanica*) is Small, commonly found in Shallow water bodies with abundant vegetation. It is recognized by its Chestnut-fringed feathers, orange-yellow eyering. This species is known to be Gregarious, often found in flocks; flies with rapid wingbeats on broad dark wings. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Lesser Whistling-Duck (*Dendrocygna javanica*) is Small, commonly found in Shallow water bodies with abundant vegetation. It is recognized by its Chestnut-fringed feathers, orange-yellow eyering. This species is known to be Gregarious, often found in flocks; flies with rapid wingbeats on broad dark wings. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    },
+    {
+        "question": "What is the scientific name of the Asian Palm Swift?",
+        "retrieved_chunk": "Cypsiurus balasiensis",
+        "enhanced_response": "The scientific name of the Asian Palm Swift is *Cypsiurus balasiensis*."
+    },
+    {
+        "question": "What is the conservation status of the Asian Palm Swift?",
+        "retrieved_chunk": "Least Concern",
+        "enhanced_response": "The Asian Palm Swift is classified as 'Least Concern', meaning it is not currently endangered."
+    },
+    {
+        "question": "What are the distinctive features of the Asian Palm Swift?",
+        "retrieved_chunk": "Long thin wings, heavily-forked tail",
+        "enhanced_response": "The Asian Palm Swift has the following distinctive features: Long thin wings, heavily-forked tail."
+    },
+    {
+        "question": "What size is the Asian Palm Swift?",
+        "retrieved_chunk": "Small",
+        "enhanced_response": "The Asian Palm Swift is Small in size."
+    },
+    {
+        "question": "Where does the Asian Palm Swift live?",
+        "retrieved_chunk": "Mostly seen over open areas such as fields and agricultural land; partial to areas with palms on which they breed",
+        "enhanced_response": "The Asian Palm Swift is found in the following habitat: Mostly seen over open areas such as fields and agricultural land; partial to areas with palms on which they breed."
+    },
+    {
+        "question": "How does the Asian Palm Swift behave?",
+        "retrieved_chunk": "Seen in rapid fluttering flight, often making trilling \u201ctiriririree\u201d calls while foraging in pairs or loose flocks",
+        "enhanced_response": "The behavior of the Asian Palm Swift is described as: Seen in rapid fluttering flight, often making trilling \u201ctiriririree\u201d calls while foraging in pairs or loose flocks."
+    },
+    {
+        "question": "Where can the Asian Palm Swift be found?",
+        "retrieved_chunk": "several regions around the world",
+        "enhanced_response": "The range of the Asian Palm Swift includes: several regions around the world."
+    },
+    {
+        "question": "Tell me about the Asian Palm Swift.",
+        "retrieved_chunk": "The Asian Palm Swift (*Cypsiurus balasiensis*) is Small, commonly found in Mostly seen over open areas such as fields and agricultural land; partial to areas with palms on which they breed. It is recognized by its Long thin wings, heavily-forked tail. This species is known to be Seen in rapid fluttering flight, often making trilling \u201ctiriririree\u201d calls while foraging in pairs or loose flocks. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world.",
+        "enhanced_response": "The Asian Palm Swift (*Cypsiurus balasiensis*) is Small, commonly found in Mostly seen over open areas such as fields and agricultural land; partial to areas with palms on which they breed. It is recognized by its Long thin wings, heavily-forked tail. This species is known to be Seen in rapid fluttering flight, often making trilling \u201ctiriririree\u201d calls while foraging in pairs or loose flocks. It has a conservation status of \"Least Concern\" and is primarily found in several regions around the world."
+    }
+]
