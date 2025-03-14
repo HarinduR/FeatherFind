@@ -19,15 +19,19 @@ answers = []
 
 for entry in dataset:
     questions.append(entry["question"])
-    answers.append(entry["retrieved_chunk"])  
+    answers.append(entry["retrieved_chunk"])
 
-question_embeddings = model.encode(questions) 
-answer_embeddings = model.encode(answers)
+question_embeddings = model.encode(questions, normalize_embeddings=True)
+answer_embeddings = model.encode(answers, normalize_embeddings=True)
 
 dimension = question_embeddings.shape[1]
-faiss_index = faiss.IndexFlatL2(dimension)
+assert dimension == answer_embeddings.shape[1], "Mismatch in embedding dimensions!"
 
-faiss_index.add(answer_embeddings)
+faiss.normalize_L2(question_embeddings)
+faiss.normalize_L2(answer_embeddings)
+
+faiss_index = faiss.IndexFlatL2(dimension)
+faiss_index.add(answer_embeddings)  
 
 faiss.write_index(faiss_index, faiss_index_file)
 np.save(question_embeddings_file, question_embeddings)

@@ -1,7 +1,8 @@
 import pandas as pd
 import json
+from rapidfuzz import process
 
-dataset_file = "../RAG_dataset/dataset.csv"
+dataset_file = "../RAG_dataset/cleaned.csv"
 qa_dataset_file = "../RAG_dataset/qa_dataset.json"
 
 DEFAULT_VALUES = {

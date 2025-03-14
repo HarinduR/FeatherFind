@@ -7,36 +7,42 @@ from rapidfuzz import process
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 faiss_index = faiss.read_index("../vector_database/faiss_index.bin")
-
 qa_mapping = np.load("../vector_database/qa_mapping.npy", allow_pickle=True)
 
 def retrieve_answer(user_query):
+    """Retrieve the best-matching bird answer using Hybrid Search (FAISS + Fuzzy Matching)."""
 
     query_embedding = model.encode([user_query])
 
-    _, indices = faiss_index.search(np.array(query_embedding, dtype=np.float32), k=5)
+    _, indices = faiss_index.search(np.array(query_embedding, dtype=np.float32), k=1)
 
-    best_match = None
-    best_score = -1
+    best_faiss_match = None
+    best_faiss_score = -1
 
-    print("\n🔍 Top 5 Matches (Checking for the Best One):")
+    print("\n FAISS Best Match:")
     
-    for idx in indices[0]:  
-        matched_question, matched_answer = qa_mapping[idx]
+    idx = indices[0][0] 
+    matched_question, matched_answer = qa_mapping[idx] 
 
-        match_vector = model.encode([matched_question])
-        similarity = cosine_similarity(query_embedding, match_vector)[0][0]  
+    match_vector = model.encode([matched_question])
+    similarity = cosine_similarity(query_embedding, match_vector)[0][0]  
 
-        print(f"🔹 Matched Question: {matched_question} | Similarity Score: {similarity:.4f}")
+    print(f" FAISS Matched Question: {matched_question} | Score: {similarity:.4f}")
 
-        # ✅ Ensure correct bird is matched
-        matched_bird_name = matched_question.split(" of the ")[-1].replace("?", "").strip()
-        user_bird_name = user_query.split(" of the ")[-1].replace("?", "").strip()
+    questions_list = [entry[0] for entry in qa_mapping]
+    
+    fuzzy_match = process.extractOne(user_query, questions_list)  
+    best_keyword_match, keyword_score, _ = fuzzy_match 
 
-        if user_bird_name.lower() == matched_bird_name.lower():
-            if similarity > best_score:
-                best_score = similarity
-                best_match = matched_answer
+    print(f"RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
 
-    return best_match if best_match else "No relevant information found."
+    if keyword_score > similarity * 100:  
+        best_answer = next(ans for q, ans in qa_mapping if q == best_keyword_match)
+        matched_question = best_keyword_match  
+        print("✅ Using RapidFuzz Answer (Higher Score)")
+    else:
+        best_answer = matched_answer
+        print("✅ Using FAISS Answer (Higher Score)")
+
+    return best_answer, matched_question 
 
