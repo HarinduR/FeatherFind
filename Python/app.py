@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 extractor = FeatureExtractor()
 query_builder = SPARQLQueryBuilder()
-ontology_engine = OntologyQueryEngine("C:/Users/Daham/Documents/GitHub/FeatherFind/Python/ontology.owl")
+ontology_engine = OntologyQueryEngine()
 
 @app.route("/")
 def home():
@@ -18,7 +18,7 @@ def query_bird():
     data = request.get_json()
     text = data.get("text", "")
     
-    features = extractor.extract_features(text)
+    features = extractor.extractFeatures(text)
     
     sparql_query = query_builder.build_query(features)
     
@@ -31,4 +31,4 @@ def query_bird():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True,port=5001)
+    app.run(debug=True, port=5001)
