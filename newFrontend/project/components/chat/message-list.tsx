@@ -58,10 +58,10 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
             <div
               key={message.id}
               className={cn(
-                "flex gap-4 rounded-lg p-4 max-w-[85%] transition-all duration-200",
+                "flex gap-4 rounded-lg p-4 max-w-[85%] message-enter",
                 message.role === "user"
-                  ? "bg-muted/50 hover:bg-muted ml-auto items-end hover:shadow-[0_0_10px_rgba(34,197,94,0.2)]"
-                  : "bg-accent/50 hover:bg-accent mr-auto items-start hover:shadow-[0_0_10px_rgba(34,197,94,0.2)]"
+                  ? "bg-muted/50 ml-auto items-end"
+                  : "bg-accent/50 mr-auto items-start"
               )}
             >
               <div className={cn(
