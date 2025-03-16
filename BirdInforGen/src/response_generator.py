@@ -49,10 +49,11 @@ def retrieve_and_enhance_answer(user_query):
     return enhanced_response if enhanced_response else "No relevant information found."
 
 def generate_gpt2_response(user_query, retrieved_chunk):
-    
+
+    # ✅ If it's a general bird description, return without GPT-2 enhancement
     if user_query.lower().startswith("tell me about"):
-        return retrieved_chunk 
-    
+        return retrieved_chunk  
+
     prompt = f"""Instruction: Improve the following response with engaging and informative wording while keeping the facts unchanged.
 
     Question: {user_query}
@@ -65,7 +66,13 @@ def generate_gpt2_response(user_query, retrieved_chunk):
         output = gpt2_pipe(prompt, max_new_tokens=50, temperature=0.7, top_p=0.9)
         enhanced_response = output[0]["generated_text"].split("Enhanced Response:")[-1].strip()
 
-        return enhanced_response if enhanced_response else retrieved_chunk
+        # ✅ Prevent empty or incorrect responses
+        if not enhanced_response or len(enhanced_response.split()) < 5:  
+            print("⚠️ GPT-2 generated an incomplete response. Falling back to original answer.")
+            return retrieved_chunk  
+
+        return enhanced_response  
+
     except Exception as e:
-        print(f" GPT-2 Generation Error: {e}")
-        return retrieved_chunk 
+        print(f"❌ GPT-2 Generation Error: {e}")
+        return "Sorry, I couldn't generate an enhanced response. Here’s the original information: " + retrieved_chunk  
