@@ -87,19 +87,15 @@ def extract_info_from_query(query):
                 break
 
     # Extract bird name
-    # Extract bird name from query (FIRST check bird_aliases)
+    for bird in valid_bird_names:
+        if bird.lower() in query.lower():
+            extracted_data["bird_name"] = bird
+            break
+
     for word in query.split():
         if word.lower() in bird_aliases:
             extracted_data["bird_name"] = bird_aliases[word.lower()]
-            break  # Stop after first match
-
-    # If not found in aliases, check against valid bird names
-    if not extracted_data["bird_name"]:
-        for bird in valid_bird_names:
-            if bird.lower() in query.lower():
-                extracted_data["bird_name"] = bird
-                break
-
+            break
 
     # Extract year
     match = re.search(r"\b(20\d{2})\b", query)
@@ -176,5 +172,3 @@ def predict():
 # ✅ Run Flask App
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-
-print("Available Bird Classes in Model:", label_encoders1['COMMON NAME'].classes_)
