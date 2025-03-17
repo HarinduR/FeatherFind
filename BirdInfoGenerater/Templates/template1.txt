@@ -1,3 +1,0 @@
-The {Name} ({Scientific_Name}) is a bird with {Distinctive_Features}. It is typically {Size} in size and is found in {Habitat}. 
-This species is classified as "{Conservation_Status}" and is known for its behavior: {Behavior}. 
-Additional details about its geographical range: {Range}.
