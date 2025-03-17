@@ -1,0 +1,225 @@
+Bird Name: Red-vented Bulbul
+Scientific Name: Pycnonotus cafer
+Conservation Status: Least Concern
+Distinctive Features: Black crest, white rump, red vent under tail
+Size: Medium-sized
+Habitat: Often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest
+Behavior: Conspicuous and sometimes gregarious
+Range: Native to South and Southeast Asia. Introduced to Kuwait, Qatar, UAE, Oman, and some Polynesian islands, including Hawaii
+---
+Bird Name: Blue-tailed Bee-eater
+Scientific Name: Merops philippinus
+Conservation Status: Least Concern
+Distinctive Features: Thin black mask, rufous throat, elongated central tail feathers (in adults), broad and sharply pointed wings, long tail, and long bill
+Size: Unknown
+Habitat: Open country
+Behavior: Frequently seen in flight or perched on exposed snags or telephone wires
+Range: Unknown
+---
+Bird Name: White-throated Kingfisher
+Scientific Name: Halcyon smyrnensis
+Conservation Status: Least Concern
+Distinctive Features: Large head, electric-blue back and wings, heavy red bill, snow-white throat patch
+Size: Unknown
+Habitat: Near wetlands, lakes, agricultural fields, and clearings
+Behavior: Frequently seen perched on fence posts and telephone lines; gives jarring, raptor-like descending trills and cackles, often in flight
+Range: Unknown
+---
+Bird Name: Gray-headed Swamphen
+Scientific Name: Porphyrio poliocephalus
+Conservation Status: Unknown
+Distinctive Features: Red bill and forehead shield, red legs and feet with long toes, fluffy white “underpants”
+Size: Very large
+Habitat: Marshy, vegetated freshwater bodies such as swamps, rivers, and lakes
+Behavior: Often clumsy, feeds at muddy water edges, in reeds, and on floating vegetation; usually in small groups
+Range: Unknown
+---
+Bird Name: White-breasted Waterhen
+Scientific Name: Amaurornis phoenicurus
+Conservation Status: Least Concern
+Distinctive Features: Chickenlike appearance, rusty patch under the tail
+Size: Medium-sized
+Habitat: Meadows, ditches, riversides, marshes, parks, and farmlands
+Behavior: Often seen foraging in the open; often found in close proximity to humans
+Range: Unknown
+---
+Bird Name: Red-wattled Lapwing
+Scientific Name: Vanellus indicus
+Conservation Status: Least Concern
+Distinctive Features: Red wattles in front of the eyes, red bill with black tip, black breast and throat, white cheek patch
+Size: Unknown
+Habitat: Found around water bodies, agricultural fields, and dry land
+Behavior: Usually found in small groups; runs a short distance to pick up food from the ground
+Range: Unknown
+---
+Bird Name: Little Cormorant
+Scientific Name: Microcarbo niger
+Conservation Status: Least Concern
+Distinctive Features: Flat head, sharply hooked bill, small size compared to other cormorants
+Size: Smallest of the cormorants found in the region
+Habitat: Inland water bodies
+Behavior: Frequently seen swimming with its body low in the water, often perches upright on a rock to dry itself with outstretched wings
+Range: Unknown
+---
+Bird Name: Black-headed Ibis
+Scientific Name: Threskiornis melanocephalus
+Conservation Status: Near Threatened
+Distinctive Features: Bare black head and neck, down-curved black bill
+Size: Large
+Habitat: Wetlands, agricultural fields, coastal areas, dry fields, and human-modified landscapes
+Behavior: Probes into mud and shallow water with its long, down-curved bill, sometimes submerging its entire head while foraging
+Range: Unknown
+---
+Bird Name: Indian Pond-Heron
+Scientific Name: Ardeola grayii
+Conservation Status: Least Concern
+Distinctive Features: Dark reddish brown back, yellowish head, neck, and breast in breeding plumage; strikingly white in flight
+Size: Small
+Habitat: Aquatic habitats across the Indian subcontinent
+Behavior: Solitary, but large numbers gather where food is plentiful; prone to seasonally local movements and vagrancy
+Range: Unknown
+---
+Bird Name: Little Egret
+Scientific Name: Egretta garzetta
+Conservation Status: Unknown
+Distinctive Features: Wispy head plumes and white plumes on the lower back in breeding adults; slender dark bill, yellowish feet ("golden slippers")
+Size: Small
+Habitat: Wetlands, lakes, rivers, marshes, estuaries
+Behavior: Occurs as singles or in small loose groups; nests and roosts communally
+Range: Unknown
+---
+Bird Name: Purple Heron
+Scientific Name: Ardea purpurea
+Conservation Status: Least Concern
+Distinctive Features: Rusty head and streaky neck, extensively rusty brown on upperparts (juvenile)
+Size: Large
+Habitat: Fresh marshes with tall reeds and other vegetation
+Behavior: Often more retiring than Gray Heron; rarely seen in open situations
+Range: Unknown
+---
+Bird Name: Brahminy Kite
+Scientific Name: Haliastur indus
+Conservation Status: Least Concern
+Distinctive Features: Rounded tail, white head and breast contrasting with brick brown plumage
+Size: Medium-sized
+Habitat: Inland and coastal wetlands in tropical Asia; restricted to coastal wetlands in Australia
+Behavior: No information available
+Range: Tropical Asia and coastal wetlands in Australia
+---
+Bird Name: Rose-ringed Parakeet
+Scientific Name: Psittacula krameri
+Conservation Status: Least Concern
+Distinctive Features: Long slender tail, bright red bill, narrow black-and-pink neck ring in males
+Size: Unknown
+Habitat: Woodland, parks, gardens
+Behavior: Nests in cavities, including holes in buildings; raucous and social, often appearing in noisy groups
+Range: Native to Africa and South Asia, introduced worldwide, including Europe, the Caribbean, Japan, and Hawaii
+---
+Bird Name: Brown-headed Barbet
+Scientific Name: Psilopogon zeylanicus
+Conservation Status: Least Concern
+Distinctive Features: Prominent pale streaks on brown head and breast, white speckling on shoulders
+Size: Unknown
+Habitat: Prefers drier woodlands
+Behavior: Heard more often than seen
+Range: Unknown
+---
+Bird Name: Spotted Dove
+Scientific Name: Spilopelia chinensis
+Conservation Status: Unknown
+Distinctive Features: White-spotted black nape patch
+Size: Unknown
+Habitat: Open forests, fields, and parks; introduced to several regions around the world
+Behavior: Often tame and approachable; coos loudly and often
+Range: Much of Asia; introduced to several regions around the world
+---
+Bird Name: Asian Koel
+Scientific Name: Eudynamys scolopaceus
+Conservation Status: Unknown
+Distinctive Features: Dull lime-green bill (males), white dots on wings and streaking on head and throat (females and immatures)
+Size: Large
+Habitat: Interior of dense trees in many habitats, including inner cities and fields
+Behavior: Usually secretive; females lay eggs in the nests of other large birds like crows, shrikes, and starlings
+Range: Unknown
+---
+Bird Name: Common Tailorbird
+Scientific Name: Orthotomus sutorius
+Conservation Status: Least Concern
+Distinctive Features: Long bill; builds nest by stitching leaves together
+Size: Unknown
+Habitat: Parks, gardens, and wooded areas across South and Southeast Asia
+Behavior: Known for stitching leaves together to build nests; “tuii-tuii…” and “whee-whee…” calls are often part of daily life sounds in human habitation
+Range: South and Southeast Asia
+---
+Bird Name: Yellow-billed Babbler
+Scientific Name: Argya affinis
+Conservation Status: Least Concern
+Distinctive Features: Pale spot in front of eyes, pale crown contrasting with dark throat and cheeks, blank-faced appearance
+Size: Unknown
+Habitat: Prefers drier habitats than the Jungle Babbler
+Behavior: Gregarious and noisy
+Range: Southern India and Sri Lanka
+---
+Bird Name: White-bellied Drongo
+Scientific Name: Dicrurus caerulescens
+Conservation Status: Least Concern
+Distinctive Features: Distinctively forked tail, white belly in white-bellied form
+Size: Small
+Habitat: Dry and open forests across the Indian subcontinent
+Behavior: No information available
+Range: Indian subcontinent
+---
+Bird Name: Black-hooded Oriole
+Scientific Name: Oriolus xanthornus
+Conservation Status: Least Concern
+Distinctive Features: Black head and breast, black band towards the tail tip in flight
+Size: Medium-sized
+Habitat: Wooded gardens, groves, and open forests
+Behavior: Often feeds on fruiting trees with a preference for figs
+Range: Unknown
+---
+Bird Name: Pied Kingfisher
+Scientific Name: Ceryle rudis
+Conservation Status: Least Concern
+Distinctive Features: Short, bushy crest; glossy all-dark bill; distinctly patterned head and breast
+Size: Unknown
+Habitat: Waterside habitats from lakes to estuaries to mangroves
+Behavior: Often hovers over water when seeking prey; frequently seen perched in pairs or small groups
+Range: Unknown
+---
+Bird Name: Greater Coucal
+Scientific Name: Centropus sinensis
+Conservation Status: Least Concern
+Distinctive Features: Long and heavy black tail, deep red eyes, rusty wings, glossy underparts
+Size: Large
+Habitat: Common across a range of habitats except very dense forests
+Behavior: Similar to Lesser Coucal; lacks white streaks on wings seen on Lesser Coucal
+Range: Unknown
+---
+Bird Name: Rock Pigeon
+Scientific Name: Columba livia
+Conservation Status: Least Concern
+Distinctive Features: Variable plumage; some identical to wild-type, others can be completely black, white, or orangey-brown
+Size: Fairly large
+Habitat: Cliffs and caves from western Europe to central Asia; cities and farmland
+Behavior: Often in large flocks
+Range: Worldwide (wild and feral populations)
+---
+Bird Name: Lesser Whistling-Duck
+Scientific Name: Dendrocygna javanica
+Conservation Status: Least Concern
+Distinctive Features: Chestnut-fringed feathers, orange-yellow eyering
+Size: Small
+Habitat: Shallow water bodies with abundant vegetation
+Behavior: Gregarious, often found in flocks; flies with rapid wingbeats on broad dark wings
+Range: Unknown
+---
+Bird Name: Asian Palm Swift
+Scientific Name: Cypsiurus balasiensis
+Conservation Status: Least Concern
+Distinctive Features: Long thin wings, heavily-forked tail
+Size: Small
+Habitat: Mostly seen over open areas such as fields and agricultural land; partial to areas with palms on which they breed
+Behavior: Seen in rapid fluttering flight, often making trilling “tiriririree” calls while foraging in pairs or loose flocks
+Range: Unknown
+---

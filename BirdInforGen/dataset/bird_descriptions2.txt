@@ -1,0 +1,100 @@
+Bird Name: Red-vented Bulbul
+Scientific Name: Pycnonotus cafer
+Descriptions: A dark, sleek, medium-sized bird with a black crest and a white rump. The red color under the tail is often difficult to see. Eats fruit, flower buds, and insects. Conspicuous and sometimes gregarious, often seen high in trees or perched on wires in urban and rural areas; generally prefers scrubby edge habitat instead of dense forest. Calls include a variety of chirps and whistles. Native to South and Southeast Asia.
+---
+Bird Name: Blue-tailed Bee-eater
+Scientific Name: Merops philippinus
+Descriptions: Elegant, slender bird of open country, frequently seen in flight or perched on exposed snags or telephone wires. Adult green overall, with blue tail, thin black mask, and rufous throat; bright rufous underwings visible in flight. Juvenile similar but paler, with tannish throat and shorter tail, lacking the adult's elongated central tail feathers. Flying bird has distinctive shape, with broad, sharply pointed wings, long tail, and long bill. Nests colonially in sandbanks.
+---
+Bird Name: White-throated Kingfisher
+Scientific Name: Halcyon smyrnensis
+Descriptions: Large-headed, predominantly brown kingfisher with electric-blue back and wings, heavy red bill, and snow-white patch from the throat through the breast. Common both near and away from water; frequently seen perched on fence posts and telephone lines near wetlands, lakes, agricultural fields, and clearings. Gives jarring, raptor-like descending trills and cackles, often in flight.
+---
+Bird Name: Gray-headed Swamphen
+Scientific Name: Porphyrio poliocephalus
+Descriptions: A very large bluish-purple waterbird with a red bill and forehead shield, as well as red legs and feet with long toes. The tail is flicked up often, revealing fluffy white “underpants.” Juveniles are duller than adults and lack the red bill and shield. An inhabitant of marshy, vegetated freshwater bodies such as swamps, rivers, and lakes; usually in small groups. Feeds, often clumsily, at muddy water edges, in reeds, and on floating vegetation. Makes short nasal grunts and croaking sounds.
+---
+Bird Name: White-breasted Waterhen
+Scientific Name: Amaurornis phoenicurus
+Descriptions: Medium-sized, fairly common chickenlike marsh bird found in meadows, ditches, riversides, marshes, as well as parks and farmlands in close proximity to humans; often seen foraging in the open. Adults are dark slaty above and white below, with a rusty patch under the tail. Juvenile similar but duller in color. Remarkably variable song is a series of hooting, grunting, or rasping notes or phrases, repeated monotonously, often from an exposed perch.
+---
+Bird Name: Red-wattled Lapwing
+Scientific Name: Vanellus indicus
+Descriptions: A distinctly marked lapwing with a black breast and throat and a red bill with a black tip. It also sports red wattles in front of the eyes and a white patch that runs down the cheeks to the underparts. In flight, note the black flight feathers that contrast with the white wing patch. Usually found in small groups around water bodies, agricultural fields, and dry land. They feed primarily on insects, catching them in a typical plover like manner, running a short distance and picking up food from ground.
+---
+Bird Name: Little Cormorant
+Scientific Name: Microcarbo niger
+Descriptions: An all black ducklike waterbird with a distinctive flattish head and a bill that is sharply hooked at the tip. Smallest of the cormorants found in the region. Breeding adults have white plumes on the sides of the head. Like all cormorants, frequently seen swimming with its body low in the water, head and neck pointing upward, and suddenly disappearing underwater to catch fish. Often perches upright on a rock, drying itself with outstretched wings. Seen singly or in small groups in inland water bodies.
+---
+Bird Name: Black-headed Ibis
+Scientific Name: Threskiornis melanocephalus
+Descriptions: A large wader with a white body and bare black head and neck. Males and females look similar and both have grayish tail feathers. It probes into mud and shallow water with its long, down curved black bill, sometimes submerging its entire head. Found primarily around wetlands including agricultural fields and occasionally around coastal areas, but also seen foraging in dry fields and human-modified landscapes.
+---
+Bird Name: Indian Pond-Heron
+Scientific Name: Ardeola grayii
+Descriptions: A small heron that is common in most aquatic habitats across the Indian subcontinent. Adults in breeding plumage have a dark reddish brown back that contrasts with a yellowish head, neck, and breast. In nonbreeding plumage they are virtually indistinguishable from nonbreeding Chinese Pond-Heron. In flight, adults appear surprisingly white due to their strikingly white wings, underparts, and tail. Although typically solitary, large numbers often gather where food is plentiful.
+---
+Bird Name: Little Egret
+Scientific Name: Egretta garzetta
+Descriptions: Small snow-white heron with slender dark bill, blackish legs, and yellowish feet ('golden slippers'). Breeding adult has 2 long wispy head plumes and a spray of white plumes ('aigrettes') on the lower back. Inhabits a wide variety of wetlands: lakes, rivers, marshes, estuaries—almost anywhere with small fish. Occurs as singles or small loose groups; nests and roosts communally.
+---
+Bird Name: Purple Heron
+Scientific Name: Ardea purpurea
+Descriptions: Large heron with rusty head and streaky neck; juvenile is extensively rusty brown on upperparts. Favors fresh marshes with tall reeds and other vegetation. Often more retiring than Gray Heron and rarely seen in open situations. Only likely to be confused with larger and bulkier Gray Heron, which is paler and grayer overall, with a stouter bill.
+---
+Bird Name: Brahminy Kite
+Scientific Name: Haliastur indus
+Descriptions: A medium-sized raptor with a rounded tail unlike other kites. Adults are unmistakable with a white head and breast contrasting with otherwise brick brown plumage. Juveniles are a darker brownish-black with a paler head and prominent white patches under the wings. Usually associated with both inland and coastal wetlands in tropical Asia, but it is largely restricted to coastal wetlands in Australia where it is alternately known as 'Red-backed Sea Eagle.' Call is a distinctive nasal, drawn out, 'Kyeeerrh.'
+---
+Bird Name: Rose-ringed Parakeet
+Scientific Name: Psittacula krameri
+Descriptions: Vibrantly bright green parakeet, frequently found in woodland, parks, and gardens, where it feeds mainly in trees. Nests in cavities, including holes in buildings. Easily overlooked if quiet, as the bright green plumage blends easily with foliage. Note the very long slender tail and bright red bill; male has narrow black-and-pink neck ring. Closely resembles the larger Alexandrine Parakeet, which has a wine-red patch on each shoulder.
+---
+Bird Name: Brown-headed Barbet
+Scientific Name: Psilopogon zeylanicus
+Descriptions: A green and brown barbet with prominent pale streaks on its brown head and breast. The brown throat and green upperparts help separate it from other barbets in its range. Found in forests, plantations, and gardens, where it is most often seen perched motionless in the canopy. Feeds on fruits and berries. Gives a repetitive 'kutroo-kutroo-kutroo' call that can go on for minutes at a time.
+---
+Bird Name: Spotted Dove
+Scientific Name: Spilopelia chinensis
+Descriptions: A medium-sized, long-tailed dove with a distinctive white-spotted black collar patch on the back and sides of the neck. The upperparts are brown with a scaly pattern, and the underparts are pinkish-gray. Commonly found in open habitats, including gardens, farmlands, and urban areas. Often seen foraging on the ground in pairs or small groups. The call is a soft, rolling 'coo-coo-coo'.
+---
+Bird Name: Asian Koel
+Scientific Name: Eudynamys scolopaceus
+Descriptions: A large, long-tailed cuckoo with striking red eyes and a stout, pale bill. Males are glossy black, while females are brown with white spots and streaks. Commonly found in wooded areas, gardens, and urban settings. Known for its loud, repetitive 'koo-ooo' calls, especially during the breeding season. Often heard more than seen, as it tends to stay hidden in dense foliage.
+---
+Bird Name: Common Tailorbird
+Scientific Name: Orthotomus sutorius
+Descriptions: A small, active warbler with bright green upperparts and whitish underparts. Notable for its rufous crown and long, graduated tail, which is often held upright. Inhabits gardens, scrublands, and forest edges. Named for its unique nesting behavior, stitching leaves together to form a cradle for its nest. The song is a loud, sharp 'chup-chup-chup', often repeated in rapid succession.
+---
+Bird Name: Yellow-billed Babbler
+Scientific Name: Argya affinis
+Descriptions: A sociable, medium-sized babbler with a pale yellow bill and grayish-brown plumage. Often seen in noisy flocks, rummaging through leaf litter or bushes in search of insects and fruits. Common in gardens, farmlands, and scrubby areas. The call is a series of harsh, chattering notes, reflecting its gregarious nature.
+---
+Bird Name: White-bellied Drongo
+Scientific Name: Dicrurus caerulescens
+Descriptions: A small drongo with glossy blue-black upperparts and contrasting white underparts. The tail is slightly forked, and the eyes are reddish-brown. Prefers open forests, plantations, and gardens. Often seen perched conspicuously, sallying out to catch insects in flight. Known for its aggressive behavior towards larger birds and its varied vocalizations, including mimicry of other species.
+---
+Bird Name: Black-hooded Oriole
+Scientific Name: Oriolus xanthornus
+Descriptions: A striking yellow oriole with a contrasting black head, throat, and upper breast. The wings are black with a yellow patch, and the tail is black with yellow edges. Found in a variety of wooded habitats, including forests, plantations, and gardens. Feeds mainly on fruits and insects. The call is a mellow, fluty whistle, often rendered as 'pee-loo' or 'kee-ow'.
+---
+Bird Name: Pied Kingfisher
+Scientific Name: Ceryle rudis
+Descriptions: A medium-sized kingfisher with distinctive black and white plumage. The male has a double black breast band, while the female has a single band. Commonly found around freshwater bodies, including rivers, lakes, and ponds. Often seen hovering above water before diving to catch fish. The call is a sharp, high-pitched 'chirruk-chirruk'.
+---
+Bird Name: Greater Coucal
+Scientific Name: Centropus sinensis
+Descriptions: A large, crow-like bird with a long tail and coppery-brown wings. The head, neck, and body are glossy black with a greenish or purplish sheen. Prefers dense undergrowth in forests, plantations, and gardens. Feeds on insects, small vertebrates, and occasionally fruits. The call is a deep, resonant 'coop-coop-coop', often heard at dawn and dusk.
+---
+Bird Name: Rock Pigeon
+Scientific Name: Columba livia
+Descriptions: A familiar bird with variable plumage, typically gray with iridescent feathers on the neck and two black bars on the wings. Commonly found in urban areas, farmlands, and cliffs. Often seen in flocks, foraging on the ground for seeds and scraps. The call is a soft, cooing 'coo-roo-coo'.
+---
+Bird Name: Lesser Whistling-Duck
+Scientific Name: Dendrocygna javanica
+Descriptions: A medium-sized, chestnut-brown duck with a long neck and legs. Notable for its whistling calls and habit of perching in trees. Commonly found in wetlands, including marshes, lakes, and paddy fields. Often seen in flocks, feeding on aquatic plants and small invertebrates. The call is a high-pitched, whistling 'wheezy-wheezy'.
+---
+Bird Name: Asian Palm Swift
+Scientific Name: Cypsiurus balasiensis
+Descriptions: A small, slender swift with a deeply forked tail and long, pointed wings. The plumage is uniformly brownish-gray, with a slightly paler throat. Commonly found near palm trees, where it nests under the fronds. Often seen in fast, agile flight, catching insects on the wing. The call is a high-pitched, twittering 'tsee-tsee-tsee'.
+---
