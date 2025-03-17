@@ -1,0 +1,94 @@
+{
+    "intents": [
+      {
+        "intent": "bird_info_generating",
+        "examples": [
+            "Tell me about the kingfisher",
+            "What are the features of the bald eagle?",
+            "Can you describe a parrot's habitat?",
+            "Give me details about the peacock's behavior",
+            "What is unique about the sparrow?",
+            "How does an owl hunt at night?",
+            "Tell me about the flamingo's diet",
+            "What are the characteristics of a crow?",
+            "Describe the flight pattern of a hummingbird",
+            "What do pelicans eat?",
+            "Can you explain the nesting habits of a robin?",
+            "What makes penguins adapted to cold climates?",
+            "Tell me about the migration of seagulls",
+            "How does a woodpecker find insects in trees?",
+            "What are the physical traits of a swan?",
+            "Describe the hunting techniques of a heron",
+            "What is the lifespan of a falcon?",
+            "Why are vultures considered scavengers?",
+            "Tell me about the communication methods of pigeons",
+            "What is the role of storks in ecosystems?",
+            "How do toucans use their large beaks?",
+            "Describe the flight endurance of an albatross",
+            "What are the mating rituals of cranes?",
+            "Tell me about the different species of ducks",
+            "How do ostriches defend themselves?",
+            "What is the habitat of an emu?",
+            "Why are kiwis flightless birds?",
+            "Describe the vibrant colors of a macaw",
+            "What are the vocalizations of a cockatoo?",
+            "How does a nightingale produce its song?",
+            "Tell me about the domestication of canaries",
+            "What are the feeding habits of finches?",
+            "Describe the social behavior of blue jays",
+            "What is the symbolism of cardinals in culture?",
+            "How intelligent are ravens?",
+            "What are the nesting habits of magpies?",
+            "Tell me about the murmuration of starlings",
+            "What is the diet of a blackbird?",
+            "How do egrets hunt in shallow water?",
+            "Describe the unique beak shape of an ibis",
+            "What is the laughing call of a kookaburra?",
+            "How do lorikeets feed on nectar?",
+            "Tell me about the camouflage of quails",
+            "What are the courtship displays of pheasants?",
+            "How do partridges protect their young?",
+            "Describe the habitat of grouse",
+            "What are the migration patterns of sandpipers?",
+            "How do terns dive for fish?",
+            "Tell me about the diving abilities of cormorants",
+            "What is the hunting strategy of a shrike?",
+            "Describe the unique crest of a hoopoe",
+            "How do bowerbirds attract mates?",
+            "What is the mimicry ability of a lyrebird?",
+            "Tell me about the nest-building skills of weaver birds",
+            "What are the feeding habits of hornbills?",
+            "How do sunbirds pollinate flowers?",
+            "Describe the aerial acrobatics of bee-eaters",
+            "What is the role of drongos in their ecosystem?",
+            "How do wagtails communicate with their tails?",
+            "What are the foraging techniques of pipits?"
+        ]
+      },
+      {
+        "intent": "bird_range_predict",
+        "examples": [
+          "Which birds migrate in winter?",
+          "Tell me about bird migration patterns",
+          "Do parrots migrate?"
+        ]
+      },
+      {
+        "intent": "greeting",
+        "examples": [
+          "Hello",
+          "Hi there!",
+          "Good morning"
+        ]
+      },
+      {
+        "intent": "goodbye",
+        "examples": [
+          "Bye",
+          "See you later",
+          "Goodbye"
+        ]
+      }
+    ]
+  }
+  
