@@ -132,3 +132,28 @@ rules:
   steps:
     - intent: range_prediction
     - action: action_handle_missing_data
+
+
+- rule: Respond to Birdwatching Location Request
+  steps:
+    - intent: birdwatching_location
+    - action: utter_birdwatching_location
+    - action: action_birdwatching_location
+
+
+- rule: Ask for missing data in Birdwatching Location Prediction
+  steps:
+    - intent: birdwatching_location
+    - action: action_handle_missing_data
+
+- rule: Respond to Birdwatching Time Prediction
+  steps:
+    - intent: birdwatching_time
+    - action: utter_birdwatching_time
+    - action: action_birdwatching_time
+
+- rule: Ask for missing data in Birdwatching Time Prediction
+  steps:
+    - intent: birdwatching_time
+    - action: action_handle_missing_time_data
+

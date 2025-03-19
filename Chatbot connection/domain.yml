@@ -23,7 +23,12 @@ intents:
   - mood_great
   - mood_unhappy
   - non_birds
+
   - range_prediction
+  - birdwatching_location
+  - birdwatching_time
+
+
   - repeat_request
   - thank_you
 
@@ -39,12 +44,16 @@ entities:
   - body_part
   - user_feedback
   - retrieved_description 
+
   - bird_name
   - locality
   - year
   - month
   - day_of_week
   - hour
+  - time_of_day
+  - season
+
 
 slots:
   bird:
@@ -168,6 +177,25 @@ slots:
       - type: from_entity
         entity: hour
 
+
+  birdwatching_location:
+    type: text
+    mappings:
+      - type: from_text
+
+  time_of_day:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time_of_day
+
+  season:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: season
+
+
 responses:
 
   utter_iamabot:
@@ -243,10 +271,6 @@ responses:
     - text: "Searching for information on {bird}... Please wait... "
     - text: "Interesting choice! Let me find the best details on {bird} for you."
 
-  utter_range_prediction:
-    - text: "Searching for sighting on {bird}... Please wait... "
-    - text: "Let me find the best migrate details on {bird} for you."
-
   utter_image_classification:
     - text: "Analyzing the image... Please wait a moment."
 
@@ -316,8 +340,23 @@ responses:
     - text: "Looking for bird insights? I can help with species info, migration, and more!"
     - text: "Need help? Try asking about a bird species, its habitat, or migration patterns!"
 
+  utter_range_prediction:
+    - text: "Searching for sighting on {bird}... Please wait... "
+    - text: "Let me find the best migrate details on {bird} for you."
+
+
+  utter_birdwatching_location:
+    - text: "Looking for birdwatching locations ? Let me find the best spots for you!"
+    - text: "Searching for the best birdwatching locations. Please wait..."
+    - text: "Great choice! I'll get the best spots where you can find {bird_name}."
+
+  utter_birdwatching_time:
+    - text: "Let me check the best time to see {bird_name} in {locality}. Please wait..."
+
+
+
 actions:
-  - action_classify_intent
+  - action_classify_intent  
   - action_get_bird_info
   - action_range_prediction
   - action_image_classification
@@ -325,7 +364,12 @@ actions:
   - action_bird_info_generating
   - action_fallback
   - action_feedback
+
   - action_handle_bird_prediction
+  - action_birdwatching_location
+  - action_birdwatching_time
+
+
   
 
 session_config:

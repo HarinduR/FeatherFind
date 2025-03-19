@@ -147,9 +147,144 @@ nlu:
     - How do birds navigate during migration?
     - Do birds migrate in bad weather?
     - How do scientists track bird migration?
+
     - Will I be able to see a [Blue-tailed Bee-eater](bird_name) in [Bundala NP General](locality) on a [Friday](day_of_week) at [10:00 AM](hour) in [April](month) [2025](year)?
     - Can I see a [Red-vented Bulbul](bird_name) at [Tissa Lake](locality) on [Monday](day_of_week) at [3:00 PM](hour) in [June](month) [2024](year)?
     - Will the [White-throated Kingfisher](bird_name) be in [Yala National Park](locality) on [Sunday](day_of_week) at [6:00 AM](hour) in [December](month) [2023](year)?
+
+
+- intent: birdwatching_location
+  examples: |
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on a [Friday](day_of_week) in [January](month) [2025](year)?
+    - What are the best locations to see a [Red-vented Bulbul](bird_name) on [Sunday](day_of_week) morning?
+    - Can I spot a [White-throated Kingfisher](bird_name) in [January](month) in [2024](year)?
+    - Tell me where I can see a [Blue-tailed Bee-eater](bird_name) in the [morning](hour).
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Friday](day_of_week) [morning](hour) in [January](month)?
+
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [morning](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [afternoon](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [evening](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [night](hour) in [January](month)?
+
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [morning](hour) in [January](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [afternoon](hour) in [January](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [evening](hour) in [January](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [night](hour) in [January](month)?
+
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Monday](day_of_week) in [January](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Monday](day_of_week) in [January](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Monday](day_of_week) in [January](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Monday](day_of_week) in [January](month) [2025](year)?
+
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [January](month) [2025](year) in the [morning](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [January](month) [2025](year) in the [afternoon](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [January](month) [2025](year) in the [evening](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [January](month) [2025](year) in the [night](hour)?
+
+
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [morning](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [afternoon](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [evening](hour) in [January](month)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Monday](day_of_week) [night](hour) in [January](month)?
+
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Tuesday](day_of_week) [morning](hour) in [February](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Tuesday](day_of_week) [afternoon](hour) in [February](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Tuesday](day_of_week) [evening](hour) in [February](month)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [2025](year) [Tuesday](day_of_week) [night](hour) in [February](month)?
+
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Wednesday](day_of_week) in [March](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Wednesday](day_of_week) in [March](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Wednesday](day_of_week) in [March](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Wednesday](day_of_week) in [March](month) [2025](year)?
+
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [April](month) [2025](year) in the [morning](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [April](month) [2025](year) in the [afternoon](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [April](month) [2025](year) in the [evening](hour)?
+    - What are the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [April](month) [2025](year) in the [night](hour)?
+
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Friday](day_of_week) in [May](month)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Friday](day_of_week) in [May](month)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Friday](day_of_week) in [May](month)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Friday](day_of_week) in [May](month)?
+
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Saturday](day_of_week) in [June](month) in the [morning](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Saturday](day_of_week) in [June](month) in the [afternoon](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Saturday](day_of_week) in [June](month) in the [evening](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Saturday](day_of_week) in [June](month) in the [night](hour)?
+
+    - Tell me where I can see a [Blue-tailed Bee-eater](bird_name) on [Sunday](day_of_week) in [July](month) in the [morning](hour).
+    - Tell me where I can see a [Blue-tailed Bee-eater](bird_name) on [Sunday](day_of_week) in [July](month) in the [afternoon](hour).
+    - Tell me where I can see a [Blue-tailed Bee-eater](bird_name) on [Sunday](day_of_week) in [July](month) in the [evening](hour).
+    - Tell me where I can see a [Blue-tailed Bee-eater](bird_name) on [Sunday](day_of_week) in [July](month) in the [night](hour).
+
+
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [August](month) [2025](year) in the [morning](hour)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [August](month) [2025](year) in the [afternoon](hour)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [August](month) [2025](year) in the [evening](hour)?
+    - Where can I find a [Blue-tailed Bee-eater](bird_name) on [Monday](day_of_week) in [August](month) [2025](year) in the [night](hour)?
+
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Tuesday](day_of_week) in [September](month) [2025](year) in the [morning](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Tuesday](day_of_week) in [September](month) [2025](year) in the [afternoon](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Tuesday](day_of_week) in [September](month) [2025](year) in the [evening](hour)?
+    - Can I see a [Blue-tailed Bee-eater](bird_name) on [Tuesday](day_of_week) in [September](month) [2025](year) in the [night](hour)?
+
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [Wednesday](day_of_week) in [October](month) [2025](year) in the [morning](hour)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [Wednesday](day_of_week) in [October](month) [2025](year) in the [afternoon](hour)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [Wednesday](day_of_week) in [October](month) [2025](year) in the [evening](hour)?
+    - Will I be able to see a [Blue-tailed Bee-eater](bird_name) on [Wednesday](day_of_week) in [October](month) [2025](year) in the [night](hour)?
+
+    - Tell me the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [November](month) [2025](year) in the [morning](hour).
+    - Tell me the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [November](month) [2025](year) in the [afternoon](hour).
+    - Tell me the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [November](month) [2025](year) in the [evening](hour).
+    - Tell me the best locations to find a [Blue-tailed Bee-eater](bird_name) on [Thursday](day_of_week) in [November](month) [2025](year) in the [night](hour).
+
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Friday](day_of_week) in [December](month) [2025](year)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Friday](day_of_week) in [December](month) [2025](year)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Friday](day_of_week) in [December](month) [2025](year)?
+    - Where should I go to see a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Friday](day_of_week) in [December](month) [2025](year)?
+
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Saturday](day_of_week) in [August](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Saturday](day_of_week) in [August](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Saturday](day_of_week) in [August](month) [2025](year)?
+    - Can I spot a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Saturday](day_of_week) in [August](month) [2025](year)?
+
+    - Where can I see a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Sunday](day_of_week) in [September](month) [2025](year)?
+    - Where can I see a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Sunday](day_of_week) in [September](month) [2025](year)?
+    - Where can I see a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Sunday](day_of_week) in [September](month) [2025](year)?
+    - Where can I see a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Sunday](day_of_week) in [September](month) [2025](year)?
+
+    - What are the best locations for finding a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Monday](day_of_week) in [October](month) [2025](year)?
+    - What are the best locations for finding a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Monday](day_of_week) in [October](month) [2025](year)?
+    - What are the best locations for finding a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Monday](day_of_week) in [October](month) [2025](year)?
+    - What are the best locations for finding a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Monday](day_of_week) in [October](month) [2025](year)?
+
+    - Will I find a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Tuesday](day_of_week) in [November](month) [2025](year)?
+    - Will I find a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Tuesday](day_of_week) in [November](month) [2025](year)?
+    - Will I find a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Tuesday](day_of_week) in [November](month) [2025](year)?
+    - Will I find a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Tuesday](day_of_week) in [November](month) [2025](year)?
+
+    - Where should I travel to find a [Blue-tailed Bee-eater](bird_name) in the [morning](hour) on [Wednesday](day_of_week) in [December](month) [2025](year)?
+    - Where should I travel to find a [Blue-tailed Bee-eater](bird_name) in the [afternoon](hour) on [Wednesday](day_of_week) in [December](month) [2025](year)?
+    - Where should I travel to find a [Blue-tailed Bee-eater](bird_name) in the [evening](hour) on [Wednesday](day_of_week) in [December](month) [2025](year)?
+    - Where should I travel to find a [Blue-tailed Bee-eater](bird_name) in the [night](hour) on [Wednesday](day_of_week) in [December](month) [2025](year)?
+
+- intent: birdwatching_time
+  examples: |
+    - When is the best time to see a [Blue-tailed Bee-eater](bird_name) in [Bundala](locality)?
+    - What is the best time to watch a [Red-vented Bulbul](bird_name) in [Tissa Lake](locality)?
+    - Can you tell me when I should go to see a [White-throated Kingfisher](bird_name)?
+    - At what time should I visit [Yala National Park](locality) to spot a [Blue-tailed Bee-eater](bird_name)?
+    - What is the ideal time to see a [Red-vented Bulbul](bird_name) in [December](month)?
+    - When is the best birdwatching time for a [White-throated Kingfisher](bird_name) during [Summer](season)?
+    - Should I go in the [morning](time_of_day) or [evening](time_of_day) to see a [Blue-tailed Bee-eater](bird_name)?
+    - Will I be able to see a [Red-vented Bulbul](bird_name) in the [morning](time_of_day) on a [Sunday](day_of_week)?
+    - Tell me the best time to go birdwatching for a [White-throated Kingfisher](bird_name) in [Winter](season).
+    - When should I go out to see a [Blue-tailed Bee-eater](bird_name) in [January](month)?
+    - When is the best time to see a [Blue-tailed Bee-eater](bird_name) in [Bundala](locality) during [summer](season)?
+    - Should I go in the [morning](time_of_day) or [evening](time_of_day) to see a [Red-vented Bulbul](bird_name)?
+    - What time should I visit [Yala National Park](locality) to see a [White-throated Kingfisher](bird_name)?
+
+
 
 # 🟢 IMAGE CLASSIFICATION
 
