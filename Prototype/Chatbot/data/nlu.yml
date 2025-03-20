@@ -1,0 +1,233 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+    - hi there
+    - greetings
+    - nice to meet you
+    - pleasure to meet you
+    - howdy
+    - yo
+    - hey chatbot
+    - chatbot, hello
+    - greetings, bot
+    - hey AI
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - take care
+    - see you around
+    - later
+    - have a nice day
+    - talk to you soon
+    - farewell
+    - until next time
+    - I have to go
+    - gotta go
+    - see you next time
+
+- intent: general_question
+  examples: |
+    - Can you help me?
+    - What can you do?
+    - How does this chatbot work?
+    - Tell me something interesting.
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - absolutely
+    - sure
+    - definitely
+    - exactly
+    - that's right
+    - affirmative
+    - yeah
+    - yup
+    - of course
+    - sounds good
+    - you bet
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - nope
+    - nah
+    - not at all
+    - no way
+    - not really
+    - I don't think so
+    - I disagree
+    - I decline
+
+- intent: mood_great
+  examples: |
+    - I am happy
+    - I'm feeling good
+    - I'm in a great mood
+    - life is amazing
+    - everything is going well
+    - I'm doing fantastic
+    - today is a great day
+
+- intent: mood_unhappy
+  examples: |
+    - I am sad
+    - not feeling great
+    - I feel bad
+    - I am not okay
+    - I'm having a rough day
+    - today is not a good day
+    - I feel terrible
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you human?
+    - am I talking to an AI?
+    - do you have emotions?
+    - do you have a name?
+    - are you a real assistant?
+    - how do you work?
+    - are you programmed?
+
+# 🟢 BIRD INFORMATION RETRIEVAL
+
+- intent: bird_info_generate
+  examples: |
+    - Tell me about the [Kingfisher](bird)
+    - What do you know about the [Hornbill](bird)?
+    - Describe the [Eagle](bird)
+    - Give me details on the [Peacock](bird)
+    - What species is the [Sparrow](bird)?
+    - Tell me interesting facts about the [Owl](bird)
+    - Provide information on the [Parrot](bird)
+    - Explain characteristics of the [Flamingo](bird)
+    - What does the [Penguin](bird) eat?
+    - Where can I find the [Canary](bird)?
+    - How fast can the [Peregrine Falcon](bird) fly?
+    - What does the [Blue Jay](bird) sound like?
+    - Describe the feathers of the [Swan](bird)
+    - What’s the diet of the [Cuckoo](bird)?
+    - What is the lifespan of a [Robin](bird)?
+    - Where do [Toucans](bird) live?
+    - How colorful is the [Lorikeet](bird)?
+    - What is the nesting behavior of the [Magpie](bird)?
+    - Why do [Seagulls](bird) stay near the sea?
+    - What is the symbolism of the [Raven](bird)?
+    - How do [Doves](bird) communicate?
+
+# 🟢 BIRD MIGRATION & RANGE PREDICTION
+
+- intent: range_prediction
+  examples: |
+    - Which birds migrate in winter?
+    - Do any birds migrate to Sri Lanka?
+    - Tell me about bird migration
+    - What birds travel long distances?
+    - Which birds migrate in summer?
+    - Where do migratory birds go?
+    - What birds migrate to India?
+    - What birds migrate over mountains?
+    - How do birds navigate during migration?
+    - Do birds migrate in bad weather?
+    - How do scientists track bird migration?
+
+# 🟢 IMAGE CLASSIFICATION
+
+- intent: image_classification
+  examples: |
+    - Identify this bird from my photo
+    - What bird is in this picture?
+    - Can you recognize this bird from the image?
+    - What species is this bird in my photo?
+    - Tell me the name of the bird in this image.
+    - Which bird is shown in this picture?
+    - Find the bird species from my uploaded image.
+    - Detect the bird in this photo.
+    - What type of bird is in this picture?
+    - Can you analyze this bird image?
+    - Identify the bird using image recognition.
+
+# 🟢 KEYWORD FINDER FOR TEXT ANALYSIS
+
+- intent: keyword_finder
+  examples: |
+    - Find important words in this text
+    - Extract bird-related terms from this passage
+    - Show me keywords related to birds
+    - Identify bird names in this document
+    - Which birds are mentioned in this paragraph?
+    - Detect key terms in this article
+    - Analyze this text for bird species
+    - Extract relevant keywords for bird classification
+    - What are the main bird species mentioned here?
+    - Provide keyword analysis for bird-related topics
+
+# 🟢 ADDITIONAL USER REQUESTS
+
+- intent: feedback
+  examples: |
+    - I have some feedback for you
+    - Let me give you a suggestion
+    - I want to report an issue
+    - Can I provide some input?
+    - Here's what I think about this chatbot
+    - Can I share my opinion?
+    - I have some thoughts on your answers
+
+- intent: repeat_request
+  examples: |
+    - Can you repeat that?
+    - I didn't understand, say it again
+    - Could you explain that again?
+    - Please repeat your answer
+    - Can you go over that one more time?
+
+- intent: thank_you
+  examples: |
+    - Thanks!
+    - Thank you so much
+    - I appreciate it
+    - Many thanks
+    - Thanks a lot
+    - Appreciate your help
+    - Grateful for your assistance
+
+- intent: help
+  examples: |
+    - How can you assist me?
+    - What can I ask you?
+    - Can you tell me what you do?
+    - What are your capabilities?
+    - What kind of help do you provide?
+    - How do I use this chatbot?
+    - Can you explain how to interact with you?
+
+# 🟢 ERROR HANDLING
+
+- intent: fallback
+  examples: |
+    - I don't understand
+    - What are you talking about?
+    - That doesn't make sense
+    - I didn't get that
+    - Can you clarify?
+    - I have no idea what you're saying
+    - This is confusing
+    - I need help understanding this

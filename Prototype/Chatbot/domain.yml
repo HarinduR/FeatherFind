@@ -1,0 +1,300 @@
+version: "3.1"
+
+intents:
+  - affirm
+  - agree
+  - bird_info_generate
+  - bot_challenge
+  - deny
+  - feedback_negative
+  - feedback_positive
+  - general_question
+  - goodbye
+  - greet_checking_in
+  - greet_good_afternoon
+  - greet_good_evening
+  - greet_good_morning
+  - greet_good_night
+  - greet_hi
+  - help
+  - image_classification
+  - keyword_finder
+  - mood_excited
+  - mood_great
+  - mood_unhappy
+  - non_birds
+  - range_prediction
+  - repeat_request
+  - thank_you
+
+entities:
+  - bird
+  - description
+  - image
+  - location
+  - date
+  - time
+  - keyword
+  - color
+  - body_part
+  - user_feedback
+  - retrieved_description 
+
+slots:
+  bird:
+    type: list  
+    mappings:
+      - type: from_entity
+        entity: bird
+        strategy: append
+        intent: 
+          - bird_info_generate
+          - range_prediction
+
+  description:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: description
+        intent:
+          - bird_info_generate
+          - keyword_finder
+
+  image:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: image
+        intent:
+          - image_classification
+
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+        intent:
+          - range_prediction
+
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+        intent:
+          - range_prediction
+
+  time:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: time
+        intent:
+          - range_prediction
+
+  keyword:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: keyword
+        intent:
+          - keyword_finder
+
+  color:
+    type: list 
+    mappings:
+      - type: from_entity
+        entity: color
+        strategy: append
+        intent:
+          - keyword_finder
+
+  body_part:
+    type: list 
+    mappings:
+      - type: from_entity
+        entity: body_part
+        strategy: append
+        intent:
+          - keyword_finder
+
+  user_feedback:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: user_feedback
+        intent:
+          - feedback_positive
+          - feedback_negative
+
+  retrieved_description:  
+    type: text
+    mappings:
+      - type: custom 
+
+  last_user_query:
+    type: text
+    mappings:
+      - type: from_text
+
+responses:
+
+  utter_iamabot:
+    - text: "I am a chatbot, powered by Rasa. I can help you with bird-related informations using images your texts and prompts."
+    
+  utter_greet:
+    - text: "Hello! Welcome to FeatherFind. How can I assist you today? \nI can help you to explore the Birds using images your texts and prompts."
+
+  utter_greet_hi:
+    - text: "Hey there! Welcome to FeatherFind. How can I assist you today?"
+    - text: "Hello! Looking for bird information? Ask me anything!"
+    - text: "Hi! How can I help you with your to find birds?"
+
+  utter_greet_good_morning:
+    - text: "Good morning! I' m Ready to discover amazing bird facts?"
+    - text: "Good morning! What question do you have today?"
+    - text: "Good morning! Let’s explore the fascinating world of birds together!"
+
+  utter_greet_good_afternoon:
+    - text: "Good afternoon! What question do you have today?"
+    - text: "Good afternoon! How can I help you with your to find birds?"
+
+  utter_greet_good_evening:
+    - text: "Good evening! What bird-related questions do you have tonight?"
+    - text: "Good evening! Let’s talk about birds and their fascinating lives!"
+
+  utter_greet_good_night:
+    - text: "Good night! Sleep well and dream of beautiful birds!"
+    - text: "Good night!"
+    - text: "Good night! Sweet dreams!"
+
+  utter_greet_checking_in:
+    - text: "Thanks for asking! How’s your birdwatching journey going?"
+    - text: "I'm here to help! Need any bird insights today?"
+    - text: "Hey! Anything new you’d like to learn about birds?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day, and happy birdwatching!"
+    - text: "Bye! Let me know if you need more bird-related insights!"
+    - text: "See you soon! Keep exploring nature!"
+
+  utter_affirm:
+    - text: "Great! What else would you like to know?"
+    - text: "Awesome! Let me know how else I can assist you!"
+    - text: "Absolutely! What other bird facts can I fetch for you?"
+
+  utter_deny:
+    - text: "Alright, no worries! Let me know if you need anything else."
+    - text: "Okay! I'm here whenever you have a question."
+    - text: "That’s fine! If you change your mind, just ask."
+
+  utter_mood_great:
+    - text: "That's wonderful! What bird-related question do you have today?"
+    - text: "Awesome! Anything specific you'd like help with?"
+    - text: "Great to hear! Want to learn a fun fact about birds?"
+  
+  utter_mood_unhappy:
+    - text: "I'm sorry to hear that. Maybe learning about birds can cheer you up?"
+    - text: "I hope I can help! Let me know what you need."
+    - text: "Feeling down? A fun bird fact might lift your spirits!"
+
+  utter_mood_excited:
+    - text: "That's great! What exciting bird-related topic is on your mind?"
+    - text: "Awesome! Let’s talk about amazing birds!"
+    - text: "Wow! You seem really excited! Let’s chat about birds!"
+
+  utter_bot_challenge:
+    - text: "I'm FeatherFind, your personal AI bird assistant. I can help you to explore the Birds using images your texts and prompts. Ask me anything!"
+    - text: "I'm an AI chatbot designed for bird-related information. I can help you to explore the Birds using images your texts and prompts. How can I help?"
+    - text: "Yes, I'm an AI! But I can provide bird knowledge just like an expert! I can help you to explore the Birds using images your texts and prompts."
+
+  utter_bird_info_generate:
+    - text: "Searching for information on {bird}... Please wait... "
+    - text: "Interesting choice! Let me find the best details on {bird} for you."
+
+  utter_range_prediction:
+    - text: "Searching for sighting on {bird}... Please wait... "
+    - text: "Let me find the best migrate details on {bird} for you."
+
+  utter_image_classification:
+    - text: "Analyzing the image... Please wait a moment."
+
+  utter_keyword_finder:
+    - text: "I can find the bird you want, Please wait..."
+
+  utter_general_question:
+    - text: "That's an interesting question! \nI can help you to find a bird you don't know or you know, ask me about bird species, migration patterns, images, and birds informations!"
+    - text: "I’ll do my best to answer that! Please wait a moment."
+
+  utter_thank_you:
+    - text: "You're welcome! Let me know if you have more questions."
+    - text: "It’s my pleasure to assist! Have a wonderful day!"
+    - text: "Happy to help! Enjoy your birdwatching!"
+
+  utter_help:
+    - text: "I can help you to find a bird you don't know or you know, ask me about bird species, migration patterns, images, and birds informations!"
+    - text: "Need help? Try asking something like: 'Tell me about Kingfisher' or 'Where can I see kingfisher tomorrow?' or 'I saw a bird with red and blue body with narrow feathers'"
+
+  utter_feedback_negative:
+    - text: "I'm sorry to hear that! How can I improve?"
+    - text: "I appreciate honest feedback. What can I improve on?"
+
+  utter_feedback_positive:
+    - text: "Thank you! I'm glad I could help."
+    - text: "Your kind words mean a lot! Thanks for your feedback."
+    - text: "That makes me happy to hear! Let me know if you need more assistance."
+
+  utter_agree:
+    - text: "I see your point! That's an interesting perspective."
+    - text: "I get what you're saying! That makes sense."
+    - text: "You’re absolutely right! That’s a great point!"
+
+  utter_non_birds:
+    - text: "I'm mainly trained on bird-related topics. Would you like to ask something else?"
+    - text: "I specialize in birds, but I can try to help with general questions!"
+    - text: "My expertise is focused on birds, but I can give general information too!"
+    - text: "That’s outside my main expertise, but I’ll do my best to answer!"
+    - text: "FeatherFind is all about birds, but I can try to help with other topics!"
+
+  utter_repeat_request:
+    - text: "No problem! Here's what I found: \n\n {last_response} \n\n Would you like more details?"
+    - text: "I can say that again if you’d like! Just let me know. \n\n {last_response}"
+
+  utter_fallback:
+    - text: "Hmm, I didn't quite understand that. Can you try again? Or perhaps rephrase your question?"
+    - text: "FeatherFind specializes in bird information. Could you clarify your question so I can assist better?"
+    - text: "That’s outside my knowledge, but I can try my best! Can you explain more?"
+    - text: "I'm not sure what you mean. Maybe try asking about a bird, location, or migration pattern?"
+
+  utter_error:
+    - text: "Oops! Something went wrong. Try again or check if your question needs more details."
+    - text: "I encountered an issue processing your request. Could you try again?"
+    - text: "Uh-oh! Something went wrong on my end. Let’s try that again!"
+
+  utter_followup_question:
+    - text: "Would you like to know more details?"
+    - text: "Is there anything else you’d like to ask about this topic?"
+    - text: "I can provide additional details if you're interested!"
+
+  utter_more_bird_info:
+    - text: "Here are more interesting details about this bird!"
+    - text: "Want to know more? Here’s something fascinating about this species."
+
+  utter_help_suggestion:
+    - text: "I can assist with bird descriptions, migration predictions, and image classification. What would you like to know?"
+    - text: "Looking for bird insights? I can help with species info, migration, and more!"
+    - text: "Need help? Try asking about a bird species, its habitat, or migration patterns!"
+
+actions:
+  - action_classify_intent
+  - action_get_bird_info
+  - action_range_prediction
+  - action_image_classification
+  - action_keyword_finder
+  - action_bird_info_generating
+  - action_fallback
+  - action_feedback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

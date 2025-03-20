@@ -1,0 +1,10 @@
+flask
+Flask-Cors
+numpy
+pandas
+faiss-cpu
+sentence-transformers
+scikit-learn
+rapidfuzz
+transformers
+torch
