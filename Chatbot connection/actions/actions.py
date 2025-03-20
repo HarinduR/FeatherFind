@@ -35,25 +35,29 @@ class ActionHandleBirdPrediction(Action):
             if "valid_localities" in json_response:
                 valid_locations_text = "\n".join(json_response["valid_localities"])
                 location_aliases_text = "\n".join(json_response.get("location_aliases", []))
-                dispatcher.utter_message(text=f"{json_response['message']}\n\nValid Locations:\n{valid_locations_text}\n\n{location_aliases_text}")
+                dispatcher.utter_message(
+                    text=f"{json_response['message']}\n\nValid Locations:\n{valid_locations_text}\n\n{location_aliases_text}"
+                )
                 return []
 
             # ✅ Handle Missing Bird Name
             if "valid_bird_names" in json_response:
                 valid_birds_text = "\n".join(json_response["valid_bird_names"])
-                dispatcher.utter_message(text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}")
+                dispatcher.utter_message(
+                    text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}"
+                )
                 return []
 
-            # ✅ Handle Prediction Result
-            meaningful_sentence = json_response.get("meaningful_sentence", "I couldn't generate a response.")
-            probability = json_response.get("probability", "Unknown")
-            dispatcher.utter_message(text=f"{meaningful_sentence} (Confidence: {probability:.1f}%)")
+            # ✅ Extract Response Field
+            meaningful_sentence = json_response.get("Response", "I couldn't generate a response.")
+            dispatcher.utter_message(text=meaningful_sentence)
 
         except requests.exceptions.RequestException as e:
             logger.error(f"❌ API call error: {e}")
             dispatcher.utter_message(text="There was an error connecting to the prediction API.")
 
         return []
+
 
 
 class ActionBirdwatchingLocation(Action):
