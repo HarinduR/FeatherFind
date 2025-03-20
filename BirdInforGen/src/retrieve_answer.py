@@ -13,7 +13,6 @@ FAISS_THRESHOLD = 0.6
 FUZZY_THRESHOLD = 80 
 
 def retrieve_answer(user_query):
-    """Retrieve the best-matching bird answer using Hybrid Search (FAISS + Fuzzy Matching)."""
 
     query_embedding = model.encode([user_query])
 
@@ -29,12 +28,10 @@ def retrieve_answer(user_query):
 
     print(f"🔹 FAISS Matched Question: {matched_question} | Score: {faiss_similarity:.4f}")
 
-    # ✅ If FAISS score is too low, reject the match
     if faiss_similarity < FAISS_THRESHOLD:
         print("❌ FAISS Confidence too low. Rejecting match.")
         return "Sorry, I don't have information about that. Can you ask about a bird?", None
 
-    # ✅ Perform Keyword Matching (RapidFuzz)
     questions_list = [entry[0] for entry in qa_mapping]
     
     fuzzy_match = process.extractOne(user_query, questions_list)  
@@ -42,12 +39,10 @@ def retrieve_answer(user_query):
 
     print(f"🔍 RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
 
-    # ✅ If RapidFuzz score is too low, return a default response
     if keyword_score < FUZZY_THRESHOLD:
         print("❌ RapidFuzz Confidence too low. Rejecting match.")
         return "Sorry, I don't have information about that. Can you ask about a bird?", None
 
-    # ✅ Choose the better match (FAISS or RapidFuzz)
     if keyword_score > faiss_similarity * 100:  
         best_answer = next(ans for q, ans in qa_mapping if q == best_keyword_match)
         matched_question = best_keyword_match  
