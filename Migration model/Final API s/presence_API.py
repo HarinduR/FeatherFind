@@ -275,7 +275,7 @@ def predict():
         # ✅ Check if Locality is Missing
         if features["locality"] == "Unknown Location":
             return jsonify({
-                "message": "The query you entered didn't contain a location. Please select one.",
+                "message": "The query you entered didn't contain a location. Please select one and re-enter the query.",
                 "valid_localities": valid_localities,
                 "location_aliases": [
                     "You can also use 'Bundala' instead of 'Bundala NP General'.",
@@ -287,7 +287,7 @@ def predict():
         # ✅ Check if Bird Name is Missing
         if features["bird_name"] == "Unknown Bird":
             return jsonify({
-                "message": "The query you entered didn't contain a bird species. Please select one.",
+                "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
                 "valid_bird_names": valid_bird_names
             })
 

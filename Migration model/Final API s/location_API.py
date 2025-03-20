@@ -270,7 +270,7 @@ def predict_best_locations():
         
         if features["bird_name"] == "Unknown Bird":
                 return jsonify({
-                    "message": "The query you entered didn't contain a bird species. Please select one.",
+                    "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
                     "valid_bird_names": valid_bird_names
                 })
         

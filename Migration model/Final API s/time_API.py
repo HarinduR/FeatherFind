@@ -106,6 +106,18 @@ def parse_approximate_date(expression):
         return today + datetime.timedelta(days=int(match.group(1)))
     return None  
 
+def get_current_season():
+    """Returns the current season based on the current month."""
+    month = datetime.datetime.today().month
+    if month in [12, 1, 2]:  # December, January, February
+        return "Is_Winter"
+    elif month in [3, 4, 5]:  # March, April, May
+        return "Is_Spring"
+    elif month in [6, 7, 8]:  # June, July, August
+        return "Is_Summer"
+    else:  # September, October, November
+        return "Is_Autumn"
+
 # ✅ Extract Features from Query
 def extract_query_features_time(query):
     query = query.lower()
@@ -120,6 +132,8 @@ def extract_query_features_time(query):
     
     day_name_match = re.search(r'\b(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b', query)
     day_of_week = day_name_to_int(day_name_match.group()) if day_name_match else datetime.datetime.today().weekday()
+    
+    day_name = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][day_of_week]
 
     
 
@@ -156,6 +170,17 @@ def extract_query_features_time(query):
                 break
 
     season_flags = {season: 0 for season in season_aliases.values()}
+    found_season = False
+
+    for season, flag in season_aliases.items():
+        if season in query:
+            season_flags[flag] = 1
+            found_season = True
+
+    if not found_season:  # ✅ If no season found, use the current season
+        current_season_flag = get_current_season()
+        season_flags[current_season_flag] = 1
+    
     time_period_flags = {time: 0 for time in time_period_aliases.values()}
 
     for season, flag in season_aliases.items():
@@ -171,6 +196,7 @@ def extract_query_features_time(query):
         "day_of_week": day_of_week,
         "locality": locality,
         "bird_name": bird_name,
+        "day_name": day_name,
         **season_flags,
         **time_period_flags
     }
@@ -188,8 +214,8 @@ def predict_best_time():
 
         features = extract_query_features_time(query)
 
-        # ✅ Check if Locality is Missing
-        if features["locality"] == "Unknown Location":
+        # ✅ Ensure Locality and Bird Name Are Not Missing Before Encoding
+        if features["locality"] == "Unknown Location" or features["locality"] is None:
             return jsonify({
                 "message": "The query you entered didn't contain a location. Please select one.",
                 "valid_localities": valid_localities,
@@ -198,18 +224,30 @@ def predict_best_time():
                     "You can use 'Yala' instead of 'Yala National Park General'.",
                     "You can use 'Tissa' instead of 'Tissa Lake'."
                 ]
-            })
+            }), 400  # ✅ Make sure we return and STOP execution
 
-        # ✅ Check if Bird Name is Missing
-        if features["bird_name"] == "Unknown Bird":
+        if features["bird_name"] == "Unknown Bird" or features["bird_name"] is None:
             return jsonify({
-                "message": "The query you entered didn't contain a bird species. Please select one.",
+                "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
                 "valid_bird_names": valid_bird_names
-            })
+            }), 400  # ✅ Ensure we return and STOP execution
 
         # ✅ Encode Locality & Bird Name
-        locality_encoded = label_encoders['LOCALITY'].transform([features["locality"]])[0]
-        bird_name_encoded = label_encoders['COMMON NAME'].transform([features["bird_name"]])[0]
+        try:
+            if features["locality"] not in valid_localities:
+                raise ValueError(f"Invalid locality: {features['locality']}")
+
+            if features["bird_name"] not in valid_bird_names:
+                raise ValueError(f"Invalid bird name: {features['bird_name']}")
+
+            locality_encoded = label_encoders['LOCALITY'].transform([features["locality"]])[0]
+            bird_name_encoded = label_encoders['COMMON NAME'].transform([features["bird_name"]])[0]
+
+        except ValueError as e:
+            logger.error(f"Encoding Error: {e}")
+            return jsonify({"error": f"Invalid input detected: {str(e)}"}), 400  # ✅ Return proper error message
+
+
 
         input_data = pd.DataFrame([[1, features["year"], features["day_of_week"],
                                     locality_encoded, bird_name_encoded,
@@ -229,11 +267,17 @@ def predict_best_time():
         if formatted_hour == 0:
             formatted_hour = 12
 
-        return jsonify({
-            "month": month_name,
-            "hour": f"{formatted_hour}:00 {am_pm}",
-            "status": "success"
-        })
+        response = {
+            "Response": (
+                f"The {features['bird_name']} can be seen "
+                f"at {features['locality']} on a {features['day_name']}, "
+                f"at {formatted_hour}:00 {am_pm} "
+                f"in {month_name}."
+            )
+        }
+
+        return jsonify(response), 200
+
 
     except Exception as e:
         return jsonify({"error": f"Prediction error: {str(e)}", "status": "failure"})
