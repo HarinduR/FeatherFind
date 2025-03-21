@@ -17,32 +17,30 @@ def retrieve_and_enhance_answer(user_query):
     query_embedding = model.encode([user_query])
     _, indices = faiss_index.search(np.array(query_embedding, dtype=np.float32), k=1)
 
-    print("\n FAISS Best Match:")
-    
-    idx = indices[0][0] 
+    idx = indices[0][0]
     matched_question, retrieved_chunk = qa_mapping[idx]
 
     if isinstance(retrieved_chunk, tuple):  
-        retrieved_chunk = retrieved_chunk[0] 
+        retrieved_chunk = retrieved_chunk[0]  
 
     match_vector = model.encode([matched_question])
-    similarity = cosine_similarity(query_embedding, match_vector)[0][0]  
+    faiss_similarity = cosine_similarity(query_embedding, match_vector)[0][0]
 
-    print(f" FAISS Matched Question: {matched_question} | Score: {similarity:.4f}")
+    print(f"\n🔍 FAISS Best Match:")
+    print(f"🔹 FAISS Matched Question: {matched_question} | Score: {faiss_similarity:.4f}")
 
     questions_list = [entry[0] for entry in qa_mapping]
-    
     fuzzy_match = process.extractOne(user_query, questions_list) 
+
     best_keyword_match, keyword_score, _ = fuzzy_match  
+    print(f"🔍 RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
 
-    print(f"RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
-
-
-    if similarity < 0.5 and keyword_score < 70:  
+    if faiss_similarity < 0.4 and keyword_score < 70:
+        print("❌ FAISS and RapidFuzz both have low confidence. Rejecting query.")
         return "Sorry, I don't have information about that. Can you ask about a bird?"
 
-    if keyword_score > similarity * 100:  
-        retrieved_chunk = next(ans for q, ans in qa_mapping if q == best_keyword_match)
+    if keyword_score > faiss_similarity * 100 and keyword_score > 70:  
+        matched_question, retrieved_chunk = next((q, ans) for q, ans in qa_mapping if q == best_keyword_match)
         print("✅ Using RapidFuzz Answer (Higher Score)")
     else:
         print("✅ Using FAISS Answer (Higher Score)")
