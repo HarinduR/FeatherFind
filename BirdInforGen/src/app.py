@@ -14,18 +14,17 @@ def get_bird_info():
     if not user_query:
         return jsonify({"response": "❌ No query provided. Please ask a bird-related question."}), 400
 
-    retrieved_chunk = retrieve_answer(user_query)
+    retrieved_chunk, matched_question = retrieve_answer(user_query)
 
-    # ✅ If no relevant information found, return default response
     if "Sorry, I don't have information" in retrieved_chunk:
         return jsonify({"response": retrieved_chunk})
 
     if "tell me about" in user_query.lower():
         final_response = retrieved_chunk
     else:
-        final_response = generate_gpt2_response(user_query, retrieved_chunk)
+        final_response = generate_gpt2_response(user_query, matched_question, retrieved_chunk) 
 
     return jsonify({"response": final_response})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5003, debug=True)

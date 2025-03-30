@@ -15,43 +15,43 @@ gpt2_pipe = pipeline("text-generation", model="../model/gpt2_finetuned", tokeniz
 def retrieve_and_enhance_answer(user_query):
 
     query_embedding = model.encode([user_query])
-
     _, indices = faiss_index.search(np.array(query_embedding, dtype=np.float32), k=1)
 
-    best_faiss_match = None
-    best_faiss_score = -1
-
-    print("\n FAISS Best Match:")
-    
-    idx = indices[0][0] 
+    idx = indices[0][0]
     matched_question, retrieved_chunk = qa_mapping[idx]
 
-    match_vector = model.encode([matched_question])
-    similarity = cosine_similarity(query_embedding, match_vector)[0][0]  
+    if isinstance(retrieved_chunk, tuple):  
+        retrieved_chunk = retrieved_chunk[0]  
 
-    print(f" FAISS Matched Question: {matched_question} | Score: {similarity:.4f}")
+    match_vector = model.encode([matched_question])
+    faiss_similarity = cosine_similarity(query_embedding, match_vector)[0][0]
+
+    print(f"\n🔍 FAISS Best Match:")
+    print(f"🔹 FAISS Matched Question: {matched_question} | Score: {faiss_similarity:.4f}")
 
     questions_list = [entry[0] for entry in qa_mapping]
-    
     fuzzy_match = process.extractOne(user_query, questions_list) 
+
     best_keyword_match, keyword_score, _ = fuzzy_match  
+    print(f"🔍 RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
 
-    print(f"RapidFuzz Match: {best_keyword_match} | Score: {keyword_score:.4f}")
+    if faiss_similarity < 0.4 and keyword_score < 70:
+        print("❌ FAISS and RapidFuzz both have low confidence. Rejecting query.")
+        return "Sorry, I don't have information about that. Can you ask about a bird?"
 
-    if keyword_score > similarity * 100:  
-        retrieved_chunk = next(ans for q, ans in qa_mapping if q == best_keyword_match)
+    if keyword_score > faiss_similarity * 100 and keyword_score > 70:  
+        matched_question, retrieved_chunk = next((q, ans) for q, ans in qa_mapping if q == best_keyword_match)
         print("✅ Using RapidFuzz Answer (Higher Score)")
     else:
         print("✅ Using FAISS Answer (Higher Score)")
 
-    enhanced_response = generate_gpt2_response(user_query, retrieved_chunk)
+    enhanced_response = generate_gpt2_response(user_query, matched_question, retrieved_chunk)
 
     return enhanced_response if enhanced_response else "No relevant information found."
 
-def generate_gpt2_response(user_query, retrieved_chunk):
+def generate_gpt2_response(user_query, matched_question, retrieved_chunk):
 
-    # ✅ If it's a general bird description, return without GPT-2 enhancement
-    if user_query.lower().startswith("tell me about"):
+    if matched_question.lower().startswith("tell me about"):
         return retrieved_chunk  
 
     prompt = f"""Instruction: Improve the following response with engaging and informative wording while keeping the facts unchanged.
@@ -63,12 +63,11 @@ def generate_gpt2_response(user_query, retrieved_chunk):
     Enhanced Response:"""
 
     try:
-        output = gpt2_pipe(prompt, max_new_tokens=50, temperature=0.7, top_p=0.9)
+        output = gpt2_pipe(prompt, max_new_tokens=50, temperature=0.5, top_p=0.7)
         enhanced_response = output[0]["generated_text"].split("Enhanced Response:")[-1].strip()
 
-        # ✅ Prevent empty or incorrect responses
         if not enhanced_response or len(enhanced_response.split()) < 5:  
-            print("⚠️ GPT-2 generated an incomplete response. Falling back to original answer.")
+            print("GPT-2 generated an incomplete response. Falling back to original answer.")
             return retrieved_chunk  
 
         return enhanced_response  
