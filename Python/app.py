@@ -23,9 +23,13 @@ def query_bird():
     sparql_query = query_builder.build_query(features)
     
     results = ontology_engine.query(sparql_query)
+
+    final_list = []
+
+    for item in results:
+        final_list.append(item.values())
     
     return jsonify({
-        "query": sparql_query,
         "features": features,
         "results": results
     })
