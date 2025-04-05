@@ -6,9 +6,9 @@ from rasa_sdk.executor import CollectingDispatcher
 logger = logging.getLogger(__name__)
 
 # ✅ API Endpoints
-RANGE_PREDICTION_API = "http://127.0.0.1:5007/predict_presence"
-LOCATION_API = "http://127.0.0.1:5007/predict_location"
-TIME_PREDICTION_API = "http://127.0.0.1:5007/predict_best_time"
+RANGE_PREDICTION_API = "http://127.0.0.1:5002/predict_presence"
+LOCATION_API = "http://127.0.0.1:5002/predict_location"
+TIME_PREDICTION_API = "http://127.0.0.1:5002/predict_best_time"
 
 # ✅ Function: Call Range Prediction API
 def handle_range_prediction(query, dispatcher):
@@ -19,14 +19,15 @@ def handle_range_prediction(query, dispatcher):
         response = requests.post(RANGE_PREDICTION_API, json=payload, headers=headers)
         json_response = response.json()
 
-        if "valid_localities" in json_response:
-            valid_locations_text = "\n".join(json_response["valid_localities"])
-            location_aliases_text = "\n".join(json_response.get("location_aliases", []))
+        # ✅ Handle "you can use these locations"
+        if "you can use these locations" in json_response:
+            location_list = "\n".join(json_response["you can use these locations"])
             dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nValid Locations:\n{valid_locations_text}\n\n{location_aliases_text}"
+                text=f"{json_response['message']}\n\nHere are the supported locations:\n{location_list}"
             )
             return
 
+        # ✅ Handle bird species prompt
         if "valid_bird_names" in json_response:
             valid_birds_text = "\n".join(json_response["valid_bird_names"])
             dispatcher.utter_message(
@@ -34,11 +35,14 @@ def handle_range_prediction(query, dispatcher):
             )
             return
 
+        # ✅ Final fallback response
         dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
 
     except requests.exceptions.RequestException as e:
         logger.error(f"❌ API call error: {e}")
         dispatcher.utter_message(text="There was an error connecting to the range prediction API.")
+
+
 
 # ✅ Function: Call Location Prediction API
 def handle_location_prediction(query, dispatcher):
@@ -47,18 +51,33 @@ def handle_location_prediction(query, dispatcher):
 
     try:
         response = requests.post(LOCATION_API, json=payload, headers=headers)
-        json_response = response.json()
 
-        if "valid_bird_names" in json_response:
-            valid_birds_text = "\n".join(json_response["valid_bird_names"])
-            dispatcher.utter_message(text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}")
+        if response.status_code != 200:
+            logger.error(f"❌ API Error: {response.status_code} - {response.text}")
+            dispatcher.utter_message(text="There was an error processing your location prediction request.")
             return
 
-        dispatcher.utter_message(text=json_response.get("Response for you", "I couldn't generate a response."))
+        json_response = response.json()
+
+        # ✅ Handle bird species not found
+        if "valid_bird_names" in json_response:
+            valid_birds_text = "\n".join(json_response["valid_bird_names"])
+            dispatcher.utter_message(
+                text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}"
+            )
+            return
+
+        # ✅ General response
+        dispatcher.utter_message(
+            text=json_response.get("Response for you", "I couldn't generate a response.")
+        )
 
     except requests.exceptions.RequestException as e:
         logger.error(f"❌ API call error: {e}")
-        dispatcher.utter_message(text="There was an error connecting to the location prediction API.")
+        dispatcher.utter_message(
+            text="There was an error connecting to the location prediction API."
+        )
+
 
 # ✅ Function: Call Time Prediction API
 def handle_time_prediction(query, dispatcher):
@@ -95,12 +114,12 @@ def handle_time_prediction(query, dispatcher):
 def determine_api_from_query(query: str) -> str:
     query = query.lower()
 
-    time_keywords = ["best time", "morning", "afternoon", "evening", "night", "what time", "hour", "summer", "winter", "spring", "autmn"]
+    time_keywords = ["when", "best time", "morning", "afternoon", "evening", "night", "what time", "hour", "summer", "winter", "spring", "autmn"]
     
     location_keywords = ["where", "locations", "spots", "places", "areas",
                          "district", "blue bird", "Blue tailed bird", "when", "When", "Where" ,"Where can I find", "find",]
     
-    presence_keywords = ["present", "see", "appear", "found", "visible"]
+    presence_keywords = ["present", "see", "appear", "found", "visible", "will I", "can i"]
 
     if any(word in query for word in time_keywords):
         return "time"
