@@ -1,5 +1,4 @@
 {
-  "_name_or_path": "bert-base-uncased",
   "architectures": [
     "BertForSequenceClassification"
   ],
@@ -74,7 +73,7 @@
   "position_embedding_type": "absolute",
   "problem_type": "single_label_classification",
   "torch_dtype": "float32",
-  "transformers_version": "4.48.3",
+  "transformers_version": "4.50.3",
   "type_vocab_size": 2,
   "use_cache": true,
   "vocab_size": 30522
