@@ -911,10 +911,10 @@ def predict_best_time():
         if not query:
             return jsonify({"error": "No query provided"}), 400
 
-        features = extract_query_features_time(query)
+        features3 = extract_query_features_time(query)
 
         # ✅ Ensure Locality and Bird Name Are Not Missing Before Encoding
-        if features["locality"] == "Unknown Location" or features["locality"] is None:
+        if features3["locality"] == "Unknown Location" or features3["locality"] is None:
             return jsonify({
                 "message": "The query you entered didn't contain a location. Please select one.",
                 "valid_localities": valid_localities,
@@ -925,7 +925,7 @@ def predict_best_time():
                 ]
             }), 400  # ✅ Make sure we return and STOP execution
 
-        if features["bird_name"] == "Unknown Bird" or features["bird_name"] is None:
+        if features3["bird_name"] == "Unknown Bird" or features3["bird_name"] is None:
             return jsonify({
                 "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
                 "valid_bird_names": valid_bird_names
@@ -933,14 +933,14 @@ def predict_best_time():
 
         # ✅ Encode Locality & Bird Name
         try:
-            if features["locality"] not in valid_localities:
-                raise ValueError(f"Invalid locality: {features['locality']}")
+            if features3["locality"] not in valid_localities:
+                raise ValueError(f"Invalid locality: {features3['locality']}")
 
-            if features["bird_name"] not in valid_bird_names:
-                raise ValueError(f"Invalid bird name: {features['bird_name']}")
+            if features3["bird_name"] not in valid_bird_names:
+                raise ValueError(f"Invalid bird name: {features3['bird_name']}")
 
-            locality_encoded = label_encoders3['LOCALITY'].transform([features["locality"]])[0]
-            bird_name_encoded = label_encoders3['COMMON NAME'].transform([features["bird_name"]])[0]
+            locality_encoded = label_encoders3['LOCALITY'].transform([features3["locality"]])[0]
+            bird_name_encoded = label_encoders3['COMMON NAME'].transform([features3["bird_name"]])[0]
 
         except ValueError as e:
             logger.error(f"Encoding Error: {e}")
@@ -948,10 +948,10 @@ def predict_best_time():
 
 
 
-        input_data = pd.DataFrame([[1, features["year"], features["day_of_week"],
+        input_data = pd.DataFrame([[1, features3["year"], features3["day_of_week"],
                                     locality_encoded, bird_name_encoded,
-                                    features["Is_Summer"], features["Is_Winter"], features["Is_Spring"], features["Is_Autumn"],
-                                    features["Is_Morning"], features["Is_Afternoon"], features["Is_Evening"], features["Is_Night"]]],
+                                    features3["Is_Summer"], features3["Is_Winter"], features3["Is_Spring"], features3["Is_Autumn"],
+                                    features3["Is_Morning"], features3["Is_Afternoon"], features3["Is_Evening"], features3["Is_Night"]]],
                                 columns=selected_features3)
 
         predicted_month = int(round(month_model.predict(input_data)[0]))
@@ -968,8 +968,8 @@ def predict_best_time():
 
         response = {
             "Response": (
-                f"The {features['bird_name']} can be seen "
-                f"at {features['locality']} on a {features['day_name']}, "
+                f"The {features3['bird_name']} can be seen "
+                f"at {features3['locality']} on a {features3['day_name']}, "
                 f"at {formatted_hour}:00 {am_pm} "
                 f"in {month_name}."
             )
@@ -984,5 +984,5 @@ def predict_best_time():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5007, debug=True)
 
