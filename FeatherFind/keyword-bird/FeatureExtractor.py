@@ -19,15 +19,15 @@ class FeatureExtractor:
 
         # Expanded habitat terms
         self.HABITAT_TERMS = [
-            "forest", "jungle", "wetland", "desert", "water", "mountains",
-            "grassland", "marsh", "coast", "field", "woodland", "garden",
+            "forest", "jungle", "wetlands", "desert", "waters", "mountains","countryside"
+            "grassland", "marshes", "coast", "fields", "woodlands", "garden",
             "savanna", "river", "rainforest", "marshlands", "highlands", "lake",
             "scrubland", "prairies", "tundra", "alpine", "mangroves", "ocean",
             "outback", "grove", "orchard", "valley", "waterfall", "pond", "city", "suburban", "urban"
         ]
 
         # Expanded size terms
-        self.SIZE_TERMS = ["small", "large", "tiny", "big", "medium", "giant", "massive", "huge", "curved", "spare", "long", "short", "thick", "hooked", "slender", "broad", "muscular"]
+        self.SIZE_TERMS = ["small", "large", "tiny", "big", "medium", "giant", "massive", "huge", "dagger", "curved", "spear", "long", "short", "thick", "hooked", "slender", "broad", "muscular"]
 
         self.CONTINENTS = ["asia", "europe", "africa", "america", "australia", "antarctica"]
         self.DIRECTIONS = ["north", "south", "east", "west", "central"]

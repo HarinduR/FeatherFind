@@ -18,15 +18,38 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export function AuthButtons() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSubmitLogin = async (event:any) => {
-    event.preventDefault(); 
-
-    const email = event.target.elements["email-login"].value;
+  const handleSubmitLogin = async (event: any) => {
+    event.preventDefault();
+  
+    const username = event.target.elements["email-login"].value;
     const password = event.target.elements["password-login"].value;
-
-    console.log("Email:", email);
-    console.log("Password:", password);
+  
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
+  
+      const data = await response.json();
+      console.log("Login Response:", data); // Log for debugging
+  
+      if (data.success) {
+        console.log("Login successful!");
+        // You can add logic here to redirect, close modal, show a toast, etc.
+      } else {
+        console.error("Login failed:", data.error);
+      }
+    } catch (error) {
+      console.error("Login request error:", error);
+    }
   };
+  
 
   const handleSubmitSignUp = async (event: any) => {
     event.preventDefault();
@@ -67,6 +90,8 @@ export function AuthButtons() {
       console.error("Request Error:", error);
     }
   };
+
+  
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

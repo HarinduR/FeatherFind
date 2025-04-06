@@ -1,146 +1,145 @@
 version: "3.1"
 
 nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+      - hi there
+      - greetings
+      - nice to meet you
+      - pleasure to meet you
+      - howdy
+      - yo
+      - hey chatbot
+      - chatbot, hello
+      - greetings, bot
+      - hey AI
 
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - good morning
-    - good evening
-    - hey there
-    - hi there
-    - greetings
-    - nice to meet you
-    - pleasure to meet you
-    - howdy
-    - yo
-    - hey chatbot
-    - chatbot, hello
-    - greetings, bot
-    - hey AI
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - take care
+      - see you around
+      - later
+      - have a nice day
+      - talk to you soon
+      - farewell
+      - until next time
+      - I have to go
+      - gotta go
+      - see you next time
 
-- intent: goodbye
-  examples: |
-    - bye
-    - goodbye
-    - see you later
-    - take care
-    - see you around
-    - later
-    - have a nice day
-    - talk to you soon
-    - farewell
-    - until next time
-    - I have to go
-    - gotta go
-    - see you next time
+  - intent: general_question
+    examples: |
+      - Can you help me?
+      - What can you do?
+      - How does this chatbot work?
+      - Tell me something interesting.
 
-- intent: general_question
-  examples: |
-    - Can you help me?
-    - What can you do?
-    - How does this chatbot work?
-    - Tell me something interesting.
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - absolutely
+      - sure
+      - definitely
+      - exactly
+      - that's right
+      - affirmative
+      - yeah
+      - yup
+      - of course
+      - sounds good
+      - you bet
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - absolutely
-    - sure
-    - definitely
-    - exactly
-    - that's right
-    - affirmative
-    - yeah
-    - yup
-    - of course
-    - sounds good
-    - you bet
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - nope
+      - nah
+      - not at all
+      - no way
+      - not really
+      - I don't think so
+      - I disagree
+      - I decline
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - nope
-    - nah
-    - not at all
-    - no way
-    - not really
-    - I don't think so
-    - I disagree
-    - I decline
+  - intent: mood_great
+    examples: |
+      - I am happy
+      - I'm feeling good
+      - I'm in a great mood
+      - life is amazing
+      - everything is going well
+      - I'm doing fantastic
+      - today is a great day
 
-- intent: mood_great
-  examples: |
-    - I am happy
-    - I'm feeling good
-    - I'm in a great mood
-    - life is amazing
-    - everything is going well
-    - I'm doing fantastic
-    - today is a great day
+  - intent: mood_unhappy
+    examples: |
+      - I am sad
+      - not feeling great
+      - I feel bad
+      - I am not okay
+      - I'm having a rough day
+      - today is not a good day
+      - I feel terrible
 
-- intent: mood_unhappy
-  examples: |
-    - I am sad
-    - not feeling great
-    - I feel bad
-    - I am not okay
-    - I'm having a rough day
-    - today is not a good day
-    - I feel terrible
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you human?
+      - am I talking to an AI?
+      - do you have emotions?
+      - do you have a name?
+      - are you a real assistant?
+      - how do you work?
+      - are you programmed?
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you human?
-    - am I talking to an AI?
-    - do you have emotions?
-    - do you have a name?
-    - are you a real assistant?
-    - how do you work?
-    - are you programmed?
+  - intent: repeat_request
+    examples: |
+      - Can you repeat that?
+      - I didn't understand, say it again
+      - Could you explain that again?
+      - Please repeat your answer
+      - Can you go over that one more time?
 
-- intent: repeat_request
-  examples: |
-    - Can you repeat that?
-    - I didn't understand, say it again
-    - Could you explain that again?
-    - Please repeat your answer
-    - Can you go over that one more time?
+  - intent: thank_you
+    examples: |
+      - Thanks!
+      - Thank you so much
+      - I appreciate it
+      - Many thanks
+      - Thanks a lot
+      - Appreciate your help
+      - Grateful for your assistance
 
-- intent: thank_you
-  examples: |
-    - Thanks!
-    - Thank you so much
-    - I appreciate it
-    - Many thanks
-    - Thanks a lot
-    - Appreciate your help
-    - Grateful for your assistance
+  - intent: help
+    examples: |
+      - How can you assist me?
+      - What can I ask you?
+      - Can you tell me what you do?
+      - What are your capabilities?
+      - What kind of help do you provide?
+      - How do I use this chatbot?
+      - Can you explain how to interact with you?
 
-- intent: help
-  examples: |
-    - How can you assist me?
-    - What can I ask you?
-    - Can you tell me what you do?
-    - What are your capabilities?
-    - What kind of help do you provide?
-    - How do I use this chatbot?
-    - Can you explain how to interact with you?
-
-- intent: fallback
-  examples: |
-    - I don't understand
-    - What are you talking about?
-    - That doesn't make sense
-    - I didn't get that
-    - Can you clarify?
-    - I have no idea what you're saying
-    - This is confusing
-    - I need help understanding this
+  - intent: fallback
+    examples: |
+      - I don't understand
+      - What are you talking about?
+      - That doesn't make sense
+      - I didn't get that
+      - Can you clarify?
+      - I have no idea what you're saying
+      - This is confusing
+      - I need help understanding this

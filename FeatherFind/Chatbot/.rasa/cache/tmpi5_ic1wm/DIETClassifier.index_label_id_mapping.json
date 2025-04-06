@@ -1,0 +1,14 @@
+{
+  "0": "affirm",
+  "1": "bot_challenge",
+  "2": "deny",
+  "3": "fallback",
+  "4": "general_question",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "help",
+  "8": "mood_great",
+  "9": "mood_unhappy",
+  "10": "repeat_request",
+  "11": "thank_you"
+}

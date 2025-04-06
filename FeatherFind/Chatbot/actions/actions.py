@@ -81,39 +81,6 @@ class ActionKeywordFinder(Action):
         dispatcher.utter_message(text=response_text)
         return []
 
-'''
-class ActionHandleBirdPrediction(Action):
-    def name(self) -> str:
-        return "action_range_prediction"
-
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict):
-        user_query = tracker.latest_message.get("text", "").strip()
-        logger.info(f"🔍 User Query Sent to API: {user_query}")
-
-        if not user_query:
-            dispatcher.utter_message(text="I couldn't understand your request. Could you rephrase it?")
-            return []
-
-        request_payload = {"query": user_query}
-        headers = {"Content-Type": "application/json"}
-
-        try:
-            response = requests.post("http://127.0.0.1:5002/predict", json=request_payload, headers=headers)
-            response.raise_for_status()  # Raise an exception for non-200 status codes
-            json_response = response.json()
-
-            meaningful_sentence = json_response.get("meaningful_sentence", "I couldn't generate a response.")
-            probability = float(json_response.get("probability", 0.0))  # Ensure probability is a float
-
-            logger.info(f"✅ API Response: {json_response}")
-            dispatcher.utter_message(text=f"{meaningful_sentence} (Confidence: {probability:.1f}%)")
-
-        except requests.exceptions.RequestException as e:
-            logger.error(f"❌ API call error: {e}")
-            dispatcher.utter_message(text="There was an error connecting to the prediction API.")
-
-        return []
-'''   
 class ActionGetBirdInfo(Action):
     def name(self) -> Text:
         return "action_get_bird_info"
@@ -152,128 +119,125 @@ class ActionGetBirdInfo(Action):
             dispatcher.utter_message(text="There was an error processing your request. Please try again later.")
 
         return []
-    
-import requests
-import logging
-from typing import Dict, Text, Any, List
-from rasa_sdk import Action, Tracker
-from rasa_sdk.executor import CollectingDispatcher
 
 logger = logging.getLogger(__name__)
 
-# Consolidated API configuration
-FLASK_API_BASE = "http://127.0.0.1:5002"  # Update with your actual URL if different
+# ✅ API Endpoints
+RANGE_PREDICTION_API = "http://127.0.0.1:5002/predict_presence"
+LOCATION_API = "http://127.0.0.1:5002/predict_location"
+TIME_PREDICTION_API = "http://127.0.0.1:5002/predict_best_time"
 
-API_ENDPOINTS = {
-    "presence": f"{FLASK_API_BASE}/predict_presence",
-    "location": f"{FLASK_API_BASE}/predict_location",
-    "time": f"{FLASK_API_BASE}/predict_best_time"
-}
+# ✅ Function: Call Range Prediction API
+def handle_range_prediction(query, dispatcher):
+    payload = {"query": query}
+    headers = {"Content-Type": "application/json"}
 
-class ActionBirdPrediction(Action):
-    def name(self) -> Text:
+    try:
+        response = requests.post(RANGE_PREDICTION_API, json=payload, headers=headers)
+        json_response = response.json()
+
+        # ✅ Show full message from API (with inline locations already included)
+        if "message" in json_response:
+            dispatcher.utter_message(text=json_response["message"])
+            return
+
+        dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"❌ API call error: {e}")
+        dispatcher.utter_message(text="There was an error connecting to the range prediction API.")
+
+
+# ✅ Function: Call Location Prediction API
+def handle_location_prediction(query, dispatcher):
+    payload = {"query": query}
+    headers = {"Content-Type": "application/json"}
+
+    try:
+        response = requests.post(LOCATION_API, json=payload, headers=headers)
+        json_response = response.json()
+
+        # ✅ Show full message from API (with inline locations already included)
+        if "message" in json_response:
+            dispatcher.utter_message(text=json_response["message"])
+            return
+
+        dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"❌ API call error: {e}")
+        dispatcher.utter_message(text="There was an error connecting to the range prediction API.")
+
+
+# ✅ Function: Call Time Prediction API
+def handle_time_prediction(query, dispatcher):
+    payload = {"query": query}
+    headers = {"Content-Type": "application/json"}
+
+    try:
+        response = requests.post(TIME_PREDICTION_API, json=payload, headers=headers)
+
+        try:
+            json_response = response.json()
+        except ValueError:
+            dispatcher.utter_message(text="⚠ Sorry, something went wrong while processing the response.")
+            return
+
+        # ✅ If API returned a message (even on error)
+        if "message" in json_response:
+            dispatcher.utter_message(text=json_response["message"])
+            return
+
+        # ✅ Else show the normal successful response
+        dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"❌ API call error: {e}")
+        dispatcher.utter_message(text="There was an error connecting to the time prediction API.")
+
+
+
+# ✅ Keyword Routing Logic
+def determine_api_from_query(query: str) -> str:
+    query = query.lower()
+
+    time_keywords = ["what", "time", "good time", "when", "best time", "what time", "hour", "summer", "winter", "spring", "autumn"]
+    
+    location_keywords = ["where", "locations", "spots", "places", "areas",
+                         "district", "blue bird", "Blue tailed bird", "when", "When", "Where" ,"Where can I find", "find",]
+    
+    presence_keywords = ["present", "see", "appear", "found", "visible", "will I", "can i" ,"can"]
+
+    if any(word in query for word in time_keywords):
+        return "time"
+    elif any(word in query for word in location_keywords):
+        return "location"
+    elif any(word in query for word in presence_keywords):
+        return "presence"
+    else:
+        return "presence"  # Default fallback
+
+# ✅ Rasa Action Class
+class ActionHandleBirdPrediction(Action):
+    def name(self) -> str:
         return "action_range_prediction"
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: dict):
         user_query = tracker.latest_message.get("text", "").strip()
+        logger.info(f"🔍 Received user query: {user_query}")
+
         if not user_query:
-            dispatcher.utter_message(text="Please provide a valid bird observation query.")
+            dispatcher.utter_message(text="I couldn't understand your request. Can you rephrase it?")
             return []
 
-        # Determine which API endpoint to use
-        endpoint_type = self._determine_endpoint(user_query)
-        endpoint_url = API_ENDPOINTS.get(endpoint_type)
+        selected_api = determine_api_from_query(user_query)
+        logger.info(f"📡 Routing query to: {selected_api.upper()} API")
 
-        try:
-            response = requests.post(
-                endpoint_url,
-                json={"query": user_query},
-                headers={"Content-Type": "application/json"},
-                timeout=10
-            )
-
-            if response.status_code != 200:
-                logger.error(f"API Error: {response.status_code} - {response.text}")
-                dispatcher.utter_message(text="Sorry, I'm having trouble processing your request right now.")
-                return []
-
-            api_response = response.json()
-
-            # Handle different response types
-            if "error" in api_response:
-                self._handle_api_errors(api_response, dispatcher)
-            else:
-                self._handle_success_response(endpoint_type, api_response, dispatcher)
-
-        except requests.exceptions.RequestException as e:
-            logger.error(f"API Connection Error: {str(e)}")
-            dispatcher.utter_message(text="I'm having trouble connecting to the bird prediction service. Please try again later.")
+        if selected_api == "time":
+            handle_time_prediction(user_query, dispatcher)
+        elif selected_api == "location":
+            handle_location_prediction(user_query, dispatcher)
+        else:
+            handle_range_prediction(user_query, dispatcher)
 
         return []
-
-    def _determine_endpoint(self, query: Text) -> Text:
-        """Determine which prediction endpoint to use based on query content"""
-        query = query.lower()
-        
-        if any(kw in query for kw in ["where", "location", "spot", "place", "find"]):
-            return "location"
-        if any(kw in query for kw in ["when", "time", "hour", "best time", "season"]):
-            return "time"
-        return "presence"
-
-    # Updated error handling in actions.py
-    def _handle_api_errors(self, response: Dict, dispatcher: CollectingDispatcher):
-        """Handle different error scenarios from the API"""
-        if "valid_localities" in response:
-            locations = response["valid_localities"]
-            buttons = [{"title": loc, "payload": loc} for loc in locations]
-            dispatcher.utter_message(
-                text=f"🚨 {response.get('message', 'Please select a valid location from these options:')}",
-                buttons=buttons
-            )
-        elif "valid_bird_names" in response:
-            birds = response["valid_bird_names"]
-            buttons = [{"title": bird, "payload": bird} for bird in birds]
-            dispatcher.utter_message(
-                text=f"🐦 {response.get('message', 'Please choose a bird species from these options:')}",
-                buttons=buttons
-            )
-        else:
-            error_msg = response.get("error", "An unknown error occurred. Please try again.")
-            dispatcher.utter_message(text=f"⚠️ {error_msg}")
-
-    # Updated success response handling
-    def _handle_success_response(self, endpoint_type: Text, response: Dict, dispatcher: CollectingDispatcher):
-        """Format successful API responses for user"""
-        try:
-            if endpoint_type == "location":
-                locations = ", ".join(response.get("locations", []))
-                dispatcher.utter_message(
-                    text=f"📍 Here are the best locations to observe {response.get('bird', 'the bird')}:\n{locations}"
-                )
-                
-            elif endpoint_type == "time":
-                best_time = response.get('best_time', 'unknown time')
-                best_month = response.get('best_month', 'unknown month')
-                dispatcher.utter_message(
-                    text=f"⏰ Best observation time for {response.get('bird', 'the bird')}:\n"
-                        f"• Month: {best_month}\n"
-                        f"• Time: {best_time}"
-                )
-                
-            else:  # presence
-                bird = response.get('bird', 'This bird')
-                confidence = response.get('confidence', 0)
-                status = "highly likely" if confidence > 0.7 else "likely" if confidence > 0.4 else "unlikely"
-                
-                dispatcher.utter_message(
-                    text=f"🔍 {bird} is {status} to be present at {response.get('location', 'this location')} "
-                        f"(confidence: {confidence:.0%})"
-                )
-                
-        except KeyError as e:
-            logger.error(f"Missing key in API response: {str(e)}")
-            dispatcher.utter_message(text="Sorry, I encountered an issue processing the response. Please try again.")

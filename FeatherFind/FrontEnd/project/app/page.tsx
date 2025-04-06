@@ -13,7 +13,7 @@ export default function Home() {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hello! I'm FeatherFind, your bird identification assistant. You can ask me questions about birds or upload an image for identification.",
+      content: "Hello!  I'm FeatherFind, your bird identification assistant. You can ask me questions about birds or upload an image for identification.",
       type: "text",
     },
   ]);
@@ -92,7 +92,7 @@ export default function Home() {
         {
           id: nanoid(),
           role: "assistant",
-          content: "I apologize, but I'm having trouble connecting to the server at the moment. Please try again later.",
+          content: "ogize, but I'm having trouble connecting to the server at the moment. Please try again later.",
           type: "text",
         },
       ]);
