@@ -84,7 +84,7 @@ def handle_time_prediction(query, dispatcher):
 def determine_api_from_query(query: str) -> str:
     query = query.lower()
 
-    time_keywords = ["what", "time", "good time", "when", "best time", "morning", "afternoon", "evening", "night", "what time", "hour", "summer", "winter", "spring", "autmn"]
+    time_keywords = ["what", "time", "good time", "when", "best time", "what time", "hour", "summer", "winter", "spring", "autumn"]
     
     location_keywords = ["where", "locations", "spots", "places", "areas",
                          "district", "blue bird", "Blue tailed bird", "when", "When", "Where" ,"Where can I find", "find",]
