@@ -17,7 +17,6 @@ def home():
 def query_bird():
     data = request.get_json()
     text = data.get("text", "")
-    
     features = extractor.extractFeatures(text)
     
     sparql_query = query_builder.build_query(features)

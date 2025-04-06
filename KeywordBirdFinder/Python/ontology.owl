@@ -275,14 +275,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Aquatic_Invertebrates -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Aquatic_Invertebrates">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Diet"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black">
@@ -297,7 +289,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black_Headed_Ibis">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Bird"/>
-        <feather-finder:eats rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Aquatic_Invertebrates"/>
+        <feather-finder:eats rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Invertebrates"/>
         <feather-finder:hasBeak rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Curved"/>
         <feather-finder:hasBeakColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black"/>
         <feather-finder:hasEyes rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
@@ -308,7 +300,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Large"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Wetlands"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -336,7 +328,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Blue"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Countryside"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -373,10 +365,18 @@
     
 
 
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Dagger_Like -->
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Dagger -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Dagger_Like">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Dagger">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Beak"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Fields -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Fields">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Habitat"/>
     </owl:NamedIndividual>
     
 
@@ -430,7 +430,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Red"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Large"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Marshes"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -455,7 +455,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Indian_Pond_Heron">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Bird"/>
-        <feather-finder:hasBeak rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear_Like"/>
+        <feather-finder:hasBeak rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear"/>
         <feather-finder:hasBeakColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Yellow"/>
         <feather-finder:hasEyes rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
         <feather-finder:hasEyesColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Yellow"/>
@@ -464,8 +464,8 @@
         <feather-finder:hasPrimaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Brown"/>
         <feather-finder:hasPrimaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#White"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
-        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Water_Bodies"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Waters"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -473,6 +473,14 @@
     <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Insects -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Insects">
+        <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Diet"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Invertebrates -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Invertebrates">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Diet"/>
     </owl:NamedIndividual>
     
@@ -499,8 +507,8 @@
         <feather-finder:hasLegsColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black"/>
         <feather-finder:hasPrimaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Small"/>
-        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Water_Bodies"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Waters"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -525,14 +533,6 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Size"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Open_Fields -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Open_Fields">
-        <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Habitat"/>
     </owl:NamedIndividual>
     
 
@@ -585,7 +585,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Red"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Woodlands"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -605,8 +605,8 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Black"/>
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#White"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
-        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Open_Fields"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Fields"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -635,17 +635,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia -->
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Region"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear_Like -->
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear_Like">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Spear">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Beak"/>
     </owl:NamedIndividual>
     
@@ -659,9 +659,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Water_Bodies -->
+    <!-- http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Waters -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Water_Bodies">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Waters">
         <rdf:type rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Habitat"/>
     </owl:NamedIndividual>
     
@@ -699,7 +699,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#White"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Medium"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Wetlands"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
@@ -720,7 +720,7 @@
         <feather-finder:hasSecondaryColor rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#White"/>
         <feather-finder:hasSize rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Large"/>
         <feather-finder:livesIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#Wetlands"/>
-        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_Asia"/>
+        <feather-finder:locatedIn rdf:resource="http://www.semanticweb.org/daham/ontologies/2025/0/feather-finder#South_asia"/>
     </owl:NamedIndividual>
     
 
