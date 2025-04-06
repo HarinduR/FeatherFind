@@ -19,15 +19,15 @@ def handle_range_prediction(query, dispatcher):
         response = requests.post(RANGE_PREDICTION_API, json=payload, headers=headers)
         json_response = response.json()
 
-        # ✅ Handle "you can use these locations"
+        # ✅ Match API key: "you can use these locations"
         if "you can use these locations" in json_response:
-            location_list = "\n".join(json_response["you can use these locations"])
+            locations_list = json_response["you can use these locations"]
+            locations_text = "\n".join(locations_list)
             dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nHere are the supported locations:\n{location_list}"
+                text=f"{json_response['message']}\n\nYou can use these locations:\n{locations_text}"
             )
             return
 
-        # ✅ Handle bird species prompt
         if "valid_bird_names" in json_response:
             valid_birds_text = "\n".join(json_response["valid_bird_names"])
             dispatcher.utter_message(
@@ -35,7 +35,6 @@ def handle_range_prediction(query, dispatcher):
             )
             return
 
-        # ✅ Final fallback response
         dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
 
     except requests.exceptions.RequestException as e:
@@ -94,21 +93,29 @@ def handle_time_prediction(query, dispatcher):
 
         json_response = response.json()
 
-        if "valid_localities" in json_response:
-            valid_locations_text = "\n".join(json_response["valid_localities"])
-            dispatcher.utter_message(text=f"{json_response['message']}\n\nValid Locations:\n{valid_locations_text}")
+        # ✅ Handle location validation message + list
+        if "you can use these locations" in json_response:
+            locations_text = "\n".join(json_response["you can use these locations"])
+            dispatcher.utter_message(
+                text=f"{json_response['message']}\n\nYou can use these locations:\n{locations_text}"
+            )
             return
 
+        # ✅ Handle bird name validation message
         if "valid_bird_names" in json_response:
-            valid_birds_text = "\n".join(json_response["valid_bird_names"])
-            dispatcher.utter_message(text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}")
+            bird_names_text = "\n".join(json_response["valid_bird_names"])
+            dispatcher.utter_message(
+                text=f"{json_response['message']}\n\nValid Bird Species:\n{bird_names_text}"
+            )
             return
 
+        # ✅ Normal case: show prediction
         dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
-        
+
     except requests.exceptions.RequestException as e:
         logger.error(f"❌ API call error: {e}")
         dispatcher.utter_message(text="There was an error connecting to the time prediction API.")
+
 
 # ✅ Keyword Routing Logic
 def determine_api_from_query(query: str) -> str:
