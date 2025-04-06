@@ -357,31 +357,41 @@ def predict():
 
         # ✅ Check if Locality is Missing
         if features["locality"] == "Unknown Location":
+            hambantota_locations = [
+                "Bundala National Park", "Kalametiya", "Tissa Lake", "Yala National Park General",
+                "Debarawewa Lake", "Bundala NP General", "Bundala Freshwater Marsh", "Yoda Lake",
+                "Kalametiya Bird Sanctuary", "Thangalle Marsh", "Hibiscus Garden Hotel Tissamaharama",
+                "Senasuma Wetland", "Pannegamuwa Lake", "Buckingham Place Hotel Tangalle",
+                "Weliaragoda Wetland", "Pallemalala Wewa", "Wirawila", "Bandagiriya Southern Province",
+                "Palatupana", "Palatupana Wetland", "Gal Wala Home Walasmulla Southern",
+                "Kalamatiya Sanctuary", "Palatupana Southern Province", "Ampitiya Lake Beliatta Southern Province",
+                "Yoda Kandiya Tank", "Godakalapuwa Ruhuna NP", "Lake View Cottage Tissamaharama",
+                "Sithulpawwa", "Road Weligatta Southern Province", "Karagan Lewaya Hambanthota"
+            ]
+            location_text = ", ".join(hambantota_locations)  # ✅ Inline formatting
+
             return jsonify({
-                "message": "The query you entered didn't contain a location in in our model for Hambanthota District. Please select one and re-enter the query.",
-                "you can use these locations": [
-                   "Bundala National Park",
-                    "Kalametiya", "Tissa Lake", "Yala National Park General", "Debarawewa Lake", "Bundala NP General", 
-                    "Debarawewa Lake", "Bundala Freshwater Marsh", "Tissa Lake", "Yoda Lake", "Kalametiya Bird Sanctuary","Thangalle Marsh",
-                    "Hibiscus Garden Hotel Tissamaharama",  "Senasuma Wetland","Pannegamuwa Lake",
-                    "Buckingham Place Hotel Tangalle","Weliaragoda Wetland","Pallemalala Wewa", 
-                    "Yala National Park", "Wirawila",  "Kalametiya", "Bandagiriya Southern Province", 
-                    "Palatupana",  "Yala NP", "Palatupana Area",
-                    "Palatupana Wetland", "Gal Wala Home Walasmulla Southern", 
-                    "Bundala National Park", "Kalamatiya Sanctuary", "Palatupana Southern Province",
-                    "Ampitiya Lake Beliatta Southern Province", "Yoda Kandiya Tank",  "Godakalapuwa  Ruhuna NP", 
-                    "Lake View Cottage  Tissamaharama",  "Sithulpawwa",
-                    "Road Weligatta Southern Province", 
-                    "Karagan Lewaya Hambanthota"
-                ]
-            })
+                "message": (
+                    "The query you entered didn't contain a location in our model for Hambantota District. "
+                    "Please select one and re-enter the query. "
+                    f"Valid locations include: {location_text}"
+                )
+            }), 400
+
 
         # ✅ Check if Bird Name is Missing
         if features["bird_name"] == "Unknown Bird":
+            valid_bird_names = ["Blue-tailed Bee-eater", "Red-vented Bulbul", "White-throated Kingfisher"]
+            
+            bird_text = ", ".join(valid_bird_names)
+            
             return jsonify({
-                "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
-                "valid_bird_names": valid_bird_names
-            })
+                "message": (
+                    "The query you entered didn't contain a bird species in our model. Please select one and re-enter the query."
+                    "Please select one and re-enter the query. "
+                    f"Valid bird names: {bird_text}"
+                )
+            }), 400
 
         # ✅ Encode Locality & Bird Name
         locality_encoded = label_encoders1['LOCALITY'].transform([features["locality"]])[0]
@@ -702,10 +712,17 @@ def predict_best_locations():
         features2 = extract_query_features(query)
         
         if features2["bird_name"] == "Unknown Bird":
-                return jsonify({
-                    "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
-                    "valid_bird_names": valid_bird_names
-                })
+            valid_bird_names = ["Blue-tailed Bee-eater", "Red-vented Bulbul", "White-throated Kingfisher"]
+            
+            bird_text = ", ".join(valid_bird_names)
+            
+            return jsonify({
+                "message": (
+                    "The query you entered didn't contain a bird species in our model. Please select one and re-enter the query."
+                    "Please select one and re-enter the query. "
+                    f"Valid bird names: {bird_text}"
+                )
+            }), 400
         
         bird_name_encoded = label_encoders2['COMMON NAME'].transform([features2["bird_name"]])[0]
         
@@ -729,7 +746,7 @@ def predict_best_locations():
         
     
         response = {
-                "Response for you": f"The {features2['bird_name']} can be seen "
+                "Response": f"The {features2['bird_name']} can be seen "
                f"on {features2['day_name']}, {features2['month']}/{features2['year']} "
                f"in the {features2['time_of_day']} at these locations in Hambanthota District: {', '.join(unique_locations)}."
                 }
@@ -1045,46 +1062,44 @@ def predict_best_time():
         features3 = extract_query_features_time(query)
 
         # ✅ Ensure Locality and Bird Name Are Not Missing Before Encoding
-        if features3["locality"] == "Unknown Location" or features3["locality"] is None:
-            return jsonify({
-                "message": "The query you entered didn't contain a location in our model for Hambanthota District. Please select one and re-enter the query.",
-                "you can use these locations": [
-                    "Bundala National Park",
-                    "Kalametiya", "Tissa Lake", "Yala National Park General", "Debarawewa Lake", "Bundala NP General", 
-                    "Debarawewa Lake", "Bundala Freshwater Marsh", "Tissa Lake", "Yoda Lake", "Kalametiya Bird Sanctuary","Thangalle Marsh",
-                    "Hibiscus Garden Hotel Tissamaharama",  "Senasuma Wetland","Pannegamuwa Lake",
-                    "Buckingham Place Hotel Tangalle","Weliaragoda Wetland","Pallemalala Wewa", 
-                    "Yala National Park", "Wirawila",  "Kalametiya", "Bandagiriya Southern Province", 
-                    "Palatupana",  "Yala NP", "Palatupana Area",
-                    "Palatupana Wetland", "Gal Wala Home Walasmulla Southern", 
-                    "Bundala National Park", "Kalamatiya Sanctuary", "Palatupana Southern Province",
-                    "Ampitiya Lake Beliatta Southern Province", "Yoda Kandiya Tank",  "Godakalapuwa  Ruhuna NP", 
-                    "Lake View Cottage  Tissamaharama",  "Sithulpawwa",
-                    "Road Weligatta Southern Province", 
-                    "Karagan Lewaya Hambanthota"
-                ]
-            }), 400  # ✅ Make sure we return and STOP execution
+        if features3["locality"] == "Unknown Location":
+            hambantota_locations = [
+                "Bundala National Park", "Kalametiya", "Tissa Lake", "Yala National Park General",
+                "Debarawewa Lake", "Bundala NP General", "Bundala Freshwater Marsh", "Yoda Lake",
+                "Kalametiya Bird Sanctuary", "Thangalle Marsh", "Hibiscus Garden Hotel Tissamaharama",
+                "Senasuma Wetland", "Pannegamuwa Lake", "Buckingham Place Hotel Tangalle",
+                "Weliaragoda Wetland", "Pallemalala Wewa", "Wirawila", "Bandagiriya Southern Province",
+                "Palatupana", "Palatupana Wetland", "Gal Wala Home Walasmulla Southern",
+                "Kalamatiya Sanctuary", "Palatupana Southern Province", "Ampitiya Lake Beliatta Southern Province",
+                "Yoda Kandiya Tank", "Godakalapuwa Ruhuna NP", "Lake View Cottage Tissamaharama",
+                "Sithulpawwa", "Road Weligatta Southern Province", "Karagan Lewaya Hambanthota"
+            ]
+            location_text = ", ".join(hambantota_locations)  # ✅ Inline formatting
 
-        if features3["bird_name"] == "Unknown Bird" or features3["bird_name"] is None:
             return jsonify({
-                "message": "The query you entered didn't contain a bird species. Please select one and re-enter the query.",
-                "valid_bird_names": valid_bird_names
-            }), 400  # ✅ Ensure we return and STOP execution
+                "message": (
+                    "The query you entered didn't contain a location in our model for Hambantota District. "
+                    "Please select one and re-enter the query. "
+                    f"Valid locations include: {location_text}"
+                )
+            }), 400
+
+        if features3["bird_name"] == "Unknown Bird":
+            valid_bird_names = ["Blue-tailed Bee-eater", "Red-vented Bulbul", "White-throated Kingfisher"]
+            
+            bird_text = ", ".join(valid_bird_names)
+            
+            return jsonify({
+                "message": (
+                    "The query you entered didn't contain a bird species in our model. Please select one and re-enter the query."
+                    "Please select one and re-enter the query. "
+                    f"Valid bird names: {bird_text}"
+                )
+            }), 400
 
         # ✅ Encode Locality & Bird Name
-        try:
-            if features3["locality"] not in valid_localities:
-                raise ValueError(f"Invalid locality: {features3['locality']}")
-
-            if features3["bird_name"] not in valid_bird_names:
-                raise ValueError(f"Invalid bird name: {features3['bird_name']}")
-
-            locality_encoded = label_encoders3['LOCALITY'].transform([features3["locality"]])[0]
-            bird_name_encoded = label_encoders3['COMMON NAME'].transform([features3["bird_name"]])[0]
-
-        except ValueError as e:
-            logger.error(f"Encoding Error: {e}")
-            return jsonify({"error": f"Invalid input detected: {str(e)}"}), 400  # ✅ Return proper error message
+        locality_encoded = label_encoders1['LOCALITY'].transform([features3["locality"]])[0]
+        bird_name_encoded = label_encoders1['COMMON NAME'].transform([features3["bird_name"]])[0]
 
 
 
@@ -1124,5 +1139,5 @@ def predict_best_time():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5007, debug=True)
+    app.run(host="0.0.0.0", port=5002, debug=True)
 
