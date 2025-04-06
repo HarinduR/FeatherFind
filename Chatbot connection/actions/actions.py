@@ -18,22 +18,42 @@ def handle_range_prediction(query, dispatcher):
     try:
         response = requests.post(RANGE_PREDICTION_API, json=payload, headers=headers)
         json_response = response.json()
+        
+        HAMBANTHOTA_LOCATIONS = [
+            "Bundala National Park", "Kalametiya", "Tissa Lake", "Yala National Park General",
+            "Debarawewa Lake", "Bundala NP General", "Bundala Freshwater Marsh", "Yoda Lake",
+            "Kalametiya Bird Sanctuary", "Thangalle Marsh", "Hibiscus Garden Hotel Tissamaharama",
+            "Senasuma Wetland", "Pannegamuwa Lake", "Buckingham Place Hotel Tangalle",
+            "Weliaragoda Wetland", "Pallemalala Wewa", "Wirawila", "Bandagiriya Southern Province",
+            "Palatupana", "Palatupana Wetland", "Gal Wala Home Walasmulla Southern",
+            "Kalamatiya Sanctuary", "Palatupana Southern Province", "Ampitiya Lake Beliatta Southern Province",
+            "Yoda Kandiya Tank", "Godakalapuwa Ruhuna NP", "Lake View Cottage Tissamaharama",
+            "Sithulpawwa", "Road Weligatta Southern Province", "Karagan Lewaya Hambanthota"
+        ]
 
-        # ✅ Match API key: "you can use these locations"
-        if "you can use these locations" in json_response:
-            locations_list = json_response["you can use these locations"]
-            locations_text = "\n".join(locations_list)
+
+        message = json_response.get("message", "")
+
+        # ✅ Combine with locations if available
+        if "you can use these locations" in json_response or "you_can_use_these_locations" in json_response or "location_error" in message.lower():
+            locations_text = "\n".join(HAMBANTHOTA_LOCATIONS)
+            full_message = f"{message}\n\nValid Locations:\n{locations_text}"
+            dispatcher.utter_message(text=full_message)
+            return
+
+
+        if "valid_bird_names" in json_response or "bird species" in message.lower():
+            VALID_BIRD_SPECIES = [
+                "Blue-tailed Bee-eater",
+                "Red-vented Bulbul",
+                "White-throated Kingfisher"
+            ]
+            birds_text = "\n".join(VALID_BIRD_SPECIES)
             dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nYou can use these locations:\n{locations_text}"
+                text=f"{message}\n\nValid Bird Species:\n{birds_text}"
             )
             return
 
-        if "valid_bird_names" in json_response:
-            valid_birds_text = "\n".join(json_response["valid_bird_names"])
-            dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}"
-            )
-            return
 
         dispatcher.utter_message(text=json_response.get("Response", "I couldn't generate a response."))
 
@@ -57,12 +77,20 @@ def handle_location_prediction(query, dispatcher):
             return
 
         json_response = response.json()
+        
+        message = json_response.get("message", "")
+
 
         # ✅ Handle bird species not found
-        if "valid_bird_names" in json_response:
-            valid_birds_text = "\n".join(json_response["valid_bird_names"])
+        if "valid_bird_names" in json_response or "bird species" in message.lower():
+            VALID_BIRD_SPECIES = [
+                "Blue-tailed Bee-eater",
+                "Red-vented Bulbul",
+                "White-throated Kingfisher"
+            ]
+            birds_text = "\n".join(VALID_BIRD_SPECIES)
             dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nValid Bird Species:\n{valid_birds_text}"
+                text=f"{message}\n\nValid Bird Species:\n{birds_text}"
             )
             return
 
@@ -94,18 +122,38 @@ def handle_time_prediction(query, dispatcher):
         json_response = response.json()
 
         # ✅ Handle location validation message + list
-        if "you can use these locations" in json_response:
-            locations_text = "\n".join(json_response["you can use these locations"])
-            dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nYou can use these locations:\n{locations_text}"
-            )
+        HAMBANTHOTA_LOCATIONS = [
+            "Bundala National Park", "Kalametiya", "Tissa Lake", "Yala National Park General",
+            "Debarawewa Lake", "Bundala NP General", "Bundala Freshwater Marsh", "Yoda Lake",
+            "Kalametiya Bird Sanctuary", "Thangalle Marsh", "Hibiscus Garden Hotel Tissamaharama",
+            "Senasuma Wetland", "Pannegamuwa Lake", "Buckingham Place Hotel Tangalle",
+            "Weliaragoda Wetland", "Pallemalala Wewa", "Wirawila", "Bandagiriya Southern Province",
+            "Palatupana", "Palatupana Wetland", "Gal Wala Home Walasmulla Southern",
+            "Kalamatiya Sanctuary", "Palatupana Southern Province", "Ampitiya Lake Beliatta Southern Province",
+            "Yoda Kandiya Tank", "Godakalapuwa Ruhuna NP", "Lake View Cottage Tissamaharama",
+            "Sithulpawwa", "Road Weligatta Southern Province", "Karagan Lewaya Hambanthota"
+        ]
+
+
+        message = json_response.get("message", "")
+
+        # ✅ Combine with locations if available
+        if "you can use these locations" in json_response or "you_can_use_these_locations" in json_response or "location_error" in message.lower():
+            locations_text = "\n".join(HAMBANTHOTA_LOCATIONS)
+            full_message = f"{message}\n\nValid Locations:\n{locations_text}"
+            dispatcher.utter_message(text=full_message)
             return
 
-        # ✅ Handle bird name validation message
-        if "valid_bird_names" in json_response:
-            bird_names_text = "\n".join(json_response["valid_bird_names"])
+
+        if "valid_bird_names" in json_response or "bird species" in message.lower():
+            VALID_BIRD_SPECIES = [
+                "Blue-tailed Bee-eater",
+                "Red-vented Bulbul",
+                "White-throated Kingfisher"
+            ]
+            birds_text = "\n".join(VALID_BIRD_SPECIES)
             dispatcher.utter_message(
-                text=f"{json_response['message']}\n\nValid Bird Species:\n{bird_names_text}"
+                text=f"{message}\n\nValid Bird Species:\n{birds_text}"
             )
             return
 
